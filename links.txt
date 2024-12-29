@@ -1,3 +1,4 @@
+links = [
   "https://slink.ltd/https://raw.githubusercontent.com/firefoxmmx2/v2rayshare_subcription/main/subscription/clash_sub.yaml",
   "https://slink.ltd/https://raw.githubusercontent.com/Roywaller/clash_subscription/refs/heads/main/clash_subscription.txt",
   "https://slink.ltd/https://raw.githubusercontent.com/Q3dlaXpoaQ/V2rayN_Clash_Node_Getter/refs/heads/main/APIs/sc0.yaml",
@@ -17,4 +18,4 @@
   "https://slink.ltd/https://raw.githubusercontent.com/leetomlee123/freenode/refs/heads/main/README.md",
   "https://slink.ltd/https://raw.githubusercontent.com/chengaopan/AutoMergePublicNodes/master/list.yml",
   "https://slink.ltd/https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/clash.yml",
-  "https://slink.ltd/https://raw.githubusercontent.com/zhangkaiitugithub/passcro/main/speednodes.yaml",
+]
