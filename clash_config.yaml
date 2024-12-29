@@ -193,14 +193,6 @@ proxies:
   server: 84.19.31.63
   type: ss
   udp: true
-- cipher: aes-256-cfb
-  client-fingerprint: chrome
-  name: 0|--10
-  password: gYCYXfkUQEs2TaJQ
-  port: 9038
-  server: 217.30.10.18
-  tfo: false
-  type: ss
 - name: 🇯🇵JP-13.114.67.166-6257
   type: ss
   server: 13.114.67.166
@@ -240,22 +232,6 @@ proxies:
   password: exaxgqkKkd0TAMrCxeonWg==
 - name: 日本1
   server: jpgmo101-cdn-route.couldflare-cdn.com
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: false
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
-  password: exaxgqkKkd0TAMrCxeonWg==
-- name: 日本2
-  server: jpgmo102-cdn-route.couldflare-cdn.com
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: false
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
-  password: exaxgqkKkd0TAMrCxeonWg==
-- name: 香港1
-  server: hkre1-cdn-route.couldflare-cdn.com
   port: 443
   type: http
   tls: true
@@ -328,16 +304,6 @@ proxies:
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
-- name: US_b5ce7_0025
-  server: nsus3.irundns.net
-  port: 443
-  type: ssr
-  cipher: aes-128-cfb
-  password: +asd6a5s5df+
-  protocol: auth_aes128_md5
-  obfs: http_post
-  protocol-param: ''
-  obfs-param: ''
 - name: 英国+伦敦Amazon数据中心-HmHY
   type: ss
   server: series-a2.varzesh360.co
@@ -371,40 +337,36 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - www.gov.ua
-  - www.wto.org
-  - fbi.gov
-  - 🇮🇸 time.is
-  - www.gco.gov.qa
-  - 🇭🇰 icook.hk
-  - 🇺🇸_US_美国_2
-  - brazil.com
   - www.gov.se
   - 🇷🇺 russia.com
+  - fbi.gov
+  - www.gov.ua
+  - www.gco.gov.qa
+  - brazil.com
+  - 🇭🇰 icook.hk
+  - 🇮🇸 time.is
+  - www.wto.org
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
+  - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
-  - DE德国(mibei77.com 米贝节点分享)
-  - US_b5ce7_0025
   - 🇩🇪 DE_324
-  - 0|--10
+  - DE德国(mibei77.com 米贝节点分享)
   - 🇬🇧 英国
   - 🇳🇱 荷兰
-  - 英国+伦敦Amazon数据中心-HmHY
-  - DE_b5ce7_0008
   - 🇱🇻_LV_拉脱维亚
-  - 🇯🇵JP-13.114.67.166-6257
+  - 英国+伦敦Amazon数据中心-HmHY
   - 🇺🇸 US_470
+  - DE_b5ce7_0008
+  - 🇯🇵JP-13.114.67.166-6257
   - KR_b5ce7_0012
   - 美国5
   - 美国3
   - 🇯🇵 免费-日本2-Ver.7
+  - 🇯🇵2
+  - 🇯🇵4
   - 🇯🇵 免费-日本6-Ver.7
   - 日本1
-  - 日本2
-  - 🇯🇵4
-  - 🇯🇵2
   - 台湾3
-  - 香港1
   url: http://www.pinterest.com
   interval: 300
   tolerance: 50
@@ -412,79 +374,71 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - www.gov.ua
-  - www.wto.org
-  - fbi.gov
-  - 🇮🇸 time.is
-  - www.gco.gov.qa
-  - 🇭🇰 icook.hk
-  - 🇺🇸_US_美国_2
-  - brazil.com
   - www.gov.se
   - 🇷🇺 russia.com
+  - fbi.gov
+  - www.gov.ua
+  - www.gco.gov.qa
+  - brazil.com
+  - 🇭🇰 icook.hk
+  - 🇮🇸 time.is
+  - www.wto.org
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
+  - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
-  - DE德国(mibei77.com 米贝节点分享)
-  - US_b5ce7_0025
   - 🇩🇪 DE_324
-  - 0|--10
+  - DE德国(mibei77.com 米贝节点分享)
   - 🇬🇧 英国
   - 🇳🇱 荷兰
-  - 英国+伦敦Amazon数据中心-HmHY
-  - DE_b5ce7_0008
   - 🇱🇻_LV_拉脱维亚
-  - 🇯🇵JP-13.114.67.166-6257
+  - 英国+伦敦Amazon数据中心-HmHY
   - 🇺🇸 US_470
+  - DE_b5ce7_0008
+  - 🇯🇵JP-13.114.67.166-6257
   - KR_b5ce7_0012
   - 美国5
   - 美国3
   - 🇯🇵 免费-日本2-Ver.7
+  - 🇯🇵2
+  - 🇯🇵4
   - 🇯🇵 免费-日本6-Ver.7
   - 日本1
-  - 日本2
-  - 🇯🇵4
-  - 🇯🇵2
   - 台湾3
-  - 香港1
   url: http://www.pinterest.com
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - www.gov.ua
-  - www.wto.org
-  - fbi.gov
-  - 🇮🇸 time.is
-  - www.gco.gov.qa
-  - 🇭🇰 icook.hk
-  - 🇺🇸_US_美国_2
-  - brazil.com
   - www.gov.se
   - 🇷🇺 russia.com
+  - fbi.gov
+  - www.gov.ua
+  - www.gco.gov.qa
+  - brazil.com
+  - 🇭🇰 icook.hk
+  - 🇮🇸 time.is
+  - www.wto.org
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
+  - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
-  - DE德国(mibei77.com 米贝节点分享)
-  - US_b5ce7_0025
   - 🇩🇪 DE_324
-  - 0|--10
+  - DE德国(mibei77.com 米贝节点分享)
   - 🇬🇧 英国
   - 🇳🇱 荷兰
-  - 英国+伦敦Amazon数据中心-HmHY
-  - DE_b5ce7_0008
   - 🇱🇻_LV_拉脱维亚
-  - 🇯🇵JP-13.114.67.166-6257
+  - 英国+伦敦Amazon数据中心-HmHY
   - 🇺🇸 US_470
+  - DE_b5ce7_0008
+  - 🇯🇵JP-13.114.67.166-6257
   - KR_b5ce7_0012
   - 美国5
   - 美国3
   - 🇯🇵 免费-日本2-Ver.7
+  - 🇯🇵2
+  - 🇯🇵4
   - 🇯🇵 免费-日本6-Ver.7
   - 日本1
-  - 日本2
-  - 🇯🇵4
-  - 🇯🇵2
   - 台湾3
-  - 香港1
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT
