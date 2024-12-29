@@ -234,16 +234,6 @@ proxies:
   tls: false
   skip-cert-verify: false
   udp: true
-- name: 🇯🇵 免费-日本6-Ver.7
-  server: lstqj-g03.jp06-7c5a-vm0.entry.fr0307a.art
-  port: 28785
-  type: vmess
-  uuid: 8e555d33-4ce4-395e-93cd-670297aeeb0f
-  alterId: 99999
-  cipher: auto
-  tls: true
-  skip-cert-verify: false
-  udp: true
 - name: DE_b5ce7_0008
   server: 89.187.169.71
   port: 8443
@@ -286,29 +276,28 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇷🇺 russia.com
-  - www.wto.org
-  - www.gov.ua
-  - 🇮🇸 time.is
-  - www.gco.gov.qa
-  - 🇭🇰 icook.hk
-  - brazil.com
-  - www.gov.se
-  - fbi.gov
-  - 🇨🇳 visa.cn
-  - 🇩🇪 DE_324
-  - DE德国(mibei77.com 米贝节点分享)
   - 🇯🇵JP-13.114.67.166-6257
-  - 🇬🇧 英国
-  - 🇺🇸 US_470
-  - 🇳🇱 荷兰
-  - DE_b5ce7_0008
   - KR_b5ce7_0012
+  - DE德国(mibei77.com 米贝节点分享)
+  - 🇩🇪 DE_324
+  - 🇳🇱 荷兰
+  - 🇬🇧 英国
+  - DE_b5ce7_0008
+  - brazil.com
+  - www.wto.org
+  - 🇷🇺 russia.com
+  - 🇮🇸 time.is
+  - 🇭🇰 icook.hk
+  - www.gco.gov.qa
+  - www.gov.se
+  - www.gov.ua
   - 美国5
   - 美国3
-  - 🇯🇵 免费-日本2-Ver.7
-  - 🇯🇵 免费-日本6-Ver.7
+  - fbi.gov
+  - 🇨🇳 visa.cn
+  - 🇺🇸 US_470
   - 日本1
+  - 🇯🇵 免费-日本2-Ver.7
   url: http://www.pinterest.com
   interval: 300
   tolerance: 50
@@ -316,57 +305,55 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇷🇺 russia.com
-  - www.wto.org
-  - www.gov.ua
-  - 🇮🇸 time.is
-  - www.gco.gov.qa
-  - 🇭🇰 icook.hk
-  - brazil.com
-  - www.gov.se
-  - fbi.gov
-  - 🇨🇳 visa.cn
-  - 🇩🇪 DE_324
-  - DE德国(mibei77.com 米贝节点分享)
   - 🇯🇵JP-13.114.67.166-6257
-  - 🇬🇧 英国
-  - 🇺🇸 US_470
-  - 🇳🇱 荷兰
-  - DE_b5ce7_0008
   - KR_b5ce7_0012
+  - DE德国(mibei77.com 米贝节点分享)
+  - 🇩🇪 DE_324
+  - 🇳🇱 荷兰
+  - 🇬🇧 英国
+  - DE_b5ce7_0008
+  - brazil.com
+  - www.wto.org
+  - 🇷🇺 russia.com
+  - 🇮🇸 time.is
+  - 🇭🇰 icook.hk
+  - www.gco.gov.qa
+  - www.gov.se
+  - www.gov.ua
   - 美国5
   - 美国3
-  - 🇯🇵 免费-日本2-Ver.7
-  - 🇯🇵 免费-日本6-Ver.7
+  - fbi.gov
+  - 🇨🇳 visa.cn
+  - 🇺🇸 US_470
   - 日本1
+  - 🇯🇵 免费-日本2-Ver.7
   url: http://www.pinterest.com
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇷🇺 russia.com
-  - www.wto.org
-  - www.gov.ua
-  - 🇮🇸 time.is
-  - www.gco.gov.qa
-  - 🇭🇰 icook.hk
-  - brazil.com
-  - www.gov.se
-  - fbi.gov
-  - 🇨🇳 visa.cn
-  - 🇩🇪 DE_324
-  - DE德国(mibei77.com 米贝节点分享)
   - 🇯🇵JP-13.114.67.166-6257
-  - 🇬🇧 英国
-  - 🇺🇸 US_470
-  - 🇳🇱 荷兰
-  - DE_b5ce7_0008
   - KR_b5ce7_0012
+  - DE德国(mibei77.com 米贝节点分享)
+  - 🇩🇪 DE_324
+  - 🇳🇱 荷兰
+  - 🇬🇧 英国
+  - DE_b5ce7_0008
+  - brazil.com
+  - www.wto.org
+  - 🇷🇺 russia.com
+  - 🇮🇸 time.is
+  - 🇭🇰 icook.hk
+  - www.gco.gov.qa
+  - www.gov.se
+  - www.gov.ua
   - 美国5
   - 美国3
-  - 🇯🇵 免费-日本2-Ver.7
-  - 🇯🇵 免费-日本6-Ver.7
+  - fbi.gov
+  - 🇨🇳 visa.cn
+  - 🇺🇸 US_470
   - 日本1
+  - 🇯🇵 免费-日本2-Ver.7
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT
