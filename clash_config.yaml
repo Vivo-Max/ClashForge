@@ -1,0 +1,5999 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+geodata-mode: true
+geox-url:
+  geoip: https://slink.ltd/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip.dat
+  mmdb: https://slink.ltd/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/GeoLite2-Country.mmdb
+dns:
+  enable: true
+  ipv6: false
+  default-nameserver:
+  - 223.5.5.5
+  - 119.29.29.29
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  nameserver:
+  - https://dns.alidns.com/dns-query
+  - https://doh.pub/dns-query
+  fallback:
+  - https://doh.dns.sb/dns-query
+  - https://dns.cloudflare.com/dns-query
+  - https://dns.twnic.tw/dns-query
+  - tls://8.8.4.4:853
+  fallback-filter:
+    geoip: true
+    ipcidr:
+    - 240.0.0.0/4
+    - 0.0.0.0/32
+proxies:
+- name: 🇨🇳 visa.cn
+  server: visa.cn
+  port: 443
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: sub.fish2018.us.kg
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sub.fish2018.us.kg
+- name: brazil.com
+  server: brazil.com
+  port: 2083
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: sub.fish2018.us.kg
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sub.fish2018.us.kg
+- name: 🇷🇺 russia.com
+  server: russia.com
+  port: 2087
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: sub.fish2018.us.kg
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sub.fish2018.us.kg
+- name: www.gov.ua
+  server: www.gov.ua
+  port: 2096
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: sub.fish2018.us.kg
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sub.fish2018.us.kg
+- name: www.gco.gov.qa
+  server: www.gco.gov.qa
+  port: 8443
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: sub.fish2018.us.kg
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sub.fish2018.us.kg
+- name: www.gov.se
+  server: www.gov.se
+  port: 443
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: sub.fish2018.us.kg
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sub.fish2018.us.kg
+- name: 🇮🇸 time.is
+  server: time.is
+  port: 443
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: sub.fish2018.us.kg
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sub.fish2018.us.kg
+- name: www.wto.org
+  server: www.wto.org
+  port: 8443
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: sub.fish2018.us.kg
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sub.fish2018.us.kg
+- name: fbi.gov
+  server: fbi.gov
+  port: 2087
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: sub.fish2018.us.kg
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sub.fish2018.us.kg
+- name: 🇭🇰 icook.hk
+  server: icook.hk
+  port: 443
+  type: vless
+  uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
+  tls: true
+  tfo: false
+  skip-cert-verify: true
+  servername: sub.fish2018.us.kg
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: sub.fish2018.us.kg
+- name: 🇺🇸_US_美国_1
+  port: 32091
+  server: 51.120.1.158
+  type: ss
+  udp: true
+  password: xjzsiMfTByKjA9URbdXWNp
+  cipher: chacha20-ietf-poly1305
+- name: 🇺🇸_US_美国_2
+  port: 8080
+  server: 79.110.53.169
+  type: ss
+  udp: true
+  password: 14fFPrbezE3HDZzsMOr6
+  cipher: rc4-md5
+- name: 🇸🇬_SG_新加坡
+  port: 443
+  server: 18.141.187.153
+  type: ss
+  udp: true
+  password: amazonskr05
+  cipher: aes-256-cfb
+- name: 🇱🇻_LV_拉脱维亚
+  port: 990
+  server: 46.183.217.232
+  type: ss
+  udp: true
+  password: f8f7aCzcPKbsF8p3
+  cipher: chacha20-ietf-poly1305
+- name: 🇷🇺_RU_俄罗斯_6
+  port: 9033
+  server: 217.30.10.18
+  type: ss
+  udp: true
+  password: UTJA57ypk2XKQpnm
+  cipher: aes-256-cfb
+- cipher: chacha20-ietf-poly1305
+  name: KR韩国(mibei77.com 米贝节点分享)
+  password: Nk9asglDzHzjktVzTkvhaA
+  port: 443
+  server: arxfw2b78fi2q9hzylhn.freesocks.work
+  type: ss
+  udp: true
+- cipher: chacha20-ietf-poly1305
+  name: KR韩国(mibei77.com 米贝节点分享) 2
+  password: Nk9asglDzHzjktVzTkvhaA
+  port: 443
+  server: 160.19.78.75
+  type: ss
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: US美国(mibei77.com 米贝节点分享) 10
+  port: 40002
+  server: 183.236.48.163
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 64
+  cipher: auto
+  name: US美国(mibei77.com 米贝节点分享) 11
+  port: 50052
+  server: 183.236.48.158
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- cipher: chacha20-ietf-poly1305
+  name: DE德国(mibei77.com 米贝节点分享)
+  password: 2EtPqn6HYjUNcHohLfUpFQwnfjCCQ5mh1mJdEMCBucuWZ9P1udkRKHnVxuo55k1KXz2Fo6jrgt18W66opty1e4bm1jzfCfBb
+  port: 50841
+  server: 84.19.31.63
+  type: ss
+  udp: true
+- alterId: 64
+  cipher: auto
+  name: US美国(mibei77.com 米贝节点分享) 16
+  port: 31878
+  server: 183.236.48.143
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 0|--5
+  password: amazonskr05
+  port: 443
+  server: 13.213.67.37
+  tfo: false
+  type: ss
+- client-fingerprint: chrome
+  name: 🇺🇸 13,14|美国|@ripaojiedian
+  password: 1ba48a0e-af2e-45fb-9e15-2b2d4134657c
+  port: 443
+  server: usla.mjt000.com
+  skip-cert-verify: false
+  sni: usla.mjt000.com
+  type: trojan
+- client-fingerprint: chrome
+  name: 15|US_speednode_0029
+  network: ws
+  port: 80
+  server: polproxy.fastly80.hosting-ip.com
+  servername: moienam.com
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vless
+  uuid: 7f1dd75a-c845-405f-a6c0-12d10edea16b
+  ws-opts:
+    headers:
+      Host: moienam.com
+    path: /telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram-@polproxy,telegram?ed=2048
+- client-fingerprint: chrome
+  name: 16|d*********g.com_3
+  password: fuck
+  port: 443
+  server: 42.236.73.72
+  skip-cert-verify: false
+  sni: www.zitian.cn
+  type: trojan
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 0|--1
+  password: amazonskr05
+  port: 443
+  server: 54.191.252.235
+  tfo: false
+  type: ss
+- cipher: chacha20-ietf
+  client-fingerprint: chrome
+  name: 0|--3-JZxj
+  password: asd123456
+  port: 8388
+  server: 103.36.91.32
+  tfo: false
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 0|--4-tIUC
+  password: amazonskr05
+  port: 443
+  server: 54.201.174.149
+  tfo: false
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 0|--8
+  password: amazonskr05
+  port: 443
+  server: 52.12.174.108
+  tfo: false
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 0|--9
+  password: amazonskr05
+  port: 443
+  server: 54.180.232.93
+  tfo: false
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 0|--10
+  password: gYCYXfkUQEs2TaJQ
+  port: 9038
+  server: 217.30.10.18
+  tfo: false
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 0|--11
+  password: amazonskr05
+  port: 443
+  server: 3.34.255.220
+  tfo: false
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 0|--14
+  password: amazonskr05
+  port: 443
+  server: 43.203.141.93
+  tfo: false
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 0|--17
+  password: amazonskr05
+  port: 443
+  server: 15.165.76.242
+  tfo: false
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 0|--18
+  password: amazonskr05
+  port: 443
+  server: 3.38.212.48
+  tfo: false
+  type: ss
+- cipher: aes-256-cfb
+  client-fingerprint: chrome
+  name: 🇯🇵 13|🇯🇵 日本特殊|@ripaojiedian-tdx8
+  password: amazonskr05
+  port: 443
+  server: 13.125.90.251
+  tfo: false
+  type: ss
+- type: vless
+  name: xiaoer886_US_6_2
+  server: 172.67.71.122
+  port: 2087
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: 3-fs4f6s46.huangyurong.cfd
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: 3-fs4f6s46.huangyurong.cfd
+- type: vless
+  name: xiaoer886_US_2
+  server: 172.67.75.194
+  port: 8443
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: 3-fs4f6s46.huangyurong.cfd
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: 3-fs4f6s46.huangyurong.cfd
+- type: vless
+  name: xiaoer886_US_3
+  server: 172.67.75.52
+  port: 2083
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: 3-fs4f6s46.huangyurong.cfd
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: 3-fs4f6s46.huangyurong.cfd
+- type: vless
+  name: xiaoer886_DE_2
+  server: 185.16.110.0
+  port: 443
+  uuid: 71ed6628-5870-4d19-8a52-f2a3ba3d4898
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vb.zhuk.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vb.zhuk.us.kg
+- type: vless
+  name: xiaoer886_US_164_2
+  server: 199.232.125.59
+  port: 443
+  uuid: 4d6ffdeb-abc5-5658-a1f3-979681b710f2
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: JOiN--E-L-I-V-2-R-A-Y.net
+  ws-opts:
+    path: /JOiN,@ELiV2RAY-JOiN,@ELiV2RAY-JOiN,@ELiV2RAY-JOiN,@ELiV2RAY?ed=2560
+    headers:
+      host: JOiN--E-L-I-V-2-R-A-Y.net
+- type: vless
+  name: xiaoer886_AT_2
+  server: 212.183.88.232
+  port: 443
+  uuid: 71ed6628-5870-4d19-8a52-f2a3ba3d4898
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vb.zhuk.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vb.zhuk.us.kg
+- type: vless
+  name: xiaoer886_AT_1
+  server: 212.183.88.242
+  port: 443
+  uuid: 71ed6628-5870-4d19-8a52-f2a3ba3d4898
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vb.zhuk.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vb.zhuk.us.kg
+- name: 🇺🇸US-54.202.63.77-0399
+  type: ss
+  server: 54.202.63.77
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇯🇵JP-13.114.67.166-6257
+  type: ss
+  server: 13.114.67.166
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇸🇬SG-18.143.139.72-6475
+  type: ss
+  server: 18.143.139.72
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇸🇬SG-13.250.110.56-6321
+  type: ss
+  server: 13.250.110.56
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇸🇬SG-54.169.63.80-6324
+  type: ss
+  server: 54.169.63.80
+  port: 443
+  cipher: aes-256-cfb
+  password: amazonskr05
+  udp: true
+- name: 🇯🇵JP-74.226.136.204-3322
+  type: trojan
+  server: sg01.trojanyyds.xyz
+  port: 443
+  password: cd41b9d7-df15-46ad-a778-257b0851525a
+  sni: ''
+  skip-cert-verify: false
+- name: 🇯🇵JP-94.177.131.71-5426
+  type: ss
+  server: 2.forlive.live
+  port: 61005
+  cipher: chacha20-ietf-poly1305
+  password: 82fb692e-1c8b-3a65-ad83-23ad9deee111
+  udp: true
+- name: 🇬🇧GB-18.135.173.157-1451
+  type: trojan
+  server: 18.135.173.157
+  port: 22222
+  password: telegram-id-privatevpns
+  sni: trojan.burgerip.co.uk
+  skip-cert-verify: false
+- name: 🇫🇷FR-13.36.74.252-6286
+  server: 13.36.74.252
+  port: 22222
+  type: trojan
+  password: telegram-id-privatevpns
+  sni: trojan.burgerip.co.uk
+  skip-cert-verify: false
+- name: 🇮🇪IE-34.242.191.20-6306
+  server: 34.242.191.20
+  port: 22222
+  type: trojan
+  password: telegram-id-privatevpns
+  sni: trojan.burgerip.co.uk
+  skip-cert-verify: false
+- name: 🇸🇪SE-13.50.211.85-6319
+  server: 13.50.211.85
+  port: 22222
+  type: trojan
+  password: telegram-id-privatevpns
+  sni: trojan.burgerip.co.uk
+  skip-cert-verify: false
+- name: 🇺🇸US-54.244.200.142-6345
+  server: 54.244.200.142
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇸🇬SG-54.151.223.9-6560
+  server: 54.151.223.9
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇬🇧 英国
+  server: 51.38.65.155
+  port: 443
+  type: trojan
+  password: f142bc50-b755-11ef-ad1a-1239d0255272
+  skip-cert-verify: true
+  tfo: false
+- name: 🇯🇵 日本
+  server: 18.179.44.127
+  port: 443
+  type: trojan
+  password: 24273330-85c9-3a6e-a0fd-58a6076a3a85
+  skip-cert-verify: true
+  tfo: false
+- name: 🇯🇵 日本 2
+  server: 18.179.44.127
+  port: 443
+  type: trojan
+  password: 6b7ec37b-96e7-37a1-9c9f-80399b8e7256
+  skip-cert-verify: true
+  tfo: false
+- name: 🇳🇱 荷兰
+  server: 5.255.118.176
+  port: 443
+  type: trojan
+  password: auto
+  skip-cert-verify: true
+  tfo: false
+- name: 🇷🇺 俄罗斯 3
+  server: 217.30.10.18
+  port: 9050
+  type: ss
+  cipher: aes-256-cfb
+  password: FG5ddLsMPbV5CutE
+  tfo: false
+- name: 🇦🇺 澳大利亚
+  server: 43.206.140.241
+  port: 443
+  type: trojan
+  password: 6b7ec37b-96e7-37a1-9c9f-80399b8e7256
+  skip-cert-verify: true
+  tfo: false
+- name: SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
+  type: ssr
+  server: 79.110.53.169
+  port: 8080
+  password: 14fFPrbezE3HDZzsMOr6
+  cipher: rc4-md5
+  protocol: origin
+  obfs: plain
+- name: VMESS-未知>美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-104.21.238.89:2086
+  type: vmess
+  server: 104.21.238.89
+  port: 2086
+  uuid: 7d92ffc9-02e1-4087-8a46-cc4d76560917
+  alterId: 0
+  cipher: auto
+  network: ws
+  servername: watt-miss-semester-slots.trycloudflare.com
+  http-opts: {}
+  h2-opts: {}
+  ws-opts:
+    path: github.com/Alvin9999
+    headers:
+      Host: watt-miss-semester-slots.trycloudflare.com
+- name: 台湾2
+  server: twmoon1-cdn-route.couldflare-cdn.com
+  port: 1443
+  type: http
+  tls: true
+  skip-cert-verify: false
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  password: exaxgqkKkd0TAMrCxeonWg==
+- name: 台湾3
+  server: tw4-cdn-route.couldflare-cdn.com
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: false
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  password: exaxgqkKkd0TAMrCxeonWg==
+- name: 日本1
+  server: jpgmo101-cdn-route.couldflare-cdn.com
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: false
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  password: exaxgqkKkd0TAMrCxeonWg==
+- name: 日本2
+  server: jpgmo102-cdn-route.couldflare-cdn.com
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: false
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  password: exaxgqkKkd0TAMrCxeonWg==
+- name: 香港1
+  server: hkre1-cdn-route.couldflare-cdn.com
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: false
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  password: exaxgqkKkd0TAMrCxeonWg==
+- name: 香港2
+  server: hkcera3-cdn-route.couldflare-cdn.com
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: false
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  password: exaxgqkKkd0TAMrCxeonWg==
+- name: 美国3
+  server: usgp3-cdn-route.couldflare-cdn.com
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: false
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  password: exaxgqkKkd0TAMrCxeonWg==
+- name: 美国5
+  server: usgp2-cdn-route.couldflare-cdn.com
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: false
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  password: exaxgqkKkd0TAMrCxeonWg==
+- name: 🇯🇵2
+  server: japan-2.keenvpn.me
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 2afbc97400ca71c8f3306f9843a6e1c2
+  udp: true
+- name: 🇯🇵4
+  server: japan-4.keenvpn.me
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 2afbc97400ca71c8f3306f9843a6e1c2
+  udp: true
+- name: 🇸🇬6
+  server: singapore-6.keenvpn.me
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 2afbc97400ca71c8f3306f9843a6e1c2
+  udp: true
+- name: hk1
+  server: pipi.myddns.me
+  port: 28811
+  type: socks5
+  username: myszy
+  password: myszy28811
+  udp: true
+- name: 🇯🇵 免费-日本2-Ver.7
+  server: l4pwe-g03.jp02-9a99-vm0.entry.fr0307a.art
+  port: 11775
+  type: vmess
+  uuid: 8e555d33-4ce4-395e-93cd-670297aeeb0f
+  alterId: 99999
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇯🇵 免费-日本4-Ver.7
+  server: 4sq5c-g03.jp04-3771-vm0.entry.fr0307a.art
+  port: 446
+  type: vmess
+  uuid: 8e555d33-4ce4-395e-93cd-670297aeeb0f
+  alterId: 99999
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 🇯🇵 免费-日本6-Ver.7
+  server: lstqj-g03.jp06-7c5a-vm0.entry.fr0307a.art
+  port: 28785
+  type: vmess
+  uuid: 8e555d33-4ce4-395e-93cd-670297aeeb0f
+  alterId: 99999
+  cipher: auto
+  tls: true
+  skip-cert-verify: false
+  udp: true
+- name: DE_b5ce7_0006
+  server: 188.245.215.46
+  port: 19984
+  type: vless
+  uuid: 13e15bfe-73f7-4bfe-a386-136451137fc3
+  tls: false
+  skip-cert-verify: false
+  servername: Telewebion.com
+  network: http
+  http-opts:
+    method: GET
+    path:
+    - /
+    headers:
+      Host:
+      - Telewebion.com
+- name: DE_b5ce7_0008
+  server: 89.187.169.71
+  port: 8443
+  type: vless
+  uuid: 6ff213b8-ccc7-4b5a-b4aa-37f7b792a1f1
+  tls: true
+  skip-cert-verify: true
+  client-fingerprint: chrome
+  servername: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
+  network: tcp
+- name: HK_b5ce7_0009
+  server: hk9.ftq.ink
+  port: 4000
+  type: http
+  tls: true
+- name: KR_b5ce7_0012
+  server: 43.200.1.13
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: US_b5ce7_0020
+  server: 54.218.229.170
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: US_b5ce7_0021
+  server: 44.243.243.198
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: US_b5ce7_0022
+  server: 35.94.51.2
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: US_b5ce7_0025
+  server: nsus3.irundns.net
+  port: 443
+  type: ssr
+  cipher: aes-128-cfb
+  password: +asd6a5s5df+
+  protocol: auth_aes128_md5
+  obfs: http_post
+  protocol-param: ''
+  obfs-param: ''
+- name: US_b5ce7_0027
+  server: 104.26.5.157
+  port: 2083
+  type: vless
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: random
+  servername: 3-fs4f6s46.huangyurong.cfd
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: 3-fs4f6s46.huangyurong.cfd
+- name: US_b5ce7_0035
+  server: 104.26.5.57
+  port: 2087
+  type: vless
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: random
+  servername: 3-fs4f6s46.huangyurong.cfd
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: 3-fs4f6s46.huangyurong.cfd
+- name: US_b5ce7_0039
+  server: 104.18.41.190
+  port: 8443
+  type: vless
+  uuid: 59860b15-b2d9-47f9-9b92-81bd1639fcc5
+  tls: true
+  skip-cert-verify: false
+  client-fingerprint: random
+  servername: 3-fs4f6s46.huangyurong.cfd
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: 3-fs4f6s46.huangyurong.cfd
+- name: US_b5ce7_0045
+  server: 170.114.45.6
+  port: 80
+  type: vless
+  uuid: 24e01a84-4864-40e4-abc4-2dc0432d68d4
+  tls: false
+  skip-cert-verify: false
+  servername: paid.free.pranithsandaruwan.shop
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: paid.free.pranithsandaruwan.shop
+- name: 美国[02]中转
+  type: ss
+  server: vip.baima360.com
+  port: 30104
+  cipher: chacha20-ietf-poly1305
+  password: f94dd9f5-eb13-493f-97cf-de31fd61ef01
+  udp: true
+- name: 美国[03]中转
+  type: ss
+  server: vip.baima360.com
+  port: 17941
+  cipher: chacha20-ietf-poly1305
+  password: f94dd9f5-eb13-493f-97cf-de31fd61ef01
+  udp: true
+- name: 香港[04]中转
+  type: ss
+  server: vip.baima360.com
+  port: 65519
+  cipher: chacha20-ietf-poly1305
+  password: f94dd9f5-eb13-493f-97cf-de31fd61ef01
+  udp: true
+- name: 香港[05]中转
+  type: ss
+  server: vip.baima360.com
+  port: 36511
+  cipher: chacha20-ietf-poly1305
+  password: f94dd9f5-eb13-493f-97cf-de31fd61ef01
+  udp: true
+- name: 香港[07]中转
+  type: ss
+  server: vip.baima360.com
+  port: 36214
+  cipher: chacha20-ietf-poly1305
+  password: f94dd9f5-eb13-493f-97cf-de31fd61ef01
+  udp: true
+- name: 日本[01]
+  type: ss
+  server: vip.baima360.com
+  port: 15888
+  cipher: chacha20-ietf-poly1305
+  password: f94dd9f5-eb13-493f-97cf-de31fd61ef01
+  udp: true
+- name: 英国[01]中转
+  type: ss
+  server: vip.baima360.com
+  port: 10683
+  cipher: chacha20-ietf-poly1305
+  password: f94dd9f5-eb13-493f-97cf-de31fd61ef01
+  udp: true
+- name: 英国+伦敦Amazon数据中心-HmHY
+  type: ss
+  server: series-a2.varzesh360.co
+  port: 443
+  cipher: chacha20-ietf-poly1305
+  password: mps3FwmDjLrWaOVg
+  udp: true
+- name: 亚太地区+V2CROSS.COM
+  type: ss
+  server: soonjp.soon.guru
+  port: 40003
+  cipher: chacha20-ietf-poly1305
+  password: f0e7fd1e-0469-415f-95da-774021f16f36
+  udp: true
+- name: 8|Mci-@V2ray_Raha-06
+  password: ksGeWd8r9Rz8
+  port: 16424
+  server: 107.175.70.80
+  skip-cert-verify: true
+  sni: www.bing.com
+  tls: false
+  type: hysteria2
+- name: '[Trojan] 🇩🇪 德国 黑森州法兰克福AMazon数据中心'
+  server: 3.123.224.197
+  port: 22222
+  type: trojan
+  password: telegram-id-privatevpns
+  sni: trojan.burgerip.co.uk
+  skip-cert-verify: true
+  udp: true
+  tfo: false
+- name: '[Trojan] 🇺🇸 美国 佐治亚州亚特兰大市BellSouth公司'
+  server: 2e703cfbaa90b14fa90d4f1353058efc.v1.cac.node-is.green
+  port: 45476
+  type: trojan
+  password: aa6ddd2f-d1cf-4a52-ba1b-2640c41a7856
+  sni: hk12.bilibili.com
+  skip-cert-verify: true
+  udp: true
+  tfo: false
+- name: '[VMess] 🇺🇸 美国 加州'
+  server: 62.60.132.33
+  port: 2087
+  type: vmess
+  uuid: bd2ba6cd-a221-4c91-934a-2b1d48d9fdd2
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+  tfo: false
+- name: '[Trojan] 🇺🇸 美国 纽约(Prudential)'
+  server: 4ef4a8055936f6af032689618b72de33.v1.cac.node-is.green
+  port: 40230
+  type: trojan
+  password: aa6ddd2f-d1cf-4a52-ba1b-2640c41a7856
+  sni: hk12.bilibili.com
+  skip-cert-verify: true
+  udp: true
+  tfo: false
+- type: vless
+  name: 🇺🇸_美国_1
+  server: 162.159.153.244
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_3
+  server: 162.159.137.46
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_4
+  server: 104.20.30.225
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇸🇪_瑞典_1
+  server: 141.147.47.32
+  port: 2053
+  uuid: 531bf100-1477-487c-a979-6adebf8f105f
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vdb.bgm2024.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vdb.bgm2024.us.kg
+- type: vless
+  name: 🇬🇧_英国_1
+  server: 141.144.198.113
+  port: 2053
+  uuid: 531bf100-1477-487c-a979-6adebf8f105f
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vdb.bgm2024.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vdb.bgm2024.us.kg
+- type: vless
+  name: 🇳🇴_挪威_1
+  server: 141.145.217.226
+  port: 443
+  uuid: 531bf100-1477-487c-a979-6adebf8f105f
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vdb.bgm2024.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vdb.bgm2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_7
+  server: xcsb.ylks2024.us.kg
+  port: 8443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_8
+  server: 104.24.50.103
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_11
+  server: xcsb.ylks2024.us.kg
+  port: 2083
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_12
+  server: xcsb.ylks2024.us.kg
+  port: 2053
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_13
+  server: 190.93.244.50
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_15
+  server: xcsb.ylks2024.us.kg
+  port: 2096
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_16
+  server: xcsb.ylks2024.us.kg
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_18
+  server: xcsb.ylks2024.us.kg
+  port: 2087
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_30
+  server: 104.25.89.216
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇧🇷_巴西_1
+  server: 188.114.99.22
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_31
+  server: 173.245.49.15
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_33
+  server: 104.25.17.112
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_34
+  server: 108.162.192.16
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_35
+  server: 104.24.158.120
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_39
+  server: 104.18.97.176
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_40
+  server: 103.21.244.51
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_41
+  server: 173.245.49.130
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_42
+  server: 108.162.195.229
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_46
+  server: 108.162.194.62
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_48
+  server: 103.21.244.89
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_51
+  server: 103.21.244.53
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_52
+  server: 104.21.23.163
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_53
+  server: 198.41.192.67
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_54
+  server: 173.245.59.88
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_55
+  server: 141.101.120.139
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_58
+  server: 198.41.217.11
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_59
+  server: 103.21.244.167
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_60
+  server: 172.64.137.201
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_62
+  server: 198.41.217.82
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_63
+  server: 172.67.47.117
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_64
+  server: 69.84.182.178
+  port: 443
+  uuid: 531bf100-1477-487c-a979-6adebf8f105f
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vdb.bgm2024.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vdb.bgm2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_66
+  server: 173.245.59.148
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_67
+  server: 129.151.198.3
+  port: 8443
+  uuid: 531bf100-1477-487c-a979-6adebf8f105f
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vdb.bgm2024.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vdb.bgm2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_69
+  server: 104.25.47.206
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_70
+  server: 108.162.195.182
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_71
+  server: 198.41.200.249
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇧🇷_巴西_3
+  server: 188.114.99.126
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇧🇷_巴西_4
+  server: 188.114.98.136
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_72
+  server: 162.159.39.136
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_73
+  server: 141.101.121.247
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_74
+  server: 104.19.56.103
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_79
+  server: 141.101.123.197
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_82
+  server: 103.21.244.126
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_83
+  server: 198.41.215.224
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_84
+  server: 104.24.244.224
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_88
+  server: 172.67.159.134
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_89
+  server: 104.25.26.152
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_90
+  server: 103.21.244.91
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_91
+  server: 103.21.244.157
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_93
+  server: 104.24.205.235
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_95
+  server: 160.79.105.247
+  port: 443
+  uuid: 531bf100-1477-487c-a979-6adebf8f105f
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vdb.bgm2024.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vdb.bgm2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_96
+  server: 63.141.128.214
+  port: 443
+  uuid: 531bf100-1477-487c-a979-6adebf8f105f
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vdb.bgm2024.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vdb.bgm2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_98
+  server: 104.22.23.224
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_100
+  server: 172.66.204.21
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_101
+  server: 103.21.244.50
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_102
+  server: 162.159.197.58
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_104
+  server: 190.93.244.4
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_107
+  server: 162.159.252.125
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_109
+  server: 172.64.195.144
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_110
+  server: 162.159.6.183
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_114
+  server: 173.245.49.156
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_115
+  server: 69.84.182.27
+  port: 443
+  uuid: 531bf100-1477-487c-a979-6adebf8f105f
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vdb.bgm2024.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vdb.bgm2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_118
+  server: 103.21.244.63
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_119
+  server: 104.19.193.250
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_121
+  server: 104.25.219.187
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_123
+  server: 173.245.58.210
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_124
+  server: 162.159.49.108
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_127
+  server: 103.21.244.82
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇧🇷_巴西_6
+  server: 188.114.98.160
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_128
+  server: 198.41.204.82
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_129
+  server: 103.21.244.213
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_131
+  server: 198.41.193.246
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_132
+  server: 104.27.61.67
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_134
+  server: 104.19.68.81
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_135
+  server: 104.25.17.162
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇧🇷_巴西_7
+  server: 188.114.98.31
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_136
+  server: 103.21.244.224
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_139
+  server: 104.25.115.106
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_141
+  server: 104.27.122.98
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_143
+  server: 104.22.24.139
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_144
+  server: 104.20.126.182
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_145
+  server: 108.162.198.201
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_146
+  server: 172.67.120.150
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_147
+  server: 104.20.194.115
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_148
+  server: 104.25.73.30
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_149
+  server: 129.151.225.228
+  port: 2053
+  uuid: 531bf100-1477-487c-a979-6adebf8f105f
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vdb.bgm2024.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vdb.bgm2024.us.kg
+- type: vless
+  name: 🇧🇷_巴西_8
+  server: 188.114.99.199
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_150
+  server: 172.67.168.65
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_151
+  server: 104.19.202.209
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_153
+  server: 198.41.220.253
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_155
+  server: 104.25.104.92
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_157
+  server: 129.151.198.3
+  port: 2053
+  uuid: 531bf100-1477-487c-a979-6adebf8f105f
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vdb.bgm2024.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vdb.bgm2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_158
+  server: 162.159.249.108
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_159
+  server: 104.21.23.238
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_160
+  server: 104.27.198.180
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_161
+  server: 104.27.68.63
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_162
+  server: 141.101.120.171
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_164
+  server: 173.245.49.32
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_165
+  server: 198.41.203.30
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_168
+  server: 104.19.84.225
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_169
+  server: 104.19.98.242
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_170
+  server: 104.25.224.33
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_171
+  server: 141.101.120.224
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_172
+  server: 162.159.254.15
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_173
+  server: 162.159.9.16
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_174
+  server: 172.67.153.79
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_175
+  server: 104.16.94.103
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_176
+  server: 162.159.198.65
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_177
+  server: 104.20.50.185
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇧🇷_巴西_10
+  server: 188.114.98.176
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_179
+  server: 198.41.204.213
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_180
+  server: 172.67.49.208
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_181
+  server: 173.245.49.100
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇨🇷_哥斯达黎加_1
+  server: 190.93.247.24
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_182
+  server: 162.159.17.18
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇨🇷_哥斯达黎加_2
+  server: 190.93.246.186
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_183
+  server: 172.64.192.181
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_184
+  server: 162.159.192.236
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_185
+  server: 154.17.21.134
+  port: 18446
+  uuid: 531bf100-1477-487c-a979-6adebf8f105f
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vdb.bgm2024.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vdb.bgm2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_186
+  server: 104.22.46.119
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_188
+  server: 104.22.10.141
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_192
+  server: 141.101.114.62
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_193
+  server: 104.20.114.22
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_194
+  server: 104.27.38.10
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_201
+  server: 190.93.245.9
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_202
+  server: 190.93.244.168
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇧🇷_巴西_11
+  server: 188.114.97.15
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_204
+  server: 141.101.115.49
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇧🇷_巴西_12
+  server: 188.114.97.240
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_205
+  server: 190.93.244.209
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_206
+  server: 190.93.244.236
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_207
+  server: 23.94.25.245
+  port: 10287
+  uuid: 71ed6628-5870-4d19-8a52-f2a3ba3d4898
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vb.zhuk.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vb.zhuk.us.kg
+- type: vless
+  name: 🇺🇸_美国_210
+  server: 104.26.8.113
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇮🇩_印度尼西亚
+  server: 35.219.15.90
+  port: 443
+  uuid: 531bf100-1477-487c-a979-6adebf8f105f
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: vdb.bgm2024.us.kg
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: vdb.bgm2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_211
+  server: 190.93.245.51
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_212
+  server: 104.16.84.3
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇨🇷_哥斯达黎加_3
+  server: 190.93.247.175
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇨🇷_哥斯达黎加_4
+  server: 190.93.247.241
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_214
+  server: 104.19.179.134
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_215
+  server: 104.17.244.56
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_216
+  server: 104.17.187.143
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_217
+  server: 104.16.237.253
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_218
+  server: 104.19.241.19
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_219
+  server: 104.19.217.14
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_221
+  server: 108.162.198.58
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_222
+  server: 103.21.244.124
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_224
+  server: 104.18.90.113
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_225
+  server: 104.19.241.10
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_226
+  server: 104.16.90.228
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_227
+  server: 104.16.194.28
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇨🇷_哥斯达黎加_5
+  server: 190.93.247.101
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_228
+  server: 104.19.184.175
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- type: vless
+  name: 🇺🇸_美国_231
+  server: 104.17.68.120
+  port: 443
+  uuid: ba50e392-753a-4828-a7b8-d72ce226fa6a
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: xcsb.ylks2024.us.kg
+  ws-opts:
+    path: /?ed=2048
+    headers:
+      host: xcsb.ylks2024.us.kg
+- name: 🇭🇰 广港•香港143•高速 - 飞翔吧
+  server: gy.58n.net
+  port: 28678
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: z143.hongkongnode.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 广港•香港259•高速 - 飞翔吧
+  server: gy.58n.net
+  port: 24603
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: z259.hongkongnode.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 广港•香港278•高速 - 飞翔吧
+  server: gy.58n.net
+  port: 20278
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: z278.hongkongnode.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 广港•香港279•高速 - 飞翔吧
+  server: gy.58n.net
+  port: 20279
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: z279.hongkongnode.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 广港•香港294•高速 - 飞翔吧
+  server: gy.58n.net
+  port: 20294
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: z294.hongkongnode.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇹🇼 中转•台湾91•原生 - 飞翔吧
+  server: gy.58n.net
+  port: 21247
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: x91.flybar.work
+  skip-cert-verify: true
+  udp: true
+- name: 🇹🇼 广港•台湾262•高速 - 飞翔吧
+  server: gy.58n.net
+  port: 36821
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: z262.hongkongnode.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸 中转•美国296•高速 - 飞翔吧
+  server: gy.58n.net
+  port: 20296
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: z296.hongkongnode.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 日本•高速114•高速 - 飞翔吧
+  server: gy.58n.net
+  port: 41767
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: x114.flybar.work
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 日本•高速115•高速 - 飞翔吧
+  server: gy.58n.net
+  port: 54178
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: x115.flybar.work
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 日本•高速141•铂金 - 飞翔吧
+  server: gy.58n.net
+  port: 20141
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: z141.hongkongnode.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 日本•高速142•原生 - 飞翔吧
+  server: gy.58n.net
+  port: 20142
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: z142.hongkongnode.top
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 日本•高速59•青铜 - 飞翔吧
+  server: gy.58n.net
+  port: 20059
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: x59.flybar.work
+  skip-cert-verify: true
+  udp: true
+- name: 🇯🇵 日本•高速76•高速 - 飞翔吧
+  server: gy.58n.net
+  port: 20076
+  type: trojan
+  password: 6be2b311-51a2-3037-b0f9-43247af0a6ad
+  sni: x76.flybar.work
+  skip-cert-verify: true
+  udp: true
+- name: 阿拉伯联合酋长国 - 迪拜 - Amazon Technologies Inc. - 1
+  server: series-a2-mec.varzesh360.co
+  type: ss
+  country: 🇺🇸US
+  port: 443
+  password: u17T3BvpYaaiuW2c
+  cipher: chacha20-ietf-poly1305
+  delay: 2164
+- name: 2a13:a5c6:3a42:b18:3e0c:d513:3bb1:ff2d_OpenAI
+  network: tcp
+  password: 165ebad5-2f9b-307d-b7e4-2b2ee84a4530
+  port: 19213
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- alterId: 64
+  cipher: auto
+  name: HK_Hong Kong_Cnservers LLC_OpenAI_Claude
+  port: 45402
+  server: 183.236.48.158
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- name: HK_Hong Kong_Radishcloud Technology LLC_OpenAI1
+  network: tcp
+  password: 1069121a-4774-38f5-876a-95b35d1a3fbf
+  port: 19209
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: HK_Hong Kong_Radishcloud Technology LLC_OpenAI2
+  network: tcp
+  password: 1069121a-4774-38f5-876a-95b35d1a3fbf
+  port: 19210
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- alterId: 64
+  cipher: auto
+  name: HK_Sheung Wan_CTG Server Ltd._OpenAI_Claude1
+  port: 34493
+  server: 120.198.71.214
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 64
+  cipher: auto
+  name: HK_Sheung Wan_CTG Server Ltd._OpenAI_Claude2
+  port: 41020
+  server: 183.236.51.23
+  skip-cert-verify: false
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- name: JP_Shinagawa_Datacamp Limited_OpenAI_Claude1
+  network: tcp
+  password: 1069121a-4774-38f5-876a-95b35d1a3fbf
+  port: 19244
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: JP_Shinagawa_Datacamp Limited_OpenAI_Claude2
+  network: tcp
+  password: 1069121a-4774-38f5-876a-95b35d1a3fbf
+  port: 19242
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: JP_Shinagawa_Datacamp Limited_OpenAI_Claude3
+  network: tcp
+  password: 1069121a-4774-38f5-876a-95b35d1a3fbf
+  port: 19243
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: JP_Shinagawa_Datacamp Limited_OpenAI_Claude4
+  network: tcp
+  password: 165ebad5-2f9b-307d-b7e4-2b2ee84a4530
+  port: 19242
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: JP_Shinagawa_Datacamp Limited_OpenAI_Claude5
+  network: tcp
+  password: 165ebad5-2f9b-307d-b7e4-2b2ee84a4530
+  port: 19244
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- cipher: chacha20-ietf
+  name: JP_Tokyo_Akari Networks_OpenAI_Claude
+  obfs: plain
+  obfs-param: 78fe8292462.microsoft.com
+  password: renzhecloud
+  port: 4506
+  protocol: auth_aes128_sha1
+  protocol-param: 292462:1rqNrm
+  server: pr3.jymzffbquawl.com
+  type: ssr
+- name: JP_Tokyo_DataCamp Limited_OpenAI_Claude
+  network: tcp
+  password: 165ebad5-2f9b-307d-b7e4-2b2ee84a4530
+  port: 19243
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: JP_Tokyo_Oracle Corporation_OpenAI_Claude1
+  network: tcp
+  password: 1069121a-4774-38f5-876a-95b35d1a3fbf
+  port: 19246
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: JP_Tokyo_Oracle Corporation_OpenAI_Claude2
+  network: tcp
+  password: 1069121a-4774-38f5-876a-95b35d1a3fbf
+  port: 19247
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: JP_Tokyo_Oracle Corporation_OpenAI_Claude3
+  network: tcp
+  password: 1069121a-4774-38f5-876a-95b35d1a3fbf
+  port: 19245
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: SG_Singapore_DigitalOcean, LLC_OpenAI_Claude1
+  network: tcp
+  password: 1069121a-4774-38f5-876a-95b35d1a3fbf
+  port: 19227
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: SG_Singapore_DigitalOcean, LLC_OpenAI_Claude2
+  network: tcp
+  password: 1069121a-4774-38f5-876a-95b35d1a3fbf
+  port: 19229
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: SG_Singapore_Oracle Corporation_OpenAI_Claude
+  network: tcp
+  password: 1069121a-4774-38f5-876a-95b35d1a3fbf
+  port: 19228
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: SG_Singapore_Radishcloud Technology LLC_OpenAI1
+  network: tcp
+  password: 1069121a-4774-38f5-876a-95b35d1a3fbf
+  port: 19202
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: SG_Singapore_Radishcloud Technology LLC_OpenAI2
+  network: tcp
+  password: 165ebad5-2f9b-307d-b7e4-2b2ee84a4530
+  port: 19216
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: SG_Singapore_Radishcloud Technology LLC_OpenAI3
+  network: tcp
+  password: 165ebad5-2f9b-307d-b7e4-2b2ee84a4530
+  port: 19214
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: TW_Taipei_Radishcloud Technology LLC_OpenAI1
+  network: tcp
+  password: 1069121a-4774-38f5-876a-95b35d1a3fbf
+  port: 19214
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: TW_Taipei_Radishcloud Technology LLC_OpenAI2
+  network: tcp
+  password: 165ebad5-2f9b-307d-b7e4-2b2ee84a4530
+  port: 19215
+  server: 122.188.71.132
+  skip-cert-verify: true
+  type: trojan
+- name: 🇷🇺 俄罗斯-圣彼得堡-009-1R
+  server: 194.87.69.56
+  port: 20503
+  type: vmess
+  uuid: 7c782b62-7d5b-4752-834f-87f6b98a3139
+  alterId: 0
+  cipher: auto
+  tls: false
+  network: ws
+  ws-opts:
+    path: /
+  udp: true
+- name: 🇷🇺 俄罗斯-圣彼得堡-HY-007-1Z
+  server: 176.32.39.181
+  port: 37179
+  type: hysteria2
+  password: cb620f72-c51c-47ee-b2fb-a6e2889a0a1e
+  auth: cb620f72-c51c-47ee-b2fb-a6e2889a0a1e
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 🇷🇺 俄罗斯-2G
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 73c1f30e-a3f8-49c4-9146-ab860fcb5e26
+  auth: 73c1f30e-a3f8-49c4-9146-ab860fcb5e26
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-圣彼得堡-HY-009-1T
+  server: 194.87.69.56
+  port: 37179
+  type: hysteria2
+  password: 58fe6ff4-1959-4b2f-9039-5048d76fafd1
+  auth: 58fe6ff4-1959-4b2f-9039-5048d76fafd1
+  up: 35
+  down: 35
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 🇷🇺 俄罗斯-1H
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: e031479b-369b-4882-a4b2-2ebba2cf797a
+  auth: e031479b-369b-4882-a4b2-2ebba2cf797a
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1C
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: d75c41fd-0b3e-481c-ba33-b81d062e0826
+  auth: d75c41fd-0b3e-481c-ba33-b81d062e0826
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-圣彼得堡-HY-009-1I
+  server: 194.87.69.56
+  port: 37179
+  type: hysteria2
+  password: 239dca97-6ab8-47b4-8631-8eb7d31688eb
+  auth: 239dca97-6ab8-47b4-8631-8eb7d31688eb
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 🇷🇺 俄罗斯-1Z
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 22dd3d57-edeb-4a74-9673-3db1546869bb
+  auth: 22dd3d57-edeb-4a74-9673-3db1546869bb
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇩🇪 欧洲-法兰克福-1-1B
+  server: oracle-arm-frankfurt1.lanmaoyun.icu
+  port: 30001
+  type: hysteria2
+  password: ce42711d-3f65-4116-a3f5-7c746f23744b
+  auth: ce42711d-3f65-4116-a3f5-7c746f23744b
+  sni: frankfurt1.nodes.lanmaoyun.icu
+  up: 100
+  down: 1000
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1L
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 568a6fc2-4678-4737-8e3f-11dcedcf9019
+  auth: 568a6fc2-4678-4737-8e3f-11dcedcf9019
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 香港01-1D
+  server: gy.666666222.shop
+  port: 34338
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 8171641d-9dbb-40b9-870e-78b91f862ff8
+  udp: true
+- name: 🇺🇸 北美-US-圣何塞-2-1B
+  server: oracle-amd-san-jose2.lanmaoyun.icu
+  port: 30001
+  type: hysteria2
+  password: ce42711d-3f65-4116-a3f5-7c746f23744b
+  auth: ce42711d-3f65-4116-a3f5-7c746f23744b
+  sni: san-jose2.nodes.lanmaoyun.icu
+  up: 100
+  down: 1000
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1O
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: dd516ef5-7809-4c5f-ab64-88e9fc80445f
+  auth: dd516ef5-7809-4c5f-ab64-88e9fc80445f
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1G
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 2ee11461-7859-4bf7-a831-416de4091031
+  auth: 2ee11461-7859-4bf7-a831-416de4091031
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1S
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 7f87924f-ad28-4ef0-98e7-b65908acf6fb
+  auth: 7f87924f-ad28-4ef0-98e7-b65908acf6fb
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1B
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: e90c0fec-bc1b-4f2d-ae7f-ce9c62ef55ab
+  auth: e90c0fec-bc1b-4f2d-ae7f-ce9c62ef55ab
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1P
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 0c45e508-a158-48dc-93e4-e0653a1e3ab2
+  auth: 0c45e508-a158-48dc-93e4-e0653a1e3ab2
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇰🇷 韩国-首尔-1B
+  server: oracle-arm-seoul1.lanmaoyun.icu
+  port: 30001
+  type: hysteria2
+  password: ce42711d-3f65-4116-a3f5-7c746f23744b
+  auth: ce42711d-3f65-4116-a3f5-7c746f23744b
+  sni: korea.nodes.lanmaoyun.icu
+  up: 100
+  down: 1000
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1I
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: a278eadd-c35c-403f-a286-7767a74307c1
+  auth: a278eadd-c35c-403f-a286-7767a74307c1
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1Q
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: d7a6f3c2-5c25-46d9-bf7d-2b0e8cf1703d
+  auth: d7a6f3c2-5c25-46d9-bf7d-2b0e8cf1703d
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 香港01-1G
+  server: gy.666666222.shop
+  port: 34338
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: c972cf99-8d54-42ad-8b9e-610c2f4626a4
+  udp: true
+- name: 🇷🇺 俄罗斯-圣彼得堡-HY-009-1N
+  server: 194.87.69.56
+  port: 37179
+  type: hysteria2
+  password: 2018f303-01c2-4936-b33d-25f9cc03ca03
+  auth: 2018f303-01c2-4936-b33d-25f9cc03ca03
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 🇷🇺 俄罗斯-1V
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 7d42ff2d-662b-42c2-b8b8-7f53290675e8
+  auth: 7d42ff2d-662b-42c2-b8b8-7f53290675e8
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-2M
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: a480e0af-10e3-43bc-9076-004d3d26d1a5
+  auth: a480e0af-10e3-43bc-9076-004d3d26d1a5
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1W
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 49e5b399-1af3-476a-8c11-c0967e261f4a
+  auth: 49e5b399-1af3-476a-8c11-c0967e261f4a
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 香港01-1E
+  server: gy.666666222.shop
+  port: 34338
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: bfe73ff8-39f7-41a3-9d8c-7a557a0b69e0
+  udp: true
+- name: 🇷🇺 俄罗斯-2L
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: cdeae572-54d3-4855-8587-f0df97b085c8
+  auth: cdeae572-54d3-4855-8587-f0df97b085c8
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 香港01-1A
+  server: gy.666666222.shop
+  port: 34338
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 08512976-c459-446c-9b5e-e0cc062ed4f8
+  udp: true
+- name: 🇷🇺 俄罗斯-莫斯科-HY-002-1E
+  server: 46.17.44.62
+  port: 34580
+  type: hysteria2
+  password: bbd17811-292d-4463-82fa-26fbf79d4f47
+  auth: bbd17811-292d-4463-82fa-26fbf79d4f47
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDY2MDRjODQ5MjhkM2ZkNw==
+  udp: true
+- name: 🇷🇺 俄罗斯-莫斯科-HY-002-2A
+  server: 46.17.44.62
+  port: 34580
+  type: hysteria2
+  password: b9ed136f-9452-4241-bf48-d271fbcf0d17
+  auth: b9ed136f-9452-4241-bf48-d271fbcf0d17
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDY2MDRjODQ5MjhkM2ZkNw==
+  udp: true
+- name: 🇷🇺 俄罗斯-2C
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: e8f0d3be-edbe-47ac-b97a-4b9a23be02fe
+  auth: e8f0d3be-edbe-47ac-b97a-4b9a23be02fe
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-圣彼得堡-HY-007-2B
+  server: 176.32.39.181
+  port: 37179
+  type: hysteria2
+  password: 84583993-591d-482b-9418-3d6c23f805e6
+  auth: 84583993-591d-482b-9418-3d6c23f805e6
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 🇷🇺 俄罗斯-圣彼得堡-HY-009-1M
+  server: 194.87.69.56
+  port: 37179
+  type: hysteria2
+  password: 8268a4a1-2bcb-4eeb-89b1-1710a3301f3e
+  auth: 8268a4a1-2bcb-4eeb-89b1-1710a3301f3e
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 🇷🇺 俄罗斯-圣彼得堡-HY-009-2D
+  server: 194.87.69.56
+  port: 37179
+  type: hysteria2
+  password: 6a328700-c5a5-4e2f-b8ea-91c2d9e956a4
+  auth: 6a328700-c5a5-4e2f-b8ea-91c2d9e956a4
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 🇷🇺 俄罗斯-2H
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 5a780bdb-e143-4f29-9b38-c51c7f7fe49f
+  auth: 5a780bdb-e143-4f29-9b38-c51c7f7fe49f
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-圣彼得堡-HY-009-1V
+  server: 194.87.69.56
+  port: 37179
+  type: hysteria2
+  password: 0d792650-5b0d-4024-b849-bc916ac4cd40
+  auth: 0d792650-5b0d-4024-b849-bc916ac4cd40
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 🇷🇺 俄罗斯-1T
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: c273276b-91c9-4064-a7d1-e64a7cb88e0d
+  auth: c273276b-91c9-4064-a7d1-e64a7cb88e0d
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-2E
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: f5205596-1584-4a10-8a24-839c67a38c99
+  auth: f5205596-1584-4a10-8a24-839c67a38c99
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1A
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: ecc7f107-04e8-4fad-9eb8-e011343c93c5
+  auth: ecc7f107-04e8-4fad-9eb8-e011343c93c5
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-圣彼得堡-HY-002-1D
+  server: 195.58.49.12
+  port: 19465
+  type: hysteria2
+  password: cf686f39-a8cb-4d55-8405-fba6d5c1e4a5
+  auth: cf686f39-a8cb-4d55-8405-fba6d5c1e4a5
+  up: 35
+  down: 35
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: MzliZDM5MDFhYmFlNTAyMA==
+  udp: true
+- name: 🇭🇰 香港01-1F
+  server: gy.666666222.shop
+  port: 34338
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: ab3c080a-241b-4765-898b-a96c32345630
+  udp: true
+- name: 🇷🇺 俄罗斯-圣彼得堡-HY-007-1E
+  server: 176.32.39.181
+  port: 37179
+  type: hysteria2
+  password: bbd17811-292d-4463-82fa-26fbf79d4f47
+  auth: bbd17811-292d-4463-82fa-26fbf79d4f47
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 🇷🇺 俄罗斯-2K
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: be32312d-5722-456f-8892-d9f878320276
+  auth: be32312d-5722-456f-8892-d9f878320276
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1Y
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 35bd3ddd-1ecc-4222-96c3-aed83cab48fd
+  auth: 35bd3ddd-1ecc-4222-96c3-aed83cab48fd
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-2B
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 0f5e40e0-29b9-4ce6-bb8d-248f431bfd5e
+  auth: 0f5e40e0-29b9-4ce6-bb8d-248f431bfd5e
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-圣彼得堡-HY-009-1G
+  server: 194.87.69.56
+  port: 37179
+  type: hysteria2
+  password: de0970b9-1e83-4064-b428-88a8ebab8cb2
+  auth: de0970b9-1e83-4064-b428-88a8ebab8cb2
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 🇷🇺 俄罗斯-1U
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 440e5d7f-f7ad-45ab-bbec-ba0148824eea
+  auth: 440e5d7f-f7ad-45ab-bbec-ba0148824eea
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1N
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: f17ecf4c-645a-4941-b7a2-6718e8ed387f
+  auth: f17ecf4c-645a-4941-b7a2-6718e8ed387f
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰 香港01-1C
+  server: gy.666666222.shop
+  port: 34338
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: ca77c26c-475f-45a0-a4c2-144f206fd0c8
+  udp: true
+- name: 🇷🇺 俄罗斯-1M
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 7f2ac4c2-5f80-44b2-867b-41300e764483
+  auth: 7f2ac4c2-5f80-44b2-867b-41300e764483
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-圣彼得堡-HY-009-1E
+  server: 194.87.69.56
+  port: 37179
+  type: hysteria2
+  password: bbd17811-292d-4463-82fa-26fbf79d4f47
+  auth: bbd17811-292d-4463-82fa-26fbf79d4f47
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDhhNmY5YTY0MGYzOTgxYQ==
+  udp: true
+- name: 🇭🇰 香港01-1I
+  server: gy.666666222.shop
+  port: 34338
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: f7b5ac29-1807-4798-93d2-e1da323fbbd3
+  udp: true
+- name: 🇷🇺 俄罗斯-1J
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 02a91f57-31dd-42c5-9be4-80e52ab5573d
+  auth: 02a91f57-31dd-42c5-9be4-80e52ab5573d
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-1F
+  server: 45.140.169.231
+  port: 8080
+  type: hysteria2
+  password: 10f6dc8c-1181-416e-84f4-236409ba3f39
+  auth: 10f6dc8c-1181-416e-84f4-236409ba3f39
+  sni: www.bing.com
+  up: 50
+  down: 50
+  skip-cert-verify: true
+  udp: true
+- name: 🇷🇺 俄罗斯-莫斯科-HY-002-1C
+  server: 46.17.44.62
+  port: 34580
+  type: hysteria2
+  password: 29ac6682-87c8-4bf0-8191-5f55cfc34808
+  auth: 29ac6682-87c8-4bf0-8191-5f55cfc34808
+  up: 100
+  down: 100
+  skip-cert-verify: true
+  obfs: salamander
+  obfs-password: NDY2MDRjODQ5MjhkM2ZkNw==
+  udp: true
+- name: 🇩🇪 DE_324
+  type: ss
+  server: 84.19.31.63
+  port: '50841'
+  cipher: chacha20-ietf-poly1305
+  password: 2EtPqn6HYjUNcHohLfUpFQwnfjCCQ5mh1mJdEMCBucuWZ9P1udkRKHnVxuo55k1KXz2Fo6jrgt18W66opty1e4bm1jzfCfBb
+  udp: true
+- name: 🇳🇴 NO_426
+  type: ss
+  server: 51.120.1.158
+  port: '32091'
+  cipher: chacha20-ietf-poly1305
+  password: xjzsiMfTByKjA9URbdXWNp
+  udp: true
+- name: 🇺🇸 US_470
+  type: ss
+  server: series-a1.samanehha.co
+  port: '443'
+  cipher: chacha20-ietf-poly1305
+  password: W74XFALLLuw6m5IA
+  udp: true
+- name: 🇺🇸 US_487
+  type: ss
+  server: series-a2-mec.varzesh360.co
+  port: '443'
+  cipher: chacha20-ietf-poly1305
+  password: u17T3BvpYaaiuW2c
+  udp: true
+- name: 🏁 ZZ_786
+  type: ss
+  server: soontw.soon.guru
+  port: '40020'
+  cipher: chacha20-ietf-poly1305
+  password: f0e7fd1e-0469-415f-95da-774021f16f36
+  udp: true
+- name: 🇨🇦 加拿大 | CAN 45
+  server: cucc.abyssvpn.com
+  port: 31161
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇦 加拿大 | CAN 46
+  server: cmcc.abyssvpn.com
+  port: 31161
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇳 台湾 | TWN 6
+  server: tw.tianmaojichang.us.kg
+  port: 61523
+  client-fingerprint: chrome
+  type: ss
+  cipher: 2022-blake3-aes-256-gcm
+  password: NTRmYWY3NDI1ODhhZTY4YThiYTlmODlkMzIwMTFjYjc=:YmFmZGYyZmEtNDE4Ny00YjBjLWIwMWQtZDkxY2ViZDE=
+  udp: true
+- name: 🇨🇳 台湾 | TWN 8
+  server: tw.tianmaojichang.us.kg
+  port: 61823
+  client-fingerprint: chrome
+  type: ss
+  cipher: 2022-blake3-aes-256-gcm
+  password: NTRmYWY3NDI1ODhhZTY4YThiYTlmODlkMzIwMTFjYjc=:YmFmZGYyZmEtNDE4Ny00YjBjLWIwMWQtZDkxY2ViZDE=
+  udp: true
+- name: 🇨🇳 台湾 | TWN 9
+  server: tw.tianmaojichang.us.kg
+  port: 61022
+  client-fingerprint: chrome
+  type: ss
+  cipher: 2022-blake3-aes-256-gcm
+  password: NTRmYWY3NDI1ODhhZTY4YThiYTlmODlkMzIwMTFjYjc=:YmFmZGYyZmEtNDE4Ny00YjBjLWIwMWQtZDkxY2ViZDE=
+  udp: true
+- name: 🇨🇳 台湾 | TWN 16
+  server: tw.tianmaojichang.us.kg
+  port: 61593
+  client-fingerprint: chrome
+  type: ss
+  cipher: 2022-blake3-aes-256-gcm
+  password: NTRmYWY3NDI1ODhhZTY4YThiYTlmODlkMzIwMTFjYjc=:YmFmZGYyZmEtNDE4Ny00YjBjLWIwMWQtZDkxY2ViZDE=
+  udp: true
+- name: 🇭🇰 香港 | HKG 171
+  server: gy.666666222.shop
+  port: 34338
+  client-fingerprint: chrome
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: edda5ffd-1e75-4973-be7f-72277971494c
+  udp: true
+- name: 🇭🇰 香港 | HKG 183
+  server: gy.666666222.shop
+  port: 34338
+  client-fingerprint: chrome
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: f5bcb10e-5a5c-4d2d-8713-ccef04393ac7
+  udp: true
+- name: 🇳🇱 荷兰 | NLD 3
+  server: bgp.abyssvpn.com
+  port: 31119
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 6
+  server: cucc.abyssvpn.com
+  port: 31116
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 15
+  server: cucc.abyssvpn.com
+  port: 31120
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 16
+  server: cucc.abyssvpn.com
+  port: 31152
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 17
+  server: bgp.abyssvpn.com
+  port: 31152
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 23
+  server: cmcc.abyssvpn.com
+  port: 31116
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 29
+  server: bgp.abyssvpn.com
+  port: 31124
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 31
+  server: cucc.abyssvpn.com
+  port: 31106
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 47
+  server: cucc.abyssvpn.com
+  port: 31126
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 48
+  server: cmcc.abyssvpn.com
+  port: 31117
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 56
+  server: bgp.abyssvpn.com
+  port: 31106
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 64
+  server: cucc.abyssvpn.com
+  port: 31105
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 71
+  server: bgp.abyssvpn.com
+  port: 31116
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 72
+  server: cucc.abyssvpn.com
+  port: 31121
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 75
+  server: bgp.abyssvpn.com
+  port: 31105
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 84
+  server: cucc.abyssvpn.com
+  port: 31117
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  sni: apple.com
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 91
+  server: cucc.abyssvpn.com
+  port: 31118
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 92
+  server: bgp.abyssvpn.com
+  port: 31123
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 99
+  server: bgp.abyssvpn.com
+  port: 31120
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 110
+  server: cucc.abyssvpn.com
+  port: 31107
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 113
+  server: cucc.abyssvpn.com
+  port: 31124
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 116
+  server: bgp.abyssvpn.com
+  port: 31121
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 118
+  server: bgp.abyssvpn.com
+  port: 31126
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 124
+  server: bgp.abyssvpn.com
+  port: 31125
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 133
+  server: bgp.abyssvpn.com
+  port: 31118
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 141
+  server: bgp.abyssvpn.com
+  port: 31104
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 161
+  server: cucc.abyssvpn.com
+  port: 31129
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 164
+  server: cucc.abyssvpn.com
+  port: 31125
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇲 美国 | USA 175
+  server: cucc.abyssvpn.com
+  port: 31104
+  client-fingerprint: chrome
+  type: hysteria2
+  password: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  auth: 3a2a198b-40f6-4850-98ce-74805dc312f4
+  skip-cert-verify: true
+  udp: true
+- name: 管理员B
+  server: 183.236.48.163
+  port: 54882
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+proxy-groups:
+- name: 节点选择
+  type: select
+  proxies:
+  - 自动选择
+  - 故障转移
+  - DIRECT
+  - 手动选择
+- name: 自动选择
+  type: url-test
+  exclude-filter: (?i)中国|China|CN|电信|移动|联通
+  proxies: &id001
+  - KR韩国(mibei77.com 米贝节点分享)
+  - JP_Shinagawa_Datacamp Limited_OpenAI_Claude5
+  - SG_Singapore_Oracle Corporation_OpenAI_Claude
+  - HK_Hong Kong_Radishcloud Technology LLC_OpenAI1
+  - HK_Hong Kong_Radishcloud Technology LLC_OpenAI2
+  - JP_Tokyo_Oracle Corporation_OpenAI_Claude3
+  - 🇭🇰 香港01-1G
+  - SG_Singapore_DigitalOcean, LLC_OpenAI_Claude2
+  - 🇭🇰 香港01-1D
+  - 0|--17
+  - KR韩国(mibei77.com 米贝节点分享) 2
+  - 0|--14
+  - 🇸🇬SG-13.250.110.56-6321
+  - SG_Singapore_DigitalOcean, LLC_OpenAI_Claude1
+  - 🇸🇬SG-54.151.223.9-6560
+  - 🇸🇬SG-54.169.63.80-6324
+  - JP_Shinagawa_Datacamp Limited_OpenAI_Claude1
+  - JP_Shinagawa_Datacamp Limited_OpenAI_Claude4
+  - 🇸🇬SG-18.143.139.72-6475
+  - 🇸🇬_SG_新加坡
+  - TW_Taipei_Radishcloud Technology LLC_OpenAI1
+  - JP_Tokyo_Oracle Corporation_OpenAI_Claude2
+  - 🇭🇰 香港01-1A
+  - JP_Shinagawa_Datacamp Limited_OpenAI_Claude3
+  - TW_Taipei_Radishcloud Technology LLC_OpenAI2
+  - JP_Shinagawa_Datacamp Limited_OpenAI_Claude2
+  - 0|--9
+  - 🇰🇷 韩国-首尔-1B
+  - 🇯🇵 13|🇯🇵 日本特殊|@ripaojiedian-tdx8
+  - HK_Hong Kong_Cnservers LLC_OpenAI_Claude
+  - SG_Singapore_Radishcloud Technology LLC_OpenAI2
+  - SG_Singapore_Radishcloud Technology LLC_OpenAI3
+  - 🇭🇰 香港01-1I
+  - 🇭🇰 香港 | HKG 171
+  - JP_Tokyo_Oracle Corporation_OpenAI_Claude1
+  - 2a13:a5c6:3a42:b18:3e0c:d513:3bb1:ff2d_OpenAI
+  - JP_Tokyo_DataCamp Limited_OpenAI_Claude
+  - 0|--11
+  - US美国(mibei77.com 米贝节点分享) 11
+  - 16|d*********g.com_3
+  - 🇯🇵 免费-日本2-Ver.7
+  - 🇭🇰 香港01-1C
+  - '[Trojan] 🇺🇸 美国 佐治亚州亚特兰大市BellSouth公司'
+  - 🇺🇸_US_美国_2
+  - 🇭🇰 香港 | HKG 183
+  - 🇭🇰 香港01-1F
+  - 🇦🇺 澳大利亚
+  - 🇮🇩_印度尼西亚
+  - US_b5ce7_0021
+  - 🇯🇵 免费-日本4-Ver.7
+  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
+  - 🇨🇳 台湾 | TWN 16
+  - 香港2
+  - US_b5ce7_0020
+  - 🇺🇸US-54.202.63.77-0399
+  - US美国(mibei77.com 米贝节点分享) 10
+  - 🇺🇸US-54.244.200.142-6345
+  - 0|--1
+  - 0|--8
+  - 0|--18
+  - 0|--3-JZxj
+  - 0|--4-tIUC
+  - hk1
+  - 🇯🇵JP-13.114.67.166-6257
+  - 管理员B
+  - 🇨🇳 台湾 | TWN 9
+  - 🇯🇵JP-94.177.131.71-5426
+  - 🇨🇳 台湾 | TWN 8
+  - HK_Sheung Wan_CTG Server Ltd._OpenAI_Claude1
+  - 🇯🇵 免费-日本6-Ver.7
+  - 🇺🇸_美国_145
+  - US_b5ce7_0022
+  - 🇺🇸_美国_169
+  - 🇺🇸_美国_55
+  - 🇺🇸_美国_207
+  - 🇺🇸_美国_79
+  - 🇭🇰 广港•香港143•高速 - 飞翔吧
+  - 🇺🇸_美国_179
+  - 🇨🇳 台湾 | TWN 6
+  - 🇷🇺 俄罗斯-1I
+  - 🇺🇸_美国_58
+  - 🇺🇸_美国_13
+  - 🇭🇰 广港•香港278•高速 - 飞翔吧
+  - 🇺🇸_美国_202
+  - 🇯🇵 日本
+  - 🇺🇸_美国_110
+  - 🇺🇸_美国_172
+  - 🇯🇵 日本 2
+  - 🇷🇺 俄罗斯-2E
+  - 🇺🇸_美国_107
+  - 🇷🇺 俄罗斯-1C
+  - DE德国(mibei77.com 米贝节点分享)
+  - 🇷🇺 俄罗斯-1Z
+  - 🇺🇸_美国_153
+  - 🇺🇸_美国_124
+  - 香港[07]中转
+  - 15|US_speednode_0029
+  - 🇺🇸_美国_206
+  - 香港1
+  - 🇺🇸_美国_59
+  - 🇭🇰 广港•香港294•高速 - 飞翔吧
+  - 🇳🇱 荷兰
+  - 🇺🇲 美国 | USA 15
+  - 0|--5
+  - 🇺🇸_美国_147
+  - 🇷🇺 俄罗斯-2K
+  - 🇺🇲 美国 | USA 75
+  - 🇺🇸_美国_219
+  - 🇷🇺 俄罗斯-1A
+  - 🇨🇷_哥斯达黎加_5
+  - 🇷🇺 俄罗斯-2B
+  - 香港[05]中转
+  - 🇧🇷_巴西_10
+  - 🇷🇺 俄罗斯-1U
+  - 🇺🇸_美国_114
+  - 🇺🇸_美国_181
+  - 🇷🇺 俄罗斯-1B
+  - xiaoer886_DE_2
+  - 🇺🇸_美国_162
+  - 🇯🇵2
+  - 🇸🇪_瑞典_1
+  - 🇷🇺 俄罗斯-1W
+  - 香港[04]中转
+  - 🇺🇸_美国_225
+  - 🇷🇺 俄罗斯-2G
+  - US_b5ce7_0039
+  - 🇺🇸_美国_222
+  - 🇳🇴 NO_426
+  - 🇺🇸_美国_4
+  - 🇺🇸_美国_174
+  - 🇷🇺 俄罗斯-1P
+  - 🇺🇸_美国_54
+  - 🇷🇺 俄罗斯-1J
+  - 🇺🇸_美国_146
+  - xiaoer886_AT_1
+  - 🇺🇸_美国_90
+  - 🇺🇸_美国_171
+  - 🇺🇸_美国_194
+  - 🇺🇸_美国_12
+  - 🇺🇸_美国_164
+  - 🇺🇸_美国_205
+  - 🇺🇲 美国 | USA 16
+  - 🇺🇸_美国_102
+  - 🇺🇸_美国_72
+  - 🇺🇸_美国_39
+  - 🇺🇸_美国_35
+  - 🇺🇸_美国_100
+  - 🇷🇺 俄罗斯-1M
+  - 🇺🇸_美国_139
+  - 🇷🇺 俄罗斯-1Q
+  - 🇱🇻_LV_拉脱维亚
+  - 🇺🇸_美国_109
+  - www.gov.se
+  - 🇺🇸_美国_121
+  - 🇺🇸_美国_180
+  - 🇺🇸_美国_136
+  - xiaoer886_AT_2
+  - 美国[02]中转
+  - 🇺🇸_美国_123
+  - 🇺🇸_美国_91
+  - 🇺🇸_美国_11
+  - 🇧🇷_巴西_7
+  - 🇺🇸_美国_34
+  - 🇺🇸_美国_46
+  - 🇺🇸_美国_98
+  - 🇺🇸_美国_70
+  - 🇺🇸_美国_74
+  - 🇩🇪 DE_324
+  - xiaoer886_US_164_2
+  - 🇺🇸_美国_176
+  - 🇺🇸_美国_168
+  - 🇺🇸_US_美国_1
+  - 🇺🇸_美国_115
+  - 🇺🇸_美国_69
+  - 🇺🇸_美国_128
+  - 🇺🇸_美国_67
+  - 🇺🇸_美国_148
+  - 🇺🇸_美国_129
+  - 🇺🇸_美国_127
+  - 🇧🇷_巴西_6
+  - 🇺🇸_美国_60
+  - 🇷🇺 俄罗斯-1Y
+  - 🇷🇺 俄罗斯-2C
+  - 🇺🇸_美国_165
+  - 🇺🇸_美国_151
+  - 🇺🇸_美国_131
+  - 🇺🇸_美国_96
+  - 🇺🇸_美国_150
+  - 🇺🇸_美国_193
+  - 🇺🇸_美国_132
+  - 🇺🇸_美国_8
+  - 🇷🇺 俄罗斯-1N
+  - 🇺🇸_美国_170
+  - 🇺🇸_美国_93
+  - 🇺🇸_美国_33
+  - 🇷🇺 俄罗斯-2M
+  - 🇺🇸_美国_89
+  - 🇺🇸_美国_118
+  - 🇺🇸_美国_83
+  - 🇺🇸_美国_177
+  - 🇺🇸_美国_135
+  - 🇨🇷_哥斯达黎加_4
+  - 🇺🇸_美国_73
+  - 🇺🇸_美国_95
+  - 🇺🇸_美国_119
+  - 英国[01]中转
+  - 🇺🇸_美国_188
+  - 🇺🇸_美国_16
+  - 阿拉伯联合酋长国 - 迪拜 - Amazon Technologies Inc. - 1
+  - 🇺🇸_美国_212
+  - 🇺🇸_美国_144
+  - 🇺🇸_美国_184
+  - 🇨🇷_哥斯达黎加_3
+  - 🇺🇸_美国_158
+  - 🇺🇸_美国_66
+  - 🇺🇸_美国_134
+  - 🇺🇸_美国_183
+  - 🇺🇲 美国 | USA 118
+  - xiaoer886_US_6_2
+  - JP_Tokyo_Akari Networks_OpenAI_Claude
+  - 🇺🇸_美国_31
+  - 🇷🇺 俄罗斯-1F
+  - www.wto.org
+  - 🇺🇸_美国_161
+  - 🇺🇸_美国_224
+  - 美国[03]中转
+  - 🇺🇸_美国_228
+  - 🇺🇸_美国_186
+  - VMESS-未知>美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-104.21.238.89:2086
+  - 🇺🇸_美国_231
+  - 🇺🇸_美国_143
+  - xiaoer886_US_2
+  - 🇧🇷_巴西_11
+  - 🇺🇸 US_470
+  - www.gov.ua
+  - 🇺🇸_美国_84
+  - 🇷🇺 俄罗斯-2L
+  - 🇨🇳 visa.cn
+  - 🇺🇸_美国_160
+  - 🇺🇸_美国_3
+  - 🇭🇰 icook.hk
+  - 🇺🇲 美国 | USA 133
+  - 🇺🇸_美国_82
+  - 🇺🇸_美国_53
+  - 🇺🇸_美国_7
+  - 🇺🇸_美国_1
+  - 🇺🇲 美国 | USA 56
+  - 🇺🇸_美国_104
+  - xiaoer886_US_3
+  - 🇺🇲 美国 | USA 161
+  - 🇷🇺 俄罗斯-1G
+  - 🇺🇸_美国_221
+  - 🇧🇷_巴西_12
+  - 🇺🇲 美国 | USA 124
+  - 🇺🇸_美国_42
+  - 🇺🇸_美国_63
+  - HK_Sheung Wan_CTG Server Ltd._OpenAI_Claude2
+  - DE_b5ce7_0006
+  - '[VMess] 🇺🇸 美国 加州'
+  - 🇺🇸_美国_157
+  - 🇺🇸_美国_18
+  - 🇺🇸_美国_155
+  - 🇺🇸_美国_175
+  - 🇺🇸_美国_88
+  - brazil.com
+  - 🇨🇷_哥斯达黎加_1
+  - 日本2
+  - 🇺🇲 美国 | USA 47
+  - 🇺🇸_美国_182
+  - 🇺🇲 美国 | USA 71
+  - 🇺🇸_美国_227
+  - 🇺🇸_美国_62
+  - 🇷🇺 俄罗斯-莫斯科-HY-002-1C
+  - 🇺🇲 美国 | USA 29
+  - fbi.gov
+  - 🇬🇧_英国_1
+  - 🇧🇷_巴西_4
+  - 🇯🇵 日本•高速76•高速 - 飞翔吧
+  - '[Trojan] 🇩🇪 德国 黑森州法兰克福AMazon数据中心'
+  - 🇺🇸_美国_40
+  - 🇷🇺 俄罗斯-圣彼得堡-HY-009-1T
+  - 🇺🇸_美国_215
+  - 英国+伦敦Amazon数据中心-HmHY
+  - 🇯🇵 日本•高速115•高速 - 飞翔吧
+  - www.gco.gov.qa
+  - 🇷🇺 俄罗斯-圣彼得堡-HY-009-2D
+  - 🇧🇷_巴西_8
+  - 🇺🇲 美国 | USA 99
+  - 🇷🇺 俄罗斯-1O
+  - 日本1
+  - 🇷🇺 俄罗斯-圣彼得堡-HY-009-1E
+  - 🇺🇸_美国_51
+  - 🇷🇺 俄罗斯-1S
+  - 🇫🇷FR-13.36.74.252-6286
+  - 🇺🇸_美国_41
+  - 🇺🇲 美国 | USA 6
+  - 🇺🇸_美国_30
+  - 🇺🇸_美国_15
+  - 🇺🇸_美国_201
+  - 🇺🇲 美国 | USA 113
+  - 🇮🇸 time.is
+  - 🇺🇸_美国_226
+  - 日本[01]
+  - 🇺🇲 美国 | USA 64
+  - 🇺🇸_美国_214
+  - 🇨🇷_哥斯达黎加_2
+  - 🇷🇺 俄罗斯-圣彼得堡-HY-009-1G
+  - 🇷🇺 俄罗斯-圣彼得堡-HY-009-1I
+  - 🇯🇵 日本•高速141•铂金 - 飞翔吧
+  - 🇺🇸_美国_218
+  - 🇺🇸_美国_71
+  - 🇭🇰 香港01-1E
+  - 🇭🇰 广港•香港279•高速 - 飞翔吧
+  - 🇺🇲 美国 | USA 92
+  - 🇷🇺 俄罗斯-1H
+  - 🇺🇸_美国_210
+  - 🇺🇸_美国_48
+  - 🇺🇸_美国_185
+  - 🇺🇸_美国_211
+  - 🇺🇸_美国_216
+  - 🇺🇲 美国 | USA 91
+  - 🇧🇷_巴西_1
+  - 🇺🇸_美国_204
+  - 🇺🇸_美国_52
+  - 🇧🇷_巴西_3
+  - 🇺🇸_美国_192
+  - 🇯🇵4
+  - 🇺🇸_美国_217
+  - US美国(mibei77.com 米贝节点分享) 16
+  - 🇭🇰 广港•香港259•高速 - 飞翔吧
+  - 台湾3
+  - 🇯🇵 日本•高速59•青铜 - 飞翔吧
+  - 🇺🇸 北美-US-圣何塞-2-1B
+  - 🇮🇪IE-34.242.191.20-6306
+  - 🇺🇸_美国_101
+  - 🇹🇼 中转•台湾91•原生 - 飞翔吧
+  - 🇺🇸_美国_141
+  - 🇺🇲 美国 | USA 17
+  - 亚太地区+V2CROSS.COM
+  - 🇺🇲 美国 | USA 84
+  - 🏁 ZZ_786
+  - 🇷🇺 俄罗斯-莫斯科-HY-002-2A
+  - 🇳🇴_挪威_1
+  - 🇷🇺 俄罗斯-圣彼得堡-HY-009-1V
+  - 🇸🇪SE-13.50.211.85-6319
+  - 🇺🇲 美国 | USA 141
+  - 🇷🇺 俄罗斯-圣彼得堡-HY-007-1E
+  - 🇷🇺 russia.com
+  - 🇺🇲 美国 | USA 164
+  - 🇳🇱 荷兰 | NLD 3
+  - 🇷🇺 俄罗斯-圣彼得堡-HY-007-1Z
+  - '[Trojan] 🇺🇸 美国 纽约(Prudential)'
+  - 🇷🇺 俄罗斯-圣彼得堡-HY-009-1M
+  - US_b5ce7_0035
+  - 🇷🇺 俄罗斯-1L
+  - 🇷🇺 俄罗斯-圣彼得堡-HY-002-1D
+  - 台湾2
+  - 🇺🇲 美国 | USA 48
+  - 🇷🇺 俄罗斯-圣彼得堡-HY-009-1N
+  - 🇷🇺 俄罗斯-圣彼得堡-009-1R
+  - 🇺🇸 13,14|美国|@ripaojiedian
+  - 🇯🇵 日本•高速114•高速 - 飞翔吧
+  - 🇺🇸_美国_159
+  - 🇷🇺_RU_俄罗斯_6
+  - 美国3
+  - US_b5ce7_0025
+  - 🇺🇲 美国 | USA 116
+  - 🇺🇲 美国 | USA 110
+  - 🇺🇸_美国_173
+  - 🇺🇸 中转•美国296•高速 - 飞翔吧
+  - 🇷🇺 俄罗斯-1V
+  - US_b5ce7_0045
+  - DE_b5ce7_0008
+  - HK_b5ce7_0009
+  - 🇬🇧 英国
+  - 🇷🇺 俄罗斯-圣彼得堡-HY-007-2B
+  - 🇷🇺 俄罗斯-莫斯科-HY-002-1E
+  - 🇺🇸_美国_149
+  - 🇬🇧GB-18.135.173.157-1451
+  - 🇺🇸_美国_64
+  - 🇷🇺 俄罗斯-2H
+  - 🇷🇺 俄罗斯-1T
+  - 🇺🇲 美国 | USA 23
+  - 🇸🇬6
+  - KR_b5ce7_0012
+  - 0|--10
+  - 🇺🇲 美国 | USA 175
+  - 8|Mci-@V2ray_Raha-06
+  - 🇯🇵 日本•高速142•原生 - 飞翔吧
+  - 🇯🇵JP-74.226.136.204-3322
+  - 🇺🇲 美国 | USA 72
+  - 🇺🇲 美国 | USA 31
+  - 🇹🇼 广港•台湾262•高速 - 飞翔吧
+  - SG_Singapore_Radishcloud Technology LLC_OpenAI1
+  - 🇺🇸 US_487
+  - 🇨🇦 加拿大 | CAN 46
+  - US_b5ce7_0027
+  - 🇩🇪 欧洲-法兰克福-1-1B
+  - 🇨🇦 加拿大 | CAN 45
+  - 美国5
+  - 🇷🇺 俄罗斯 3
+  url: http://www.pinterest.com
+  interval: 300
+  tolerance: 50
+- name: 故障转移
+  type: fallback
+  exclude-filter: (?i)中国|China|CN|电信|移动|联通
+  proxies: *id001
+  url: http://www.pinterest.com
+  interval: 300
+- name: 手动选择
+  type: select
+  proxies: *id001
+rules:
+- DOMAIN,app.adjust.com,DIRECT
+- DOMAIN,bdtj.tagtic.cn,DIRECT
+- DOMAIN,log.mmstat.com,DIRECT
+- DOMAIN,sycm.mmstat.com,DIRECT
+- DOMAIN-SUFFIX,blog.google,DIRECT
+- DOMAIN-SUFFIX,googletraveladservices.com,DIRECT
+- DOMAIN,dl.google.com,DIRECT
+- DOMAIN,dl.l.google.com,DIRECT
+- DOMAIN,fonts.googleapis.com,DIRECT
+- DOMAIN,fonts.gstatic.com,DIRECT
+- DOMAIN,mtalk.google.com,DIRECT
+- DOMAIN,alt1-mtalk.google.com,DIRECT
+- DOMAIN,alt2-mtalk.google.com,DIRECT
+- DOMAIN,alt3-mtalk.google.com,DIRECT
+- DOMAIN,alt4-mtalk.google.com,DIRECT
+- DOMAIN,alt5-mtalk.google.com,DIRECT
+- DOMAIN,alt6-mtalk.google.com,DIRECT
+- DOMAIN,alt7-mtalk.google.com,DIRECT
+- DOMAIN,alt8-mtalk.google.com,DIRECT
+- DOMAIN,fairplay.l.qq.com,DIRECT
+- DOMAIN,livew.l.qq.com,DIRECT
+- DOMAIN,vd.l.qq.com,DIRECT
+- DOMAIN,analytics.strava.com,DIRECT
+- DOMAIN,msg.umeng.com,DIRECT
+- DOMAIN,msg.umengcloud.com,DIRECT
+- PROCESS-NAME,com.ximalaya.ting.himalaya,节点选择
+- DOMAIN-SUFFIX,himalaya.com,节点选择
+- PROCESS-NAME,deezer.android.app,节点选择
+- DOMAIN-SUFFIX,deezer.com,节点选择
+- DOMAIN-SUFFIX,dzcdn.net,节点选择
+- PROCESS-NAME,com.tencent.ibg.joox,节点选择
+- PROCESS-NAME,com.tencent.ibg.jooxtv,节点选择
+- DOMAIN-SUFFIX,joox.com,节点选择
+- DOMAIN-KEYWORD,jooxweb-api,节点选择
+- PROCESS-NAME,com.skysoft.kkbox.android,节点选择
+- DOMAIN-SUFFIX,kkbox.com,节点选择
+- DOMAIN-SUFFIX,kkbox.com.tw,节点选择
+- DOMAIN-SUFFIX,kfs.io,节点选择
+- PROCESS-NAME,com.pandora.android,节点选择
+- DOMAIN-SUFFIX,pandora.com,节点选择
+- PROCESS-NAME,com.soundcloud.android,节点选择
+- DOMAIN-SUFFIX,p-cdn.us,节点选择
+- DOMAIN-SUFFIX,sndcdn.com,节点选择
+- DOMAIN-SUFFIX,soundcloud.com,节点选择
+- PROCESS-NAME,com.spotify.music,节点选择
+- DOMAIN-SUFFIX,pscdn.co,节点选择
+- DOMAIN-SUFFIX,scdn.co,节点选择
+- DOMAIN-SUFFIX,spotify.com,节点选择
+- DOMAIN-SUFFIX,spoti.fi,节点选择
+- DOMAIN-KEYWORD,spotify.com,节点选择
+- DOMAIN-KEYWORD,-spotify-com,节点选择
+- PROCESS-NAME,com.aspiro.tidal,节点选择
+- DOMAIN-SUFFIX,tidal.com,节点选择
+- PROCESS-NAME,com.google.android.apps.youtube.music,节点选择
+- PROCESS-NAME,com.google.android.youtube.tvmusic,节点选择
+- PROCESS-NAME,tv.abema,节点选择
+- DOMAIN-SUFFIX,abema.io,节点选择
+- DOMAIN-SUFFIX,abema.tv,节点选择
+- DOMAIN-SUFFIX,ameba.jp,节点选择
+- DOMAIN-SUFFIX,hayabusa.io,节点选择
+- DOMAIN-KEYWORD,abematv.akamaized.net,节点选择
+- PROCESS-NAME,com.channel4.ondemand,节点选择
+- DOMAIN-SUFFIX,c4assets.com,节点选择
+- DOMAIN-SUFFIX,channel4.com,节点选择
+- PROCESS-NAME,com.amazon.avod.thirdp,节点选择
+- DOMAIN-SUFFIX,aiv-cdn.net,节点选择
+- DOMAIN-SUFFIX,aiv-delivery.net,节点选择
+- DOMAIN-SUFFIX,amazonvideo.com,节点选择
+- DOMAIN-SUFFIX,primevideo.com,节点选择
+- DOMAIN-SUFFIX,media-amazon.com,节点选择
+- DOMAIN,atv-ps.amazon.com,节点选择
+- DOMAIN,fls-na.amazon.com,节点选择
+- DOMAIN,avodmp4s3ww-a.akamaihd.net,节点选择
+- DOMAIN,d25xi40x97liuc.cloudfront.net,节点选择
+- DOMAIN,dmqdd6hw24ucf.cloudfront.net,节点选择
+- DOMAIN,dmqdd6hw24ucf.cloudfront.net,节点选择
+- DOMAIN,d22qjgkvxw22r6.cloudfront.net,节点选择
+- DOMAIN,d1v5ir2lpwr8os.cloudfront.net,节点选择
+- DOMAIN,d27xxe7juh1us6.cloudfront.net,节点选择
+- DOMAIN-KEYWORD,avoddashs,节点选择
+- DOMAIN,linear.tv.apple.com,节点选择
+- DOMAIN,play-edge.itunes.apple.com,节点选择
+- PROCESS-NAME,tw.com.gamer.android.animad,节点选择
+- DOMAIN-SUFFIX,bahamut.com.tw,节点选择
+- DOMAIN-SUFFIX,gamer.com.tw,节点选择
+- DOMAIN,gamer-cds.cdn.hinet.net,节点选择
+- DOMAIN,gamer2-cds.cdn.hinet.net,节点选择
+- PROCESS-NAME,bbc.iplayer.android,节点选择
+- DOMAIN-SUFFIX,bbc.co.uk,节点选择
+- DOMAIN-SUFFIX,bbci.co.uk,节点选择
+- DOMAIN-KEYWORD,bbcfmt,节点选择
+- DOMAIN-KEYWORD,uk-live,节点选择
+- PROCESS-NAME,com.dazn,节点选择
+- DOMAIN-SUFFIX,dazn.com,节点选择
+- DOMAIN-SUFFIX,dazn-api.com,节点选择
+- DOMAIN,d151l6v8er5bdm.cloudfront.net,节点选择
+- DOMAIN-KEYWORD,voddazn,节点选择
+- PROCESS-NAME,com.disney.disneyplus,节点选择
+- DOMAIN-SUFFIX,bamgrid.com,节点选择
+- DOMAIN-SUFFIX,disneyplus.com,节点选择
+- DOMAIN-SUFFIX,disney-plus.net,节点选择
+- DOMAIN-SUFFIX,disney自动选择.com,节点选择
+- DOMAIN-SUFFIX,dssott.com,节点选择
+- DOMAIN,cdn.registerdisney.go.com,节点选择
+- PROCESS-NAME,com.dmm.app.movieplayer,节点选择
+- DOMAIN-SUFFIX,dmm.co.jp,节点选择
+- DOMAIN-SUFFIX,dmm.com,节点选择
+- DOMAIN-SUFFIX,dmm-extension.com,节点选择
+- PROCESS-NAME,com.tvbusa.encore,节点选择
+- DOMAIN-SUFFIX,encoretvb.com,节点选择
+- DOMAIN,edge.api.brightcove.com,节点选择
+- DOMAIN,bcbolt446c5271-a.akamaihd.net,节点选择
+- PROCESS-NAME,com.fox.now,节点选择
+- DOMAIN-SUFFIX,fox.com,节点选择
+- DOMAIN-SUFFIX,foxdcg.com,节点选择
+- DOMAIN-SUFFIX,theplatform.com,节点选择
+- DOMAIN-SUFFIX,uplynk.com,节点选择
+- DOMAIN-SUFFIX,foxplus.com,节点选择
+- DOMAIN,cdn-fox-networks-group-green.akamaized.net,节点选择
+- DOMAIN,d3cv4a9a9wh0bt.cloudfront.net,节点选择
+- DOMAIN,foxsports01-i.akamaihd.net,节点选择
+- DOMAIN,foxsports02-i.akamaihd.net,节点选择
+- DOMAIN,foxsports03-i.akamaihd.net,节点选择
+- DOMAIN,staticasiafox.akamaized.net,节点选择
+- PROCESS-NAME,com.hbo.hbonow,节点选择
+- DOMAIN-SUFFIX,hbo.com,节点选择
+- DOMAIN-SUFFIX,hbogo.com,节点选择
+- DOMAIN-SUFFIX,hbonow.com,节点选择
+- DOMAIN-SUFFIX,hbomax.com,节点选择
+- PROCESS-NAME,hk.hbo.hbogo,节点选择
+- DOMAIN-SUFFIX,hbogoasia.com,节点选择
+- DOMAIN-SUFFIX,hbogoasia.hk,节点选择
+- DOMAIN,bcbolthboa-a.akamaihd.net,节点选择
+- DOMAIN,players.brightcove.net,节点选择
+- DOMAIN,s3-ap-southeast-1.amazonaws.com,节点选择
+- DOMAIN,dai3fd1oh325y.cloudfront.net,节点选择
+- DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,节点选择
+- DOMAIN,hboasia1-i.akamaihd.net,节点选择
+- DOMAIN,hboasia2-i.akamaihd.net,节点选择
+- DOMAIN,hboasia3-i.akamaihd.net,节点选择
+- DOMAIN,hboasia4-i.akamaihd.net,节点选择
+- DOMAIN,hboasia5-i.akamaihd.net,节点选择
+- DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net,节点选择
+- DOMAIN-SUFFIX,5itv.tv,节点选择
+- DOMAIN-SUFFIX,ocnttv.com,节点选择
+- PROCESS-NAME,com.hulu.plus,节点选择
+- DOMAIN-SUFFIX,hulu.com,节点选择
+- DOMAIN-SUFFIX,huluim.com,节点选择
+- DOMAIN-SUFFIX,hulustream.com,节点选择
+- PROCESS-NAME,jp.happyon.android,节点选择
+- DOMAIN-SUFFIX,happyon.jp,节点选择
+- DOMAIN-SUFFIX,hjholdings.jp,节点选择
+- DOMAIN-SUFFIX,hulu.jp,节点选择
+- PROCESS-NAME,air.ITVMobilePlayer,节点选择
+- DOMAIN-SUFFIX,itv.com,节点选择
+- DOMAIN-SUFFIX,itvstatic.com,节点选择
+- DOMAIN,itvpnpmobile-a.akamaihd.net,节点选择
+- PROCESS-NAME,com.kktv.kktv,节点选择
+- DOMAIN-SUFFIX,kktv.com.tw,节点选择
+- DOMAIN-SUFFIX,kktv.me,节点选择
+- DOMAIN,kktv-theater.kk.stream,节点选择
+- PROCESS-NAME,com.linecorp.linetv,节点选择
+- DOMAIN-SUFFIX,linetv.tw,节点选择
+- DOMAIN,d3c7rimkq79yfu.cloudfront.net,节点选择
+- PROCESS-NAME,com.litv.mobile.gp.litv,节点选择
+- DOMAIN-SUFFIX,litv.tv,节点选择
+- DOMAIN,litvfreemobile-hichannel.cdn.hinet.net,节点选择
+- PROCESS-NAME,com.mobileiq.demand5,节点选择
+- DOMAIN-SUFFIX,channel5.com,节点选择
+- DOMAIN-SUFFIX,my5.tv,节点选择
+- DOMAIN,d349g9zuie06uo.cloudfront.net,节点选择
+- PROCESS-NAME,com.tvb.mytvsuper,节点选择
+- DOMAIN-SUFFIX,mytvsuper.com,节点选择
+- DOMAIN-SUFFIX,tvb.com,节点选择
+- PROCESS-NAME,com.netflix.mediaclient,节点选择
+- DOMAIN-SUFFIX,netflix.com,节点选择
+- DOMAIN-SUFFIX,netflix.net,节点选择
+- DOMAIN-SUFFIX,nflxext.com,节点选择
+- DOMAIN-SUFFIX,nflximg.com,节点选择
+- DOMAIN-SUFFIX,nflximg.net,节点选择
+- DOMAIN-SUFFIX,nflxso.net,节点选择
+- DOMAIN-SUFFIX,nflxvideo.net,节点选择
+- DOMAIN-SUFFIX,netflixdnstest0.com,节点选择
+- DOMAIN-SUFFIX,netflixdnstest1.com,节点选择
+- DOMAIN-SUFFIX,netflixdnstest2.com,节点选择
+- DOMAIN-SUFFIX,netflixdnstest3.com,节点选择
+- DOMAIN-SUFFIX,netflixdnstest4.com,节点选择
+- DOMAIN-SUFFIX,netflixdnstest5.com,节点选择
+- DOMAIN-SUFFIX,netflixdnstest6.com,节点选择
+- DOMAIN-SUFFIX,netflixdnstest7.com,节点选择
+- DOMAIN-SUFFIX,netflixdnstest8.com,节点选择
+- DOMAIN-SUFFIX,netflixdnstest9.com,节点选择
+- DOMAIN-KEYWORD,dualstack.api自动选择-device-prod-nlb-,节点选择
+- DOMAIN-KEYWORD,dualstack.ichnaea-web-,节点选择
+- IP-CIDR,23.246.0.0/18,节点选择,no-resolve
+- IP-CIDR,37.77.184.0/21,节点选择,no-resolve
+- IP-CIDR,45.57.0.0/17,节点选择,no-resolve
+- IP-CIDR,64.120.128.0/17,节点选择,no-resolve
+- IP-CIDR,66.197.128.0/17,节点选择,no-resolve
+- IP-CIDR,108.175.32.0/20,节点选择,no-resolve
+- IP-CIDR,192.173.64.0/18,节点选择,no-resolve
+- IP-CIDR,198.38.96.0/19,节点选择,no-resolve
+- IP-CIDR,198.45.48.0/20,节点选择,no-resolve
+- IP-CIDR,34.210.42.111/32,节点选择,no-resolve
+- IP-CIDR,52.89.124.203/32,节点选择,no-resolve
+- IP-CIDR,54.148.37.5/32,节点选择,no-resolve
+- PROCESS-NAME,jp.nicovideo.android,节点选择
+- DOMAIN-SUFFIX,dmc.nico,节点选择
+- DOMAIN-SUFFIX,nicovideo.jp,节点选择
+- DOMAIN-SUFFIX,nimg.jp,节点选择
+- PROCESS-NAME,com.pccw.nowemobile,节点选择
+- DOMAIN-SUFFIX,nowe.com,节点选择
+- DOMAIN-SUFFIX,nowestatic.com,节点选择
+- PROCESS-NAME,com.pbs.video,节点选择
+- DOMAIN-SUFFIX,pbs.org,节点选择
+- DOMAIN-SUFFIX,phncdn.com,节点选择
+- DOMAIN-SUFFIX,phprcdn.com,节点选择
+- DOMAIN-SUFFIX,pornhub.com,节点选择
+- DOMAIN-SUFFIX,pornhubpremium.com,节点选择
+- PROCESS-NAME,com.twgood.android,节点选择
+- DOMAIN-SUFFIX,skyking.com.tw,节点选择
+- DOMAIN,hamifans.emome.net,节点选择
+- PROCESS-NAME,com.ss.android.ugc.trill,节点选择
+- DOMAIN-SUFFIX,byteoversea.com,节点选择
+- DOMAIN-SUFFIX,ibytedtos.com,节点选择
+- DOMAIN-SUFFIX,muscdn.com,节点选择
+- DOMAIN-SUFFIX,musical.ly,节点选择
+- DOMAIN-SUFFIX,tiktok.com,节点选择
+- DOMAIN-SUFFIX,tik-tokapi.com,节点选择
+- DOMAIN-SUFFIX,tiktokcdn.com,节点选择
+- DOMAIN-SUFFIX,tiktokv.com,节点选择
+- DOMAIN-KEYWORD,-tiktokcdn-com,节点选择
+- PROCESS-NAME,tv.twitch.android.app,节点选择
+- DOMAIN-SUFFIX,jtvnw.net,节点选择
+- DOMAIN-SUFFIX,ttvnw.net,节点选择
+- DOMAIN-SUFFIX,twitch.tv,节点选择
+- DOMAIN-SUFFIX,twitchcdn.net,节点选择
+- PROCESS-NAME,com.hktve.viutv,节点选择
+- DOMAIN-SUFFIX,viu.com,节点选择
+- DOMAIN-SUFFIX,viu.tv,节点选择
+- DOMAIN,api.viu.now.com,节点选择
+- DOMAIN,d1k2us671qcoau.cloudfront.net,节点选择
+- DOMAIN,d2anahhhmp1ffz.cloudfront.net,节点选择
+- DOMAIN,dfp6rglgjqszk.cloudfront.net,节点选择
+- PROCESS-NAME,com.google.android.youtube,节点选择
+- PROCESS-NAME,com.google.android.youtube.tv,节点选择
+- DOMAIN-SUFFIX,googlevideo.com,节点选择
+- DOMAIN-SUFFIX,youtube.com,节点选择
+- DOMAIN,youtubei.googleapis.com,节点选择
+- DOMAIN-SUFFIX,biliapi.net,节点选择
+- DOMAIN-SUFFIX,bilibili.com,节点选择
+- DOMAIN,upos-hz-mirrorakam.akamaized.net,节点选择
+- DOMAIN-SUFFIX,iq.com,节点选择
+- DOMAIN,cache.video.iqiyi.com,节点选择
+- DOMAIN,cache-video.iq.com,节点选择
+- DOMAIN,intl.iqiyi.com,节点选择
+- DOMAIN,intl-rcd.iqiyi.com,节点选择
+- DOMAIN,intl-subscription.iqiyi.com,节点选择
+- DOMAIN-KEYWORD,oversea-tw.inter.iqiyi.com,节点选择
+- DOMAIN-KEYWORD,oversea-tw.inter.ptqy.gitv.tv,节点选择
+- IP-CIDR,103.44.56.0/22,节点选择,no-resolve
+- IP-CIDR,118.26.32.0/23,节点选择,no-resolve
+- IP-CIDR,118.26.120.0/24,节点选择,no-resolve
+- IP-CIDR,223.119.62.225/28,节点选择,no-resolve
+- IP-CIDR,23.40.242.10/32,节点选择,no-resolve
+- IP-CIDR,23.40.241.251/32,节点选择,no-resolve
+- DOMAIN-SUFFIX,api.mgtv.com,节点选择
+- DOMAIN-SUFFIX,wetv.vip,节点选择
+- DOMAIN-SUFFIX,wetvinfo.com,节点选择
+- DOMAIN,testflight.apple.com,节点选择
+- DOMAIN-SUFFIX,appspot.com,节点选择
+- DOMAIN-SUFFIX,blogger.com,节点选择
+- DOMAIN-SUFFIX,getoutline.org,节点选择
+- DOMAIN-SUFFIX,gvt0.com,节点选择
+- DOMAIN-SUFFIX,gvt3.com,节点选择
+- DOMAIN-SUFFIX,xn--ngstr-lra8j.com,节点选择
+- DOMAIN-SUFFIX,ytimg.com,节点选择
+- DOMAIN-KEYWORD,google,节点选择
+- DOMAIN-KEYWORD,.blogspot.,节点选择
+- DOMAIN-SUFFIX,aka.ms,节点选择
+- DOMAIN-SUFFIX,onedrive.live.com,节点选择
+- DOMAIN,az416426.vo.msecnd.net,节点选择
+- DOMAIN,az668014.vo.msecnd.net,节点选择
+- DOMAIN-SUFFIX,cdninstagram.com,节点选择
+- DOMAIN-SUFFIX,facebook.com,节点选择
+- DOMAIN-SUFFIX,facebook.net,节点选择
+- DOMAIN-SUFFIX,fb.com,节点选择
+- DOMAIN-SUFFIX,fb.me,节点选择
+- DOMAIN-SUFFIX,fbaddins.com,节点选择
+- DOMAIN-SUFFIX,fbcdn.net,节点选择
+- DOMAIN-SUFFIX,fbsbx.com,节点选择
+- DOMAIN-SUFFIX,fbworkmail.com,节点选择
+- DOMAIN-SUFFIX,instagram.com,节点选择
+- DOMAIN-SUFFIX,m.me,节点选择
+- DOMAIN-SUFFIX,messenger.com,节点选择
+- DOMAIN-SUFFIX,oculus.com,节点选择
+- DOMAIN-SUFFIX,oculuscdn.com,节点选择
+- DOMAIN-SUFFIX,rocksdb.org,节点选择
+- DOMAIN-SUFFIX,whatsapp.com,节点选择
+- DOMAIN-SUFFIX,whatsapp.net,节点选择
+- DOMAIN-SUFFIX,pscp.tv,节点选择
+- DOMAIN-SUFFIX,periscope.tv,节点选择
+- DOMAIN-SUFFIX,t.co,节点选择
+- DOMAIN-SUFFIX,twimg.co,节点选择
+- DOMAIN-SUFFIX,twimg.com,节点选择
+- DOMAIN-SUFFIX,twitpic.com,节点选择
+- DOMAIN-SUFFIX,twitter.com,节点选择
+- DOMAIN-SUFFIX,x.com,节点选择
+- DOMAIN-SUFFIX,vine.co,节点选择
+- DOMAIN-SUFFIX,telegra.ph,节点选择
+- DOMAIN-SUFFIX,telegram.org,节点选择
+- IP-CIDR,91.108.4.0/22,节点选择,no-resolve
+- IP-CIDR,91.108.8.0/22,节点选择,no-resolve
+- IP-CIDR,91.108.12.0/22,节点选择,no-resolve
+- IP-CIDR,91.108.16.0/22,节点选择,no-resolve
+- IP-CIDR,91.108.20.0/22,节点选择,no-resolve
+- IP-CIDR,91.108.56.0/22,节点选择,no-resolve
+- IP-CIDR,149.154.160.0/20,节点选择,no-resolve
+- IP-CIDR,2001:b28:f23d::/48,节点选择,no-resolve
+- IP-CIDR,2001:b28:f23f::/48,节点选择,no-resolve
+- IP-CIDR,2001:67c:4e8::/48,节点选择,no-resolve
+- DOMAIN-SUFFIX,line.me,节点选择
+- DOMAIN-SUFFIX,line-apps.com,节点选择
+- DOMAIN-SUFFIX,line-scdn.net,节点选择
+- DOMAIN-SUFFIX,naver.jp,节点选择
+- IP-CIDR,103.2.30.0/23,节点选择,no-resolve
+- IP-CIDR,125.209.208.0/20,节点选择,no-resolve
+- IP-CIDR,147.92.128.0/17,节点选择,no-resolve
+- IP-CIDR,203.104.144.0/21,节点选择,no-resolve
+- DOMAIN-SUFFIX,amazon.co.jp,节点选择
+- DOMAIN,d3c33hcgiwev3.cloudfront.net,节点选择
+- DOMAIN,payments-jp.amazon.com,节点选择
+- DOMAIN,s3-ap-northeast-1.amazonaws.com,节点选择
+- DOMAIN,s3-ap-southeast-2.amazonaws.com,节点选择
+- DOMAIN,a248.e.akamai.net,节点选择
+- DOMAIN,a771.dscq.akamai.net,节点选择
+- DOMAIN-SUFFIX,4shared.com,节点选择
+- DOMAIN-SUFFIX,9cache.com,节点选择
+- DOMAIN-SUFFIX,9gag.com,节点选择
+- DOMAIN-SUFFIX,abc.com,节点选择
+- DOMAIN-SUFFIX,abc.net.au,节点选择
+- DOMAIN-SUFFIX,abebooks.com,节点选择
+- DOMAIN-SUFFIX,ao3.org,节点选择
+- DOMAIN-SUFFIX,apigee.com,节点选择
+- DOMAIN-SUFFIX,apkcombo.com,节点选择
+- DOMAIN-SUFFIX,apk-dl.com,节点选择
+- DOMAIN-SUFFIX,apkfind.com,节点选择
+- DOMAIN-SUFFIX,apkmirror.com,节点选择
+- DOMAIN-SUFFIX,apkmonk.com,节点选择
+- DOMAIN-SUFFIX,apkpure.com,节点选择
+- DOMAIN-SUFFIX,aptoide.com,节点选择
+- DOMAIN-SUFFIX,archive.is,节点选择
+- DOMAIN-SUFFIX,archive.org,节点选择
+- DOMAIN-SUFFIX,archiveofourown.com,节点选择
+- DOMAIN-SUFFIX,archiveofourown.org,节点选择
+- DOMAIN-SUFFIX,arte.tv,节点选择
+- DOMAIN-SUFFIX,artstation.com,节点选择
+- DOMAIN-SUFFIX,arukas.io,节点选择
+- DOMAIN-SUFFIX,ask.com,节点选择
+- DOMAIN-SUFFIX,avg.com,节点选择
+- DOMAIN-SUFFIX,avgle.com,节点选择
+- DOMAIN-SUFFIX,badoo.com,节点选择
+- DOMAIN-SUFFIX,bandwagonhost.com,节点选择
+- DOMAIN-SUFFIX,bangkokpost.com,节点选择
+- DOMAIN-SUFFIX,bbc.com,节点选择
+- DOMAIN-SUFFIX,behance.net,节点选择
+- DOMAIN-SUFFIX,bibox.com,节点选择
+- DOMAIN-SUFFIX,biggo.com.tw,节点选择
+- DOMAIN-SUFFIX,binance.com,节点选择
+- DOMAIN-SUFFIX,bit.ly,节点选择
+- DOMAIN-SUFFIX,bitcointalk.org,节点选择
+- DOMAIN-SUFFIX,bitfinex.com,节点选择
+- DOMAIN-SUFFIX,bitmex.com,节点选择
+- DOMAIN-SUFFIX,bit-z.com,节点选择
+- DOMAIN-SUFFIX,bloglovin.com,节点选择
+- DOMAIN-SUFFIX,bloomberg.cn,节点选择
+- DOMAIN-SUFFIX,bloomberg.com,节点选择
+- DOMAIN-SUFFIX,blubrry.com,节点选择
+- DOMAIN-SUFFIX,book.com.tw,节点选择
+- DOMAIN-SUFFIX,booklive.jp,节点选择
+- DOMAIN-SUFFIX,books.com.tw,节点选择
+- DOMAIN-SUFFIX,boslife.net,节点选择
+- DOMAIN-SUFFIX,box.com,节点选择
+- DOMAIN-SUFFIX,brave.com,节点选择
+- DOMAIN-SUFFIX,businessinsider.com,节点选择
+- DOMAIN-SUFFIX,buzzfeed.com,节点选择
+- DOMAIN-SUFFIX,bwh1.net,节点选择
+- DOMAIN-SUFFIX,castbox.fm,节点选择
+- DOMAIN-SUFFIX,cbc.ca,节点选择
+- DOMAIN-SUFFIX,cdw.com,节点选择
+- DOMAIN-SUFFIX,change.org,节点选择
+- DOMAIN-SUFFIX,channelnewsasia.com,节点选择
+- DOMAIN-SUFFIX,ck101.com,节点选择
+- DOMAIN-SUFFIX,clarionproject.org,节点选择
+- DOMAIN-SUFFIX,cloudcone.com,节点选择
+- DOMAIN-SUFFIX,clyp.it,节点选择
+- DOMAIN-SUFFIX,cna.com.tw,节点选择
+- DOMAIN-SUFFIX,comparitech.com,节点选择
+- DOMAIN-SUFFIX,conoha.jp,节点选择
+- DOMAIN-SUFFIX,crucial.com,节点选择
+- DOMAIN-SUFFIX,cts.com.tw,节点选择
+- DOMAIN-SUFFIX,cw.com.tw,节点选择
+- DOMAIN-SUFFIX,cyberctm.com,节点选择
+- DOMAIN-SUFFIX,dailymotion.com,节点选择
+- DOMAIN-SUFFIX,dailyview.tw,节点选择
+- DOMAIN-SUFFIX,daum.net,节点选择
+- DOMAIN-SUFFIX,daumcdn.net,节点选择
+- DOMAIN-SUFFIX,dcard.tw,节点选择
+- DOMAIN-SUFFIX,deadline.com,节点选择
+- DOMAIN-SUFFIX,deepdiscount.com,节点选择
+- DOMAIN-SUFFIX,depositphotos.com,节点选择
+- DOMAIN-SUFFIX,deviantart.com,节点选择
+- DOMAIN-SUFFIX,disconnect.me,节点选择
+- DOMAIN-SUFFIX,discordapp.com,节点选择
+- DOMAIN-SUFFIX,discordapp.net,节点选择
+- DOMAIN-SUFFIX,disqus.com,节点选择
+- DOMAIN-SUFFIX,dlercloud.com,节点选择
+- DOMAIN-SUFFIX,dmhy.org,节点选择
+- DOMAIN-SUFFIX,dns2go.com,节点选择
+- DOMAIN-SUFFIX,dowjones.com,节点选择
+- DOMAIN-SUFFIX,dropbox.com,节点选择
+- DOMAIN-SUFFIX,dropboxapi.com,节点选择
+- DOMAIN-SUFFIX,dropboxusercontent.com,节点选择
+- DOMAIN-SUFFIX,duckduckgo.com,节点选择
+- DOMAIN-SUFFIX,duyaoss.com,节点选择
+- DOMAIN-SUFFIX,dw.com,节点选择
+- DOMAIN-SUFFIX,dynu.com,节点选择
+- DOMAIN-SUFFIX,earthcam.com,节点选择
+- DOMAIN-SUFFIX,ebookservice.tw,节点选择
+- DOMAIN-SUFFIX,economist.com,节点选择
+- DOMAIN-SUFFIX,edgecastcdn.net,节点选择
+- DOMAIN-SUFFIX,edx-cdn.org,节点选择
+- DOMAIN-SUFFIX,elpais.com,节点选择
+- DOMAIN-SUFFIX,enanyang.my,节点选择
+- DOMAIN-SUFFIX,encyclopedia.com,节点选择
+- DOMAIN-SUFFIX,esoir.be,节点选择
+- DOMAIN-SUFFIX,etherscan.io,节点选择
+- DOMAIN-SUFFIX,euronews.com,节点选择
+- DOMAIN-SUFFIX,evozi.com,节点选择
+- DOMAIN-SUFFIX,exblog.jp,节点选择
+- DOMAIN-SUFFIX,feeder.co,节点选择
+- DOMAIN-SUFFIX,feedly.com,节点选择
+- DOMAIN-SUFFIX,feedx.net,节点选择
+- DOMAIN-SUFFIX,firech.at,节点选择
+- DOMAIN-SUFFIX,flickr.com,节点选择
+- DOMAIN-SUFFIX,flipboard.com,节点选择
+- DOMAIN-SUFFIX,flitto.com,节点选择
+- DOMAIN-SUFFIX,foreignpolicy.com,节点选择
+- DOMAIN-SUFFIX,fortawesome.com,节点选择
+- DOMAIN-SUFFIX,freetls.fastly.net,节点选择
+- DOMAIN-SUFFIX,friday.tw,节点选择
+- DOMAIN-SUFFIX,ft.com,节点选择
+- DOMAIN-SUFFIX,ftchinese.com,节点选择
+- DOMAIN-SUFFIX,ftimg.net,节点选择
+- DOMAIN-SUFFIX,gate.io,节点选择
+- DOMAIN-SUFFIX,genius.com,节点选择
+- DOMAIN-SUFFIX,getlantern.org,节点选择
+- DOMAIN-SUFFIX,getsync.com,节点选择
+- DOMAIN-SUFFIX,github.com,节点选择
+- DOMAIN-SUFFIX,github.io,节点选择
+- DOMAIN-SUFFIX,githubusercontent.com,节点选择
+- DOMAIN-SUFFIX,globalvoices.org,节点选择
+- DOMAIN-SUFFIX,goo.ne.jp,节点选择
+- DOMAIN-SUFFIX,goodreads.com,节点选择
+- DOMAIN-SUFFIX,gov.tw,节点选择
+- DOMAIN-SUFFIX,greatfire.org,节点选择
+- DOMAIN-SUFFIX,gumroad.com,节点选择
+- DOMAIN-SUFFIX,hbg.com,节点选择
+- DOMAIN-SUFFIX,heroku.com,节点选择
+- DOMAIN-SUFFIX,hightail.com,节点选择
+- DOMAIN-SUFFIX,hk01.com,节点选择
+- DOMAIN-SUFFIX,hkbf.org,节点选择
+- DOMAIN-SUFFIX,hkbookcity.com,节点选择
+- DOMAIN-SUFFIX,hkej.com,节点选择
+- DOMAIN-SUFFIX,hket.com,节点选择
+- DOMAIN-SUFFIX,hootsuite.com,节点选择
+- DOMAIN-SUFFIX,hudson.org,节点选择
+- DOMAIN-SUFFIX,huffpost.com,节点选择
+- DOMAIN-SUFFIX,hyread.com.tw,节点选择
+- DOMAIN-SUFFIX,ibtimes.com,节点选择
+- DOMAIN-SUFFIX,i-cable.com,节点选择
+- DOMAIN-SUFFIX,icij.org,节点选择
+- DOMAIN-SUFFIX,icoco.com,节点选择
+- DOMAIN-SUFFIX,imgur.com,节点选择
+- DOMAIN-SUFFIX,independent.co.uk,节点选择
+- DOMAIN-SUFFIX,initiummall.com,节点选择
+- DOMAIN-SUFFIX,inoreader.com,节点选择
+- DOMAIN-SUFFIX,insecam.org,节点选择
+- DOMAIN-SUFFIX,ipfs.io,节点选择
+- DOMAIN-SUFFIX,issuu.com,节点选择
+- DOMAIN-SUFFIX,istockphoto.com,节点选择
+- DOMAIN-SUFFIX,japantimes.co.jp,节点选择
+- DOMAIN-SUFFIX,jiji.com,节点选择
+- DOMAIN-SUFFIX,jinx.com,节点选择
+- DOMAIN-SUFFIX,jkforum.net,节点选择
+- DOMAIN-SUFFIX,joinmastodon.org,节点选择
+- DOMAIN-SUFFIX,justmysocks.net,节点选择
+- DOMAIN-SUFFIX,justpaste.it,节点选择
+- DOMAIN-SUFFIX,kadokawa.co.jp,节点选择
+- DOMAIN-SUFFIX,kakao.com,节点选择
+- DOMAIN-SUFFIX,kakaocorp.com,节点选择
+- DOMAIN-SUFFIX,kik.com,节点选择
+- DOMAIN-SUFFIX,kingkong.com.tw,节点选择
+- DOMAIN-SUFFIX,knowyourmeme.com,节点选择
+- DOMAIN-SUFFIX,kobo.com,节点选择
+- DOMAIN-SUFFIX,kobobooks.com,节点选择
+- DOMAIN-SUFFIX,kodingen.com,节点选择
+- DOMAIN-SUFFIX,lemonde.fr,节点选择
+- DOMAIN-SUFFIX,lepoint.fr,节点选择
+- DOMAIN-SUFFIX,lihkg.com,节点选择
+- DOMAIN-SUFFIX,linkedin.com,节点选择
+- DOMAIN-SUFFIX,limbopro.xyz,节点选择
+- DOMAIN-SUFFIX,listennotes.com,节点选择
+- DOMAIN-SUFFIX,livestream.com,节点选择
+- DOMAIN-SUFFIX,logimg.jp,节点选择
+- DOMAIN-SUFFIX,logmein.com,节点选择
+- DOMAIN-SUFFIX,mail.ru,节点选择
+- DOMAIN-SUFFIX,mailchimp.com,节点选择
+- DOMAIN-SUFFIX,marc.info,节点选择
+- DOMAIN-SUFFIX,matters.news,节点选择
+- DOMAIN-SUFFIX,maying.co,节点选择
+- DOMAIN-SUFFIX,medium.com,节点选择
+- DOMAIN-SUFFIX,mega.nz,节点选择
+- DOMAIN-SUFFIX,mergersandinquisitions.com,节点选择
+- DOMAIN-SUFFIX,mingpao.com,节点选择
+- DOMAIN-SUFFIX,mixi.jp,节点选择
+- DOMAIN-SUFFIX,mobile01.com,节点选择
+- DOMAIN-SUFFIX,mubi.com,节点选择
+- DOMAIN-SUFFIX,myspace.com,节点选择
+- DOMAIN-SUFFIX,myspacecdn.com,节点选择
+- DOMAIN-SUFFIX,nanyang.com,节点选择
+- DOMAIN-SUFFIX,nationalinterest.org,节点选择
+- DOMAIN-SUFFIX,naver.com,节点选择
+- DOMAIN-SUFFIX,nbcnews.com,节点选择
+- DOMAIN-SUFFIX,ndr.de,节点选择
+- DOMAIN-SUFFIX,neowin.net,节点选择
+- DOMAIN-SUFFIX,newstapa.org,节点选择
+- DOMAIN-SUFFIX,nexitally.com,节点选择
+- DOMAIN-SUFFIX,nhk.or.jp,节点选择
+- DOMAIN-SUFFIX,nii.ac.jp,节点选择
+- DOMAIN-SUFFIX,nikkei.com,节点选择
+- DOMAIN-SUFFIX,nitter.net,节点选择
+- DOMAIN-SUFFIX,nofile.io,节点选择
+- DOMAIN-SUFFIX,notion.so,节点选择
+- DOMAIN-SUFFIX,now.com,节点选择
+- DOMAIN-SUFFIX,nrk.no,节点选择
+- DOMAIN-SUFFIX,nuget.org,节点选择
+- DOMAIN-SUFFIX,nyaa.si,节点选择
+- DOMAIN-SUFFIX,nyt.com,节点选择
+- DOMAIN-SUFFIX,nytchina.com,节点选择
+- DOMAIN-SUFFIX,nytcn.me,节点选择
+- DOMAIN-SUFFIX,nytco.com,节点选择
+- DOMAIN-SUFFIX,nytimes.com,节点选择
+- DOMAIN-SUFFIX,nytimg.com,节点选择
+- DOMAIN-SUFFIX,nytlog.com,节点选择
+- DOMAIN-SUFFIX,nytstyle.com,节点选择
+- DOMAIN-SUFFIX,ok.ru,节点选择
+- DOMAIN-SUFFIX,okex.com,节点选择
+- DOMAIN-SUFFIX,on.cc,节点选择
+- DOMAIN-SUFFIX,orientaldaily.com.my,节点选择
+- DOMAIN-SUFFIX,overcast.fm,节点选择
+- DOMAIN-SUFFIX,paltalk.com,节点选择
+- DOMAIN-SUFFIX,parsevideo.com,节点选择
+- DOMAIN-SUFFIX,pawoo.net,节点选择
+- DOMAIN-SUFFIX,pbxes.com,节点选择
+- DOMAIN-SUFFIX,pcdvd.com.tw,节点选择
+- DOMAIN-SUFFIX,pchome.com.tw,节点选择
+- DOMAIN-SUFFIX,pcloud.com,节点选择
+- DOMAIN-SUFFIX,peing.net,节点选择
+- DOMAIN-SUFFIX,picacomic.com,节点选择
+- DOMAIN-SUFFIX,pinimg.com,节点选择
+- DOMAIN-SUFFIX,pixiv.net,节点选择
+- DOMAIN-SUFFIX,player.fm,节点选择
+- DOMAIN-SUFFIX,plurk.com,节点选择
+- DOMAIN-SUFFIX,po18.tw,节点选择
+- DOMAIN-SUFFIX,potato.im,节点选择
+- DOMAIN-SUFFIX,potatso.com,节点选择
+- DOMAIN-SUFFIX,prism-break.org,节点选择
+- DOMAIN-SUFFIX,proxifier.com,节点选择
+- DOMAIN-SUFFIX,pt.im,节点选择
+- DOMAIN-SUFFIX,pts.org.tw,节点选择
+- DOMAIN-SUFFIX,pubu.com.tw,节点选择
+- DOMAIN-SUFFIX,pubu.tw,节点选择
+- DOMAIN-SUFFIX,pureapk.com,节点选择
+- DOMAIN-SUFFIX,quora.com,节点选择
+- DOMAIN-SUFFIX,quoracdn.net,节点选择
+- DOMAIN-SUFFIX,qz.com,节点选择
+- DOMAIN-SUFFIX,radio.garden,节点选择
+- DOMAIN-SUFFIX,rakuten.co.jp,节点选择
+- DOMAIN-SUFFIX,rarbgprx.org,节点选择
+- DOMAIN-SUFFIX,reabble.com,节点选择
+- DOMAIN-SUFFIX,readingtimes.com.tw,节点选择
+- DOMAIN-SUFFIX,readmoo.com,节点选择
+- DOMAIN-SUFFIX,redbubble.com,节点选择
+- DOMAIN-SUFFIX,redd.it,节点选择
+- DOMAIN-SUFFIX,reddit.com,节点选择
+- DOMAIN-SUFFIX,redditmedia.com,节点选择
+- DOMAIN-SUFFIX,resilio.com,节点选择
+- DOMAIN-SUFFIX,reuters.com,节点选择
+- DOMAIN-SUFFIX,reutersmedia.net,节点选择
+- DOMAIN-SUFFIX,rfi.fr,节点选择
+- DOMAIN-SUFFIX,rixcloud.com,节点选择
+- DOMAIN-SUFFIX,roadshow.hk,节点选择
+- DOMAIN-SUFFIX,rsshub.app,节点选择
+- DOMAIN-SUFFIX,scmp.com,节点选择
+- DOMAIN-SUFFIX,scribd.com,节点选择
+- DOMAIN-SUFFIX,seatguru.com,节点选择
+- DOMAIN-SUFFIX,shadowsocks.org,节点选择
+- DOMAIN-SUFFIX,shindanmaker.com,节点选择
+- DOMAIN-SUFFIX,shopee.tw,节点选择
+- DOMAIN-SUFFIX,sina.com.hk,节点选择
+- DOMAIN-SUFFIX,slideshare.net,节点选择
+- DOMAIN-SUFFIX,softfamous.com,节点选择
+- DOMAIN-SUFFIX,spiegel.de,节点选择
+- DOMAIN-SUFFIX,ssrcloud.org,节点选择
+- DOMAIN-SUFFIX,startpage.com,节点选择
+- DOMAIN-SUFFIX,steamcommunity.com,节点选择
+- DOMAIN-SUFFIX,steemit.com,节点选择
+- DOMAIN-SUFFIX,steemitwallet.com,节点选择
+- DOMAIN-SUFFIX,straitstimes.com,节点选择
+- DOMAIN-SUFFIX,streamable.com,节点选择
+- DOMAIN-SUFFIX,streema.com,节点选择
+- DOMAIN-SUFFIX,t66y.com,节点选择
+- DOMAIN-SUFFIX,tapatalk.com,节点选择
+- DOMAIN-SUFFIX,teco-hk.org,节点选择
+- DOMAIN-SUFFIX,teco-mo.org,节点选择
+- DOMAIN-SUFFIX,teddysun.com,节点选择
+- DOMAIN-SUFFIX,textnow.me,节点选择
+- DOMAIN-SUFFIX,theguardian.com,节点选择
+- DOMAIN-SUFFIX,theinitium.com,节点选择
+- DOMAIN-SUFFIX,themoviedb.org,节点选择
+- DOMAIN-SUFFIX,thetvdb.com,节点选择
+- DOMAIN-SUFFIX,time.com,节点选择
+- DOMAIN-SUFFIX,tineye.com,节点选择
+- DOMAIN-SUFFIX,tiny.cc,节点选择
+- DOMAIN-SUFFIX,tinyurl.com,节点选择
+- DOMAIN-SUFFIX,torproject.org,节点选择
+- DOMAIN-SUFFIX,tumblr.com,节点选择
+- DOMAIN-SUFFIX,turbobit.net,节点选择
+- DOMAIN-SUFFIX,tutanota.com,节点选择
+- DOMAIN-SUFFIX,tvboxnow.com,节点选择
+- DOMAIN-SUFFIX,udn.com,节点选择
+- DOMAIN-SUFFIX,unseen.is,节点选择
+- DOMAIN-SUFFIX,upmedia.mg,节点选择
+- DOMAIN-SUFFIX,uptodown.com,节点选择
+- DOMAIN-SUFFIX,urbandictionary.com,节点选择
+- DOMAIN-SUFFIX,ustream.tv,节点选择
+- DOMAIN-SUFFIX,uwants.com,节点选择
+- DOMAIN-SUFFIX,v2fly.org,节点选择
+- DOMAIN-SUFFIX,v2ray.com,节点选择
+- DOMAIN-SUFFIX,viber.com,节点选择
+- DOMAIN-SUFFIX,videopress.com,节点选择
+- DOMAIN-SUFFIX,vimeo.com,节点选择
+- DOMAIN-SUFFIX,voachinese.com,节点选择
+- DOMAIN-SUFFIX,voanews.com,节点选择
+- DOMAIN-SUFFIX,voxer.com,节点选择
+- DOMAIN-SUFFIX,vzw.com,节点选择
+- DOMAIN-SUFFIX,w3schools.com,节点选择
+- DOMAIN-SUFFIX,washingtonpost.com,节点选择
+- DOMAIN-SUFFIX,wattpad.com,节点选择
+- DOMAIN-SUFFIX,whoer.net,节点选择
+- DOMAIN-SUFFIX,wikileaks.org,节点选择
+- DOMAIN-SUFFIX,wikimapia.org,节点选择
+- DOMAIN-SUFFIX,wikimedia.org,节点选择
+- DOMAIN-SUFFIX,wikinews.org,节点选择
+- DOMAIN-SUFFIX,wikipedia.org,节点选择
+- DOMAIN-SUFFIX,wikiquote.org,节点选择
+- DOMAIN-SUFFIX,wikiwand.com,节点选择
+- DOMAIN-SUFFIX,winudf.com,节点选择
+- DOMAIN-SUFFIX,wire.com,节点选择
+- DOMAIN-SUFFIX,wn.com,节点选择
+- DOMAIN-SUFFIX,wordpress.com,节点选择
+- DOMAIN-SUFFIX,workflow.is,节点选择
+- DOMAIN-SUFFIX,worldcat.org,节点选择
+- DOMAIN-SUFFIX,wsj.com,节点选择
+- DOMAIN-SUFFIX,wsj.net,节点选择
+- DOMAIN-SUFFIX,xhamster.com,节点选择
+- DOMAIN-SUFFIX,xn--90wwvt03e.com,节点选择
+- DOMAIN-SUFFIX,xn--i2ru8q2qg.com,节点选择
+- DOMAIN-SUFFIX,xnxx.com,节点选择
+- DOMAIN-SUFFIX,xvideos.com,节点选择
+- DOMAIN-SUFFIX,yahoo.com,节点选择
+- DOMAIN-SUFFIX,yandex.ru,节点选择
+- DOMAIN-SUFFIX,ycombinator.com,节点选择
+- DOMAIN-SUFFIX,yesasia.com,节点选择
+- DOMAIN-SUFFIX,yes-news.com,节点选择
+- DOMAIN-SUFFIX,yomiuri.co.jp,节点选择
+- DOMAIN-SUFFIX,you-get.org,节点选择
+- DOMAIN-SUFFIX,zaobao.com,节点选择
+- DOMAIN-SUFFIX,zb.com,节点选择
+- DOMAIN-SUFFIX,zello.com,节点选择
+- DOMAIN-SUFFIX,zeronet.io,节点选择
+- DOMAIN-SUFFIX,zoom.us,节点选择
+- DOMAIN,cc.tvbs.com.tw,节点选择
+- DOMAIN,ocsp.int-x3.letsencrypt.org,节点选择
+- DOMAIN,search.avira.com,节点选择
+- DOMAIN,us.weibo.com,节点选择
+- DOMAIN-KEYWORD,.pinterest.,节点选择
+- DOMAIN-SUFFIX,edu,节点选择
+- DOMAIN-SUFFIX,gov,节点选择
+- DOMAIN-SUFFIX,mil,节点选择
+- DOMAIN-SUFFIX,google,节点选择
+- DOMAIN-SUFFIX,abc.xyz,节点选择
+- DOMAIN-SUFFIX,advertisercommunity.com,节点选择
+- DOMAIN-SUFFIX,ampproject.org,节点选择
+- DOMAIN-SUFFIX,android.com,节点选择
+- DOMAIN-SUFFIX,androidify.com,节点选择
+- DOMAIN-SUFFIX,autodraw.com,节点选择
+- DOMAIN-SUFFIX,capitalg.com,节点选择
+- DOMAIN-SUFFIX,certificate-transparency.org,节点选择
+- DOMAIN-SUFFIX,chrome.com,节点选择
+- DOMAIN-SUFFIX,chromeexperiments.com,节点选择
+- DOMAIN-SUFFIX,chromestatus.com,节点选择
+- DOMAIN-SUFFIX,chromium.org,节点选择
+- DOMAIN-SUFFIX,creativelab5.com,节点选择
+- DOMAIN-SUFFIX,debug.com,节点选择
+- DOMAIN-SUFFIX,deepmind.com,节点选择
+- DOMAIN-SUFFIX,dialogflow.com,节点选择
+- DOMAIN-SUFFIX,firebaseio.com,节点选择
+- DOMAIN-SUFFIX,getmdl.io,节点选择
+- DOMAIN-SUFFIX,ggpht.com,节点选择
+- DOMAIN-SUFFIX,googleapis.cn,节点选择
+- DOMAIN-SUFFIX,gmail.com,节点选择
+- DOMAIN-SUFFIX,gmodules.com,节点选择
+- DOMAIN-SUFFIX,godoc.org,节点选择
+- DOMAIN-SUFFIX,golang.org,节点选择
+- DOMAIN-SUFFIX,gstatic.com,节点选择
+- DOMAIN-SUFFIX,gv.com,节点选择
+- DOMAIN-SUFFIX,gwtproject.org,节点选择
+- DOMAIN-SUFFIX,itasoftware.com,节点选择
+- DOMAIN-SUFFIX,madewithcode.com,节点选择
+- DOMAIN-SUFFIX,material.io,节点选择
+- DOMAIN-SUFFIX,page.link,节点选择
+- DOMAIN-SUFFIX,polymer-project.org,节点选择
+- DOMAIN-SUFFIX,recaptcha.net,节点选择
+- DOMAIN-SUFFIX,shattered.io,节点选择
+- DOMAIN-SUFFIX,synergyse.com,节点选择
+- DOMAIN-SUFFIX,telephony.goog,节点选择
+- DOMAIN-SUFFIX,tensorflow.org,节点选择
+- DOMAIN-SUFFIX,tfhub.dev,节点选择
+- DOMAIN-SUFFIX,tiltbrush.com,节点选择
+- DOMAIN-SUFFIX,waveprotocol.org,节点选择
+- DOMAIN-SUFFIX,waymo.com,节点选择
+- DOMAIN-SUFFIX,webmproject.org,节点选择
+- DOMAIN-SUFFIX,webrtc.org,节点选择
+- DOMAIN-SUFFIX,whatbrowser.org,节点选择
+- DOMAIN-SUFFIX,widevine.com,节点选择
+- DOMAIN-SUFFIX,x.company,节点选择
+- DOMAIN-SUFFIX,youtu.be,节点选择
+- DOMAIN-SUFFIX,yt.be,节点选择
+- DOMAIN-SUFFIX,ytimg.com,节点选择
+- DOMAIN-SUFFIX,t.me,节点选择
+- DOMAIN-SUFFIX,tdesktop.com,节点选择
+- DOMAIN-SUFFIX,telegram.me,节点选择
+- DOMAIN-SUFFIX,telesco.pe,节点选择
+- DOMAIN-KEYWORD,.facebook.,节点选择
+- DOMAIN-SUFFIX,facebookmail.com,节点选择
+- DOMAIN-SUFFIX,noxinfluencer.com,节点选择
+- DOMAIN-SUFFIX,smartmailcloud.com,节点选择
+- DOMAIN-SUFFIX,weebly.com,节点选择
+- DOMAIN-SUFFIX,twitter.jp,节点选择
+- DOMAIN-SUFFIX,appsto.re,节点选择
+- DOMAIN,books.itunes.apple.com,节点选择
+- DOMAIN,apps.apple.com,节点选择
+- DOMAIN,itunes.apple.com,节点选择
+- DOMAIN,api-glb-sea.smoot.apple.com,节点选择
+- DOMAIN-SUFFIX,smoot.apple.com,节点选择
+- DOMAIN,lookup-api.apple.com,节点选择
+- DOMAIN,beta.music.apple.com,节点选择
+- DOMAIN-SUFFIX,bing.com,节点选择
+- DOMAIN-SUFFIX,cccat.io,节点选择
+- DOMAIN-SUFFIX,dubox.com,节点选择
+- DOMAIN-SUFFIX,duboxcdn.com,节点选择
+- DOMAIN-SUFFIX,ifixit.com,节点选择
+- DOMAIN-SUFFIX,mangakakalot.com,节点选择
+- DOMAIN-SUFFIX,shopeemobile.com,节点选择
+- DOMAIN-SUFFIX,cloudcone.com.cn,节点选择
+- DOMAIN-SUFFIX,inkbunny.net,节点选择
+- DOMAIN-SUFFIX,metapix.net,节点选择
+- DOMAIN-SUFFIX,s3.amazonaws.com,节点选择
+- DOMAIN-SUFFIX,zaobao.com.sg,节点选择
+- DOMAIN,international-gfe.download.nvidia.com,节点选择
+- DOMAIN,ocsp.apple.com,节点选择
+- DOMAIN,store-images.s-microsoft.com,节点选择
+- DOMAIN-SUFFIX,qhres.com,DIRECT
+- DOMAIN-SUFFIX,qhimg.com,DIRECT
+- DOMAIN-SUFFIX,alibaba.com,DIRECT
+- DOMAIN-SUFFIX,alibabausercontent.com,DIRECT
+- DOMAIN-SUFFIX,alicdn.com,DIRECT
+- DOMAIN-SUFFIX,alikunlun.com,DIRECT
+- DOMAIN-SUFFIX,alipay.com,DIRECT
+- DOMAIN-SUFFIX,amap.com,DIRECT
+- DOMAIN-SUFFIX,autonavi.com,DIRECT
+- DOMAIN-SUFFIX,dingtalk.com,DIRECT
+- DOMAIN-SUFFIX,mxhichina.com,DIRECT
+- DOMAIN-SUFFIX,soku.com,DIRECT
+- DOMAIN-SUFFIX,taobao.com,DIRECT
+- DOMAIN-SUFFIX,tmall.com,DIRECT
+- DOMAIN-SUFFIX,tmall.hk,DIRECT
+- DOMAIN-SUFFIX,ykimg.com,DIRECT
+- DOMAIN-SUFFIX,youku.com,DIRECT
+- DOMAIN-SUFFIX,xiami.com,DIRECT
+- DOMAIN-SUFFIX,xiami.net,DIRECT
+- DOMAIN-SUFFIX,aaplimg.com,DIRECT
+- DOMAIN-SUFFIX,apple.co,DIRECT
+- DOMAIN-SUFFIX,apple.com,DIRECT
+- DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT
+- DOMAIN-SUFFIX,appstore.com,DIRECT
+- DOMAIN-SUFFIX,cdn-apple.com,DIRECT
+- DOMAIN-SUFFIX,icloud.com,DIRECT
+- DOMAIN-SUFFIX,icloud-content.com,DIRECT
+- DOMAIN-SUFFIX,me.com,DIRECT
+- DOMAIN-SUFFIX,mzstatic.com,DIRECT
+- DOMAIN-KEYWORD,apple.com.akadns.net,DIRECT
+- DOMAIN-KEYWORD,icloud.com.akadns.net,DIRECT
+- DOMAIN-SUFFIX,baidu.com,DIRECT
+- DOMAIN-SUFFIX,baidubcr.com,DIRECT
+- DOMAIN-SUFFIX,baidupan.com,DIRECT
+- DOMAIN-SUFFIX,baidupcs.com,DIRECT
+- DOMAIN-SUFFIX,bdimg.com,DIRECT
+- DOMAIN-SUFFIX,bdstatic.com,DIRECT
+- DOMAIN-SUFFIX,yunjiasu-cdn.net,DIRECT
+- DOMAIN-SUFFIX,acgvideo.com,DIRECT
+- DOMAIN-SUFFIX,biliapi.com,DIRECT
+- DOMAIN-SUFFIX,biliapi.net,DIRECT
+- DOMAIN-SUFFIX,bilibili.com,DIRECT
+- DOMAIN-SUFFIX,bilibili.tv,DIRECT
+- DOMAIN-SUFFIX,hdslb.com,DIRECT
+- DOMAIN-SUFFIX,feiliao.com,DIRECT
+- DOMAIN-SUFFIX,pstatp.com,DIRECT
+- DOMAIN-SUFFIX,snssdk.com,DIRECT
+- DOMAIN-SUFFIX,iesdouyin.com,DIRECT
+- DOMAIN-SUFFIX,toutiao.com,DIRECT
+- DOMAIN-SUFFIX,cctv.com,DIRECT
+- DOMAIN-SUFFIX,cctvpic.com,DIRECT
+- DOMAIN-SUFFIX,livechina.com,DIRECT
+- DOMAIN-SUFFIX,didialift.com,DIRECT
+- DOMAIN-SUFFIX,didiglobal.com,DIRECT
+- DOMAIN-SUFFIX,udache.com,DIRECT
+- DOMAIN-SUFFIX,21cn.com,DIRECT
+- DOMAIN-SUFFIX,hitv.com,DIRECT
+- DOMAIN-SUFFIX,mgtv.com,DIRECT
+- DOMAIN-SUFFIX,iqiyi.com,DIRECT
+- DOMAIN-SUFFIX,iqiyipic.com,DIRECT
+- DOMAIN-SUFFIX,71.am,DIRECT
+- DOMAIN-SUFFIX,jd.com,DIRECT
+- DOMAIN-SUFFIX,jd.hk,DIRECT
+- DOMAIN-SUFFIX,jdpay.com,DIRECT
+- DOMAIN-SUFFIX,360buyimg.com,DIRECT
+- DOMAIN-SUFFIX,iciba.com,DIRECT
+- DOMAIN-SUFFIX,ksosoft.com,DIRECT
+- DOMAIN-SUFFIX,meitu.com,DIRECT
+- DOMAIN-SUFFIX,meitudata.com,DIRECT
+- DOMAIN-SUFFIX,meitustat.com,DIRECT
+- DOMAIN-SUFFIX,meipai.com,DIRECT
+- DOMAIN-SUFFIX,dianping.com,DIRECT
+- DOMAIN-SUFFIX,dpfile.com,DIRECT
+- DOMAIN-SUFFIX,meituan.com,DIRECT
+- DOMAIN-SUFFIX,meituan.net,DIRECT
+- DOMAIN-SUFFIX,duokan.com,DIRECT
+- DOMAIN-SUFFIX,mi.com,DIRECT
+- DOMAIN-SUFFIX,mi-img.com,DIRECT
+- DOMAIN-SUFFIX,miui.com,DIRECT
+- DOMAIN-SUFFIX,miwifi.com,DIRECT
+- DOMAIN-SUFFIX,xiaomi.com,DIRECT
+- DOMAIN-SUFFIX,xiaomi.net,DIRECT
+- DOMAIN-SUFFIX,hotmail.com,DIRECT
+- DOMAIN-SUFFIX,microsoft.com,DIRECT
+- DOMAIN-SUFFIX,msecnd.net,DIRECT
+- DOMAIN-SUFFIX,office365.com,DIRECT
+- DOMAIN-SUFFIX,outlook.com,DIRECT
+- DOMAIN-SUFFIX,s-microsoft.com,DIRECT
+- DOMAIN-SUFFIX,visualstudio.com,DIRECT
+- DOMAIN-SUFFIX,windows.com,DIRECT
+- DOMAIN-SUFFIX,windowsupdate.com,DIRECT
+- DOMAIN-SUFFIX,163.com,DIRECT
+- DOMAIN-SUFFIX,126.com,DIRECT
+- DOMAIN-SUFFIX,126.net,DIRECT
+- DOMAIN-SUFFIX,127.net,DIRECT
+- DOMAIN-SUFFIX,163yun.com,DIRECT
+- DOMAIN-SUFFIX,lofter.com,DIRECT
+- DOMAIN-SUFFIX,netease.com,DIRECT
+- DOMAIN-SUFFIX,ydstatic.com,DIRECT
+- DOMAIN-SUFFIX,paypal.com,DIRECT
+- DOMAIN-SUFFIX,paypal.me,DIRECT
+- DOMAIN-SUFFIX,paypalobjects.com,DIRECT
+- DOMAIN-SUFFIX,sina.com,DIRECT
+- DOMAIN-SUFFIX,weibo.com,DIRECT
+- DOMAIN-SUFFIX,weibocdn.com,DIRECT
+- DOMAIN-SUFFIX,sohu.com,DIRECT
+- DOMAIN-SUFFIX,sohucs.com,DIRECT
+- DOMAIN-SUFFIX,sohu-inc.com,DIRECT
+- DOMAIN-SUFFIX,v-56.com,DIRECT
+- DOMAIN-SUFFIX,sogo.com,DIRECT
+- DOMAIN-SUFFIX,sogou.com,DIRECT
+- DOMAIN-SUFFIX,sogoucdn.com,DIRECT
+- DOMAIN-SUFFIX,steamcontent.com,DIRECT
+- DOMAIN-SUFFIX,steampowered.com,DIRECT
+- DOMAIN-SUFFIX,steamstatic.com,DIRECT
+- DOMAIN-SUFFIX,gtimg.com,DIRECT
+- DOMAIN-SUFFIX,idqqimg.com,DIRECT
+- DOMAIN-SUFFIX,igamecj.com,DIRECT
+- DOMAIN-SUFFIX,myapp.com,DIRECT
+- DOMAIN-SUFFIX,myqcloud.com,DIRECT
+- DOMAIN-SUFFIX,qq.com,DIRECT
+- DOMAIN-SUFFIX,qqmail.com,DIRECT
+- DOMAIN-SUFFIX,servicewechat.com,DIRECT
+- DOMAIN-SUFFIX,tencent.com,DIRECT
+- DOMAIN-SUFFIX,tencent-cloud.net,DIRECT
+- DOMAIN-SUFFIX,tenpay.com,DIRECT
+- DOMAIN-SUFFIX,wechat.com,DIRECT
+- DOMAIN,file-igamecj.akamaized.net,DIRECT
+- DOMAIN-SUFFIX,ccgslb.com,DIRECT
+- DOMAIN-SUFFIX,ccgslb.net,DIRECT
+- DOMAIN-SUFFIX,chinanetcenter.com,DIRECT
+- DOMAIN-SUFFIX,meixincdn.com,DIRECT
+- DOMAIN-SUFFIX,ourdvs.com,DIRECT
+- DOMAIN-SUFFIX,staticdn.net,DIRECT
+- DOMAIN-SUFFIX,wangsu.com,DIRECT
+- DOMAIN-SUFFIX,ipip.net,DIRECT
+- DOMAIN-SUFFIX,ip.la,DIRECT
+- DOMAIN-SUFFIX,ip.sb,DIRECT
+- DOMAIN-SUFFIX,ip-cdn.com,DIRECT
+- DOMAIN-SUFFIX,ipv6-test.com,DIRECT
+- DOMAIN-SUFFIX,myip.la,DIRECT
+- DOMAIN-SUFFIX,test-ipv6.com,DIRECT
+- DOMAIN-SUFFIX,whatismyip.com,DIRECT
+- DOMAIN,ip.istatmenus.app,DIRECT
+- DOMAIN,sms.imagetasks.com,DIRECT
+- DOMAIN-SUFFIX,netspeedtestmaster.com,DIRECT
+- DOMAIN,speedtest.macpaw.com,DIRECT
+- DOMAIN-SUFFIX,acg.rip,DIRECT
+- DOMAIN-SUFFIX,animebytes.tv,DIRECT
+- DOMAIN-SUFFIX,awesome-hd.me,DIRECT
+- DOMAIN-SUFFIX,broadcasthe.net,DIRECT
+- DOMAIN-SUFFIX,chdbits.co,DIRECT
+- DOMAIN-SUFFIX,classix-unlimited.co.uk,DIRECT
+- DOMAIN-SUFFIX,comicat.org,DIRECT
+- DOMAIN-SUFFIX,empornium.me,DIRECT
+- DOMAIN-SUFFIX,gazellegames.net,DIRECT
+- DOMAIN-SUFFIX,hdbits.org,DIRECT
+- DOMAIN-SUFFIX,hdchina.org,DIRECT
+- DOMAIN-SUFFIX,hddolby.com,DIRECT
+- DOMAIN-SUFFIX,hdhome.org,DIRECT
+- DOMAIN-SUFFIX,hdsky.me,DIRECT
+- DOMAIN-SUFFIX,icetorrent.org,DIRECT
+- DOMAIN-SUFFIX,jpopsuki.eu,DIRECT
+- DOMAIN-SUFFIX,keepfrds.com,DIRECT
+- DOMAIN-SUFFIX,madsrevolution.net,DIRECT
+- DOMAIN-SUFFIX,morethan.tv,DIRECT
+- DOMAIN-SUFFIX,m-team.cc,DIRECT
+- DOMAIN-SUFFIX,myanonamouse.net,DIRECT
+- DOMAIN-SUFFIX,nanyangpt.com,DIRECT
+- DOMAIN-SUFFIX,ncore.cc,DIRECT
+- DOMAIN-SUFFIX,open.cd,DIRECT
+- DOMAIN-SUFFIX,ourbits.club,DIRECT
+- DOMAIN-SUFFIX,passthepopcorn.me,DIRECT
+- DOMAIN-SUFFIX,privatehd.to,DIRECT
+- DOMAIN-SUFFIX,pterclub.com,DIRECT
+- DOMAIN-SUFFIX,redacted.ch,DIRECT
+- DOMAIN-SUFFIX,springsunday.net,DIRECT
+- DOMAIN-SUFFIX,tjupt.org,DIRECT
+- DOMAIN-SUFFIX,totheglory.im,DIRECT
+- DOMAIN-SUFFIX,cn,DIRECT
+- DOMAIN-SUFFIX,115.com,DIRECT
+- DOMAIN-SUFFIX,360in.com,DIRECT
+- DOMAIN-SUFFIX,51ym.me,DIRECT
+- DOMAIN-SUFFIX,8686c.com,DIRECT
+- DOMAIN-SUFFIX,99.com,DIRECT
+- DOMAIN-SUFFIX,abchina.com,DIRECT
+- DOMAIN-SUFFIX,accuweather.com,DIRECT
+- DOMAIN-SUFFIX,aicoinstorge.com,DIRECT
+- DOMAIN-SUFFIX,air-matters.com,DIRECT
+- DOMAIN-SUFFIX,air-matters.io,DIRECT
+- DOMAIN-SUFFIX,aixifan.com,DIRECT
+- DOMAIN-SUFFIX,amd.com,DIRECT
+- DOMAIN-SUFFIX,b612.net,DIRECT
+- DOMAIN-SUFFIX,bdatu.com,DIRECT
+- DOMAIN-SUFFIX,beitaichufang.com,DIRECT
+- DOMAIN-SUFFIX,booking.com,DIRECT
+- DOMAIN-SUFFIX,bstatic.com,DIRECT
+- DOMAIN-SUFFIX,cailianpress.com,DIRECT
+- DOMAIN-SUFFIX,camera360.com,DIRECT
+- DOMAIN-SUFFIX,chaoxing.com,DIRECT
+- DOMAIN-SUFFIX,chaoxing.com,DIRECT
+- DOMAIN-SUFFIX,chinaso.com,DIRECT
+- DOMAIN-SUFFIX,chuimg.com,DIRECT
+- DOMAIN-SUFFIX,chunyu.mobi,DIRECT
+- DOMAIN-SUFFIX,cmbchina.com,DIRECT
+- DOMAIN-SUFFIX,cmbimg.com,DIRECT
+- DOMAIN-SUFFIX,ctrip.com,DIRECT
+- DOMAIN-SUFFIX,dfcfw.com,DIRECT
+- DOMAIN-SUFFIX,dji.net,DIRECT
+- DOMAIN-SUFFIX,docschina.org,DIRECT
+- DOMAIN-SUFFIX,douban.com,DIRECT
+- DOMAIN-SUFFIX,doubanio.com,DIRECT
+- DOMAIN-SUFFIX,douyu.com,DIRECT
+- DOMAIN-SUFFIX,dxycdn.com,DIRECT
+- DOMAIN-SUFFIX,dytt8.net,DIRECT
+- DOMAIN-SUFFIX,eastmoney.com,DIRECT
+- DOMAIN-SUFFIX,eudic.net,DIRECT
+- DOMAIN-SUFFIX,feng.com,DIRECT
+- DOMAIN-SUFFIX,fengkongcloud.com,DIRECT
+- DOMAIN-SUFFIX,frdic.com,DIRECT
+- DOMAIN-SUFFIX,futu5.com,DIRECT
+- DOMAIN-SUFFIX,futunn.com,DIRECT
+- DOMAIN-SUFFIX,gandi.net,DIRECT
+- DOMAIN-SUFFIX,gcores.com,DIRECT
+- DOMAIN-SUFFIX,geilicdn.com,DIRECT
+- DOMAIN-SUFFIX,getpricetag.com,DIRECT
+- DOMAIN-SUFFIX,gifshow.com,DIRECT
+- DOMAIN-SUFFIX,godic.net,DIRECT
+- DOMAIN-SUFFIX,hicloud.com,DIRECT
+- DOMAIN-SUFFIX,hongxiu.com,DIRECT
+- DOMAIN-SUFFIX,hostbuf.com,DIRECT
+- DOMAIN-SUFFIX,huxiucdn.com,DIRECT
+- DOMAIN-SUFFIX,huya.com,DIRECT
+- DOMAIN-SUFFIX,ibm.com,DIRECT
+- DOMAIN-SUFFIX,infinitynewtab.com,DIRECT
+- DOMAIN-SUFFIX,ithome.com,DIRECT
+- DOMAIN-SUFFIX,java.com,DIRECT
+- DOMAIN-SUFFIX,jianguoyun.com,DIRECT
+- DOMAIN-SUFFIX,jianshu.com,DIRECT
+- DOMAIN-SUFFIX,jianshu.io,DIRECT
+- DOMAIN-SUFFIX,jidian.im,DIRECT
+- DOMAIN-SUFFIX,kaiyanapp.com,DIRECT
+- DOMAIN-SUFFIX,kaspersky-labs.com,DIRECT
+- DOMAIN-SUFFIX,keepcdn.com,DIRECT
+- DOMAIN-SUFFIX,kkmh.com,DIRECT
+- DOMAIN-SUFFIX,lanzous.com,DIRECT
+- DOMAIN-SUFFIX,licdn.com,DIRECT
+- DOMAIN-SUFFIX,luojilab.com,DIRECT
+- DOMAIN-SUFFIX,maoyan.com,DIRECT
+- DOMAIN-SUFFIX,maoyun.tv,DIRECT
+- DOMAIN-SUFFIX,mls-cdn.com,DIRECT
+- DOMAIN-SUFFIX,mobike.com,DIRECT
+- DOMAIN-SUFFIX,moke.com,DIRECT
+- DOMAIN-SUFFIX,mubu.com,DIRECT
+- DOMAIN-SUFFIX,myzaker.com,DIRECT
+- DOMAIN-SUFFIX,nim-lang-cn.org,DIRECT
+- DOMAIN-SUFFIX,nvidia.com,DIRECT
+- DOMAIN-SUFFIX,oracle.com,DIRECT
+- DOMAIN-SUFFIX,originlab.com,DIRECT
+- DOMAIN-SUFFIX,qdaily.com,DIRECT
+- DOMAIN-SUFFIX,qidian.com,DIRECT
+- DOMAIN-SUFFIX,qyer.com,DIRECT
+- DOMAIN-SUFFIX,qyerstatic.com,DIRECT
+- DOMAIN-SUFFIX,raychase.net,DIRECT
+- DOMAIN-SUFFIX,ronghub.com,DIRECT
+- DOMAIN-SUFFIX,ruguoapp.com,DIRECT
+- DOMAIN-SUFFIX,sankuai.com,DIRECT
+- DOMAIN-SUFFIX,scomper.me,DIRECT
+- DOMAIN-SUFFIX,seafile.com,DIRECT
+- DOMAIN-SUFFIX,sm.ms,DIRECT
+- DOMAIN-SUFFIX,smzdm.com,DIRECT
+- DOMAIN-SUFFIX,snapdrop.net,DIRECT
+- DOMAIN-SUFFIX,snwx.com,DIRECT
+- DOMAIN-SUFFIX,s-reader.com,DIRECT
+- DOMAIN-SUFFIX,sspai.com,DIRECT
+- DOMAIN-SUFFIX,subhd.tv,DIRECT
+- DOMAIN-SUFFIX,takungpao.com,DIRECT
+- DOMAIN-SUFFIX,teamviewer.com,DIRECT
+- DOMAIN-SUFFIX,tianyancha.com,DIRECT
+- DOMAIN-SUFFIX,tophub.today,DIRECT
+- DOMAIN-SUFFIX,udacity.com,DIRECT
+- DOMAIN-SUFFIX,uning.com,DIRECT
+- DOMAIN-SUFFIX,weather.com,DIRECT
+- DOMAIN-SUFFIX,weico.cc,DIRECT
+- DOMAIN-SUFFIX,weidian.com,DIRECT
+- DOMAIN-SUFFIX,xiachufang.com,DIRECT
+- DOMAIN-SUFFIX,xiaoka.tv,DIRECT
+- DOMAIN-SUFFIX,ximalaya.com,DIRECT
+- DOMAIN-SUFFIX,xinhuanet.com,DIRECT
+- DOMAIN-SUFFIX,xmcdn.com,DIRECT
+- DOMAIN-SUFFIX,yangkeduo.com,DIRECT
+- DOMAIN-SUFFIX,yizhibo.com,DIRECT
+- DOMAIN-SUFFIX,zhangzishi.cc,DIRECT
+- DOMAIN-SUFFIX,zhihu.com,DIRECT
+- DOMAIN-SUFFIX,zhihuishu.com,DIRECT
+- DOMAIN-SUFFIX,zhimg.com,DIRECT
+- DOMAIN-SUFFIX,zhuihd.com,DIRECT
+- DOMAIN,download.jetbrains.com,DIRECT
+- DOMAIN,images-cn.ssl-images-amazon.com,DIRECT
+- DOMAIN-SUFFIX,local,DIRECT
+- IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+- IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+- IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+- IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+- IP-CIDR6,::1/128,DIRECT,no-resolve
+- IP-CIDR6,fc00::/7,DIRECT,no-resolve
+- IP-CIDR6,fe80::/10,DIRECT,no-resolve
+- IP-CIDR6,fd00::/8,DIRECT,no-resolve
+- GEOIP,CN,DIRECT
+- MATCH,节点选择
