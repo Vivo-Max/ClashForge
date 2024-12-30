@@ -274,14 +274,6 @@ proxies:
   skip-cert-verify: false
   username: mrwdfNTD8M79LCukCieldrqZWqs=
   password: exaxgqkKkd0TAMrCxeonWg==
-- name: 香港1
-  server: hkre1-cdn-route.couldflare-cdn.com
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: false
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
-  password: exaxgqkKkd0TAMrCxeonWg==
 - name: 美国3
   server: usgp3-cdn-route.couldflare-cdn.com
   port: 443
@@ -300,13 +292,6 @@ proxies:
   password: exaxgqkKkd0TAMrCxeonWg==
 - name: 🇯🇵2
   server: japan-2.keenvpn.me
-  port: 443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 2afbc97400ca71c8f3306f9843a6e1c2
-  udp: true
-- name: 🇯🇵4
-  server: japan-4.keenvpn.me
   port: 443
   type: ss
   cipher: chacha20-ietf-poly1305
@@ -355,16 +340,6 @@ proxies:
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
-- name: US_b5ce7_0025
-  server: nsus3.irundns.net
-  port: 443
-  type: ssr
-  cipher: aes-128-cfb
-  password: +asd6a5s5df+
-  protocol: auth_aes128_md5
-  obfs: http_post
-  protocol-param: ''
-  obfs-param: ''
 - name: 英国+伦敦Amazon数据中心-HmHY
   type: ss
   server: series-a2.varzesh360.co
@@ -585,60 +560,57 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
+  - www.gov.se
   - 🇮🇸 time.is
+  - 🇷🇺 russia.com
   - fbi.gov
   - www.gov.ua
-  - 🇭🇰 icook.hk
-  - brazil.com
-  - www.gco.gov.qa
   - www.wto.org
-  - 🇷🇺 russia.com
+  - www.gco.gov.qa
+  - brazil.com
+  - 🇭🇰 icook.hk
   - 🇺🇸_US_美国_2
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
-  - 🇩🇪 DE_324
-  - www.gov.se
   - 🇨🇳 visa.cn
   - DE德国(mibei77.com 米贝节点分享)
-  - US_b5ce7_0025
+  - 🇩🇪 DE_324
+  - 🇺🇸US-54.244.200.142-6345
   - 🇬🇧 英国
   - 🇳🇱 荷兰
   - DE_b5ce7_0008
-  - 🇱🇻_LV_拉脱维亚
   - 英国+伦敦Amazon数据中心-HmHY
-  - 🇺🇸US-54.244.200.142-6345
-  - 🇯🇵JP-13.114.67.166-6257
   - 🇺🇸 US_470
+  - 🇯🇵JP-13.114.67.166-6257
+  - 🇷🇺 俄罗斯-2C
+  - 🇷🇺 俄罗斯-1Q
+  - 🇷🇺 俄罗斯-1V
+  - 🇷🇺_RU_俄罗斯_6
   - KR_b5ce7_0012
   - 美国3
   - 美国5
-  - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵2
+  - 🇯🇵 免费-日本2-Ver.7
   - 🇷🇺 俄罗斯-1G
   - 🇷🇺 俄罗斯-2B
-  - 🇷🇺 俄罗斯-2K
-  - 🇷🇺 俄罗斯-1J
-  - 🇷🇺 俄罗斯-2L
-  - 🇷🇺 俄罗斯-1U
-  - 🇷🇺 俄罗斯-1W
-  - 🇷🇺 俄罗斯-1V
-  - 🇷🇺 俄罗斯-1O
-  - 🇷🇺 俄罗斯-1Q
-  - 🇷🇺 俄罗斯-2C
-  - 🇯🇵JP-94.177.131.71-5426
-  - 🇯🇵4
-  - 🇯🇵 免费-日本6-Ver.7
-  - 🇷🇺_RU_俄罗斯_6
   - 🇸🇬6
-  - 日本2
-  - 日本1
-  - 台湾2
+  - 🇷🇺 俄罗斯-2K
+  - 🇯🇵 免费-日本6-Ver.7
   - 🇷🇺 俄罗斯-2G
-  - 🇷🇺 俄罗斯-1N
+  - 🇷🇺 俄罗斯-1U
+  - 🇷🇺 俄罗斯-1J
+  - 🇷🇺 俄罗斯-1O
+  - 🇷🇺 俄罗斯-1A
+  - 🇷🇺 俄罗斯-1L
   - 🇷🇺 俄罗斯-1T
   - 🇷🇺 俄罗斯-1F
-  - 🇷🇺 俄罗斯-1L
-  - 🇷🇺 俄罗斯-1A
-  - 香港1
+  - 🇷🇺 俄罗斯-1N
+  - 🇷🇺 俄罗斯-2L
+  - 🇷🇺 俄罗斯-1W
+  - 日本2
+  - 🇯🇵JP-94.177.131.71-5426
+  - 日本1
+  - 🇱🇻_LV_拉脱维亚
+  - 台湾2
   - 台湾3
   url: http://www.pinterest.com
   interval: 300
@@ -647,120 +619,114 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
+  - www.gov.se
   - 🇮🇸 time.is
+  - 🇷🇺 russia.com
   - fbi.gov
   - www.gov.ua
-  - 🇭🇰 icook.hk
-  - brazil.com
-  - www.gco.gov.qa
   - www.wto.org
-  - 🇷🇺 russia.com
+  - www.gco.gov.qa
+  - brazil.com
+  - 🇭🇰 icook.hk
   - 🇺🇸_US_美国_2
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
-  - 🇩🇪 DE_324
-  - www.gov.se
   - 🇨🇳 visa.cn
   - DE德国(mibei77.com 米贝节点分享)
-  - US_b5ce7_0025
+  - 🇩🇪 DE_324
+  - 🇺🇸US-54.244.200.142-6345
   - 🇬🇧 英国
   - 🇳🇱 荷兰
   - DE_b5ce7_0008
-  - 🇱🇻_LV_拉脱维亚
   - 英国+伦敦Amazon数据中心-HmHY
-  - 🇺🇸US-54.244.200.142-6345
-  - 🇯🇵JP-13.114.67.166-6257
   - 🇺🇸 US_470
+  - 🇯🇵JP-13.114.67.166-6257
+  - 🇷🇺 俄罗斯-2C
+  - 🇷🇺 俄罗斯-1Q
+  - 🇷🇺 俄罗斯-1V
+  - 🇷🇺_RU_俄罗斯_6
   - KR_b5ce7_0012
   - 美国3
   - 美国5
-  - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵2
+  - 🇯🇵 免费-日本2-Ver.7
   - 🇷🇺 俄罗斯-1G
   - 🇷🇺 俄罗斯-2B
-  - 🇷🇺 俄罗斯-2K
-  - 🇷🇺 俄罗斯-1J
-  - 🇷🇺 俄罗斯-2L
-  - 🇷🇺 俄罗斯-1U
-  - 🇷🇺 俄罗斯-1W
-  - 🇷🇺 俄罗斯-1V
-  - 🇷🇺 俄罗斯-1O
-  - 🇷🇺 俄罗斯-1Q
-  - 🇷🇺 俄罗斯-2C
-  - 🇯🇵JP-94.177.131.71-5426
-  - 🇯🇵4
-  - 🇯🇵 免费-日本6-Ver.7
-  - 🇷🇺_RU_俄罗斯_6
   - 🇸🇬6
-  - 日本2
-  - 日本1
-  - 台湾2
+  - 🇷🇺 俄罗斯-2K
+  - 🇯🇵 免费-日本6-Ver.7
   - 🇷🇺 俄罗斯-2G
-  - 🇷🇺 俄罗斯-1N
+  - 🇷🇺 俄罗斯-1U
+  - 🇷🇺 俄罗斯-1J
+  - 🇷🇺 俄罗斯-1O
+  - 🇷🇺 俄罗斯-1A
+  - 🇷🇺 俄罗斯-1L
   - 🇷🇺 俄罗斯-1T
   - 🇷🇺 俄罗斯-1F
-  - 🇷🇺 俄罗斯-1L
-  - 🇷🇺 俄罗斯-1A
-  - 香港1
+  - 🇷🇺 俄罗斯-1N
+  - 🇷🇺 俄罗斯-2L
+  - 🇷🇺 俄罗斯-1W
+  - 日本2
+  - 🇯🇵JP-94.177.131.71-5426
+  - 日本1
+  - 🇱🇻_LV_拉脱维亚
+  - 台湾2
   - 台湾3
   url: http://www.pinterest.com
   interval: 300
 - name: 手动选择
   type: select
   proxies:
+  - www.gov.se
   - 🇮🇸 time.is
+  - 🇷🇺 russia.com
   - fbi.gov
   - www.gov.ua
-  - 🇭🇰 icook.hk
-  - brazil.com
-  - www.gco.gov.qa
   - www.wto.org
-  - 🇷🇺 russia.com
+  - www.gco.gov.qa
+  - brazil.com
+  - 🇭🇰 icook.hk
   - 🇺🇸_US_美国_2
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
-  - 🇩🇪 DE_324
-  - www.gov.se
   - 🇨🇳 visa.cn
   - DE德国(mibei77.com 米贝节点分享)
-  - US_b5ce7_0025
+  - 🇩🇪 DE_324
+  - 🇺🇸US-54.244.200.142-6345
   - 🇬🇧 英国
   - 🇳🇱 荷兰
   - DE_b5ce7_0008
-  - 🇱🇻_LV_拉脱维亚
   - 英国+伦敦Amazon数据中心-HmHY
-  - 🇺🇸US-54.244.200.142-6345
-  - 🇯🇵JP-13.114.67.166-6257
   - 🇺🇸 US_470
+  - 🇯🇵JP-13.114.67.166-6257
+  - 🇷🇺 俄罗斯-2C
+  - 🇷🇺 俄罗斯-1Q
+  - 🇷🇺 俄罗斯-1V
+  - 🇷🇺_RU_俄罗斯_6
   - KR_b5ce7_0012
   - 美国3
   - 美国5
-  - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵2
+  - 🇯🇵 免费-日本2-Ver.7
   - 🇷🇺 俄罗斯-1G
   - 🇷🇺 俄罗斯-2B
-  - 🇷🇺 俄罗斯-2K
-  - 🇷🇺 俄罗斯-1J
-  - 🇷🇺 俄罗斯-2L
-  - 🇷🇺 俄罗斯-1U
-  - 🇷🇺 俄罗斯-1W
-  - 🇷🇺 俄罗斯-1V
-  - 🇷🇺 俄罗斯-1O
-  - 🇷🇺 俄罗斯-1Q
-  - 🇷🇺 俄罗斯-2C
-  - 🇯🇵JP-94.177.131.71-5426
-  - 🇯🇵4
-  - 🇯🇵 免费-日本6-Ver.7
-  - 🇷🇺_RU_俄罗斯_6
   - 🇸🇬6
-  - 日本2
-  - 日本1
-  - 台湾2
+  - 🇷🇺 俄罗斯-2K
+  - 🇯🇵 免费-日本6-Ver.7
   - 🇷🇺 俄罗斯-2G
-  - 🇷🇺 俄罗斯-1N
+  - 🇷🇺 俄罗斯-1U
+  - 🇷🇺 俄罗斯-1J
+  - 🇷🇺 俄罗斯-1O
+  - 🇷🇺 俄罗斯-1A
+  - 🇷🇺 俄罗斯-1L
   - 🇷🇺 俄罗斯-1T
   - 🇷🇺 俄罗斯-1F
-  - 🇷🇺 俄罗斯-1L
-  - 🇷🇺 俄罗斯-1A
-  - 香港1
+  - 🇷🇺 俄罗斯-1N
+  - 🇷🇺 俄罗斯-2L
+  - 🇷🇺 俄罗斯-1W
+  - 日本2
+  - 🇯🇵JP-94.177.131.71-5426
+  - 日本1
+  - 🇱🇻_LV_拉脱维亚
+  - 台湾2
   - 台湾3
 rules:
 - DOMAIN,app.adjust.com,DIRECT
