@@ -221,22 +221,6 @@ proxies:
   cipher: rc4-md5
   protocol: origin
   obfs: plain
-- name: 台湾2
-  server: twmoon1-cdn-route.couldflare-cdn.com
-  port: 1443
-  type: http
-  tls: true
-  skip-cert-verify: false
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
-  password: exaxgqkKkd0TAMrCxeonWg==
-- name: 日本1
-  server: jpgmo101-cdn-route.couldflare-cdn.com
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: false
-  username: mrwdfNTD8M79LCukCieldrqZWqs=
-  password: exaxgqkKkd0TAMrCxeonWg==
 - name: 日本2
   server: jpgmo102-cdn-route.couldflare-cdn.com
   port: 443
@@ -323,34 +307,32 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - brazil.com
-  - 🇮🇸 time.is
   - www.gov.se
   - www.gov.ua
-  - www.wto.org
   - 🇭🇰 icook.hk
   - 🇷🇺 russia.com
-  - www.gco.gov.qa
+  - www.wto.org
   - fbi.gov
-  - 🇺🇸_US_美国_2
+  - brazil.com
+  - www.gco.gov.qa
+  - 🇮🇸 time.is
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
+  - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
-  - 🇩🇪 DE_324
-  - DE德国(mibei77.com 米贝节点分享)
-  - 🇺🇸US-54.244.200.142-6345
   - 🇬🇧 英国
+  - DE德国(mibei77.com 米贝节点分享)
+  - 🇩🇪 DE_324
   - DE_b5ce7_0008
   - 🇳🇱 荷兰
+  - 🇺🇸US-54.244.200.142-6345
   - 🇯🇵JP-13.114.67.166-6257
   - 美国5
-  - 美国3
   - KR_b5ce7_0012
+  - 美国3
   - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵2
   - 🇯🇵 免费-日本6-Ver.7
-  - 日本1
   - 日本2
-  - 台湾2
   url: http://www.pinterest.com
   interval: 300
   tolerance: 50
@@ -358,67 +340,63 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - brazil.com
-  - 🇮🇸 time.is
   - www.gov.se
   - www.gov.ua
-  - www.wto.org
   - 🇭🇰 icook.hk
   - 🇷🇺 russia.com
-  - www.gco.gov.qa
+  - www.wto.org
   - fbi.gov
-  - 🇺🇸_US_美国_2
+  - brazil.com
+  - www.gco.gov.qa
+  - 🇮🇸 time.is
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
+  - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
-  - 🇩🇪 DE_324
-  - DE德国(mibei77.com 米贝节点分享)
-  - 🇺🇸US-54.244.200.142-6345
   - 🇬🇧 英国
+  - DE德国(mibei77.com 米贝节点分享)
+  - 🇩🇪 DE_324
   - DE_b5ce7_0008
   - 🇳🇱 荷兰
+  - 🇺🇸US-54.244.200.142-6345
   - 🇯🇵JP-13.114.67.166-6257
   - 美国5
-  - 美国3
   - KR_b5ce7_0012
+  - 美国3
   - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵2
   - 🇯🇵 免费-日本6-Ver.7
-  - 日本1
   - 日本2
-  - 台湾2
   url: http://www.pinterest.com
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - brazil.com
-  - 🇮🇸 time.is
   - www.gov.se
   - www.gov.ua
-  - www.wto.org
   - 🇭🇰 icook.hk
   - 🇷🇺 russia.com
-  - www.gco.gov.qa
+  - www.wto.org
   - fbi.gov
-  - 🇺🇸_US_美国_2
+  - brazil.com
+  - www.gco.gov.qa
+  - 🇮🇸 time.is
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
+  - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
-  - 🇩🇪 DE_324
-  - DE德国(mibei77.com 米贝节点分享)
-  - 🇺🇸US-54.244.200.142-6345
   - 🇬🇧 英国
+  - DE德国(mibei77.com 米贝节点分享)
+  - 🇩🇪 DE_324
   - DE_b5ce7_0008
   - 🇳🇱 荷兰
+  - 🇺🇸US-54.244.200.142-6345
   - 🇯🇵JP-13.114.67.166-6257
   - 美国5
-  - 美国3
   - KR_b5ce7_0012
+  - 美国3
   - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵2
   - 🇯🇵 免费-日本6-Ver.7
-  - 日本1
   - 日本2
-  - 台湾2
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT
