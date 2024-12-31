@@ -179,13 +179,6 @@ proxies:
   udp: true
   password: 14fFPrbezE3HDZzsMOr6
   cipher: rc4-md5
-- name: 🇱🇻_LV_拉脱维亚
-  port: 990
-  server: 46.183.217.232
-  type: ss
-  udp: true
-  password: f8f7aCzcPKbsF8p3
-  cipher: chacha20-ietf-poly1305
 - cipher: chacha20-ietf-poly1305
   name: DE德国(mibei77.com 米贝节点分享)
   password: 2EtPqn6HYjUNcHohLfUpFQwnfjCCQ5mh1mJdEMCBucuWZ9P1udkRKHnVxuo55k1KXz2Fo6jrgt18W66opty1e4bm1jzfCfBb
@@ -275,13 +268,6 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: 2afbc97400ca71c8f3306f9843a6e1c2
   udp: true
-- name: 🇸🇬6
-  server: singapore-6.keenvpn.me
-  port: 443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 2afbc97400ca71c8f3306f9843a6e1c2
-  udp: true
 - name: 🇯🇵 免费-日本2-Ver.7
   server: l4pwe-g03.jp02-9a99-vm0.entry.fr0307a.art
   port: 11775
@@ -318,193 +304,6 @@ proxies:
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇷🇺 俄罗斯-2G
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: 73c1f30e-a3f8-49c4-9146-ab860fcb5e26
-  auth: 73c1f30e-a3f8-49c4-9146-ab860fcb5e26
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-1L
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: 568a6fc2-4678-4737-8e3f-11dcedcf9019
-  auth: 568a6fc2-4678-4737-8e3f-11dcedcf9019
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-1O
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: dd516ef5-7809-4c5f-ab64-88e9fc80445f
-  auth: dd516ef5-7809-4c5f-ab64-88e9fc80445f
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-1G
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: 2ee11461-7859-4bf7-a831-416de4091031
-  auth: 2ee11461-7859-4bf7-a831-416de4091031
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-1Q
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: d7a6f3c2-5c25-46d9-bf7d-2b0e8cf1703d
-  auth: d7a6f3c2-5c25-46d9-bf7d-2b0e8cf1703d
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-1V
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: 7d42ff2d-662b-42c2-b8b8-7f53290675e8
-  auth: 7d42ff2d-662b-42c2-b8b8-7f53290675e8
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-1W
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: 49e5b399-1af3-476a-8c11-c0967e261f4a
-  auth: 49e5b399-1af3-476a-8c11-c0967e261f4a
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-2L
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: cdeae572-54d3-4855-8587-f0df97b085c8
-  auth: cdeae572-54d3-4855-8587-f0df97b085c8
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-2C
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: e8f0d3be-edbe-47ac-b97a-4b9a23be02fe
-  auth: e8f0d3be-edbe-47ac-b97a-4b9a23be02fe
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-1T
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: c273276b-91c9-4064-a7d1-e64a7cb88e0d
-  auth: c273276b-91c9-4064-a7d1-e64a7cb88e0d
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-1A
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: ecc7f107-04e8-4fad-9eb8-e011343c93c5
-  auth: ecc7f107-04e8-4fad-9eb8-e011343c93c5
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-2K
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: be32312d-5722-456f-8892-d9f878320276
-  auth: be32312d-5722-456f-8892-d9f878320276
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-2B
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: 0f5e40e0-29b9-4ce6-bb8d-248f431bfd5e
-  auth: 0f5e40e0-29b9-4ce6-bb8d-248f431bfd5e
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-1U
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: 440e5d7f-f7ad-45ab-bbec-ba0148824eea
-  auth: 440e5d7f-f7ad-45ab-bbec-ba0148824eea
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-1N
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: f17ecf4c-645a-4941-b7a2-6718e8ed387f
-  auth: f17ecf4c-645a-4941-b7a2-6718e8ed387f
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-1J
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: 02a91f57-31dd-42c5-9be4-80e52ab5573d
-  auth: 02a91f57-31dd-42c5-9be4-80e52ab5573d
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
-- name: 🇷🇺 俄罗斯-1F
-  server: 45.140.169.231
-  port: 8080
-  type: hysteria2
-  password: 10f6dc8c-1181-416e-84f4-236409ba3f39
-  auth: 10f6dc8c-1181-416e-84f4-236409ba3f39
-  sni: www.bing.com
-  up: 50
-  down: 50
-  skip-cert-verify: true
-  udp: true
 - name: 🇩🇪 DE_324
   type: ss
   server: 84.19.31.63
@@ -524,14 +323,14 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - www.gov.ua
-  - 🇭🇰 icook.hk
   - brazil.com
-  - www.wto.org
-  - 🇷🇺 russia.com
-  - www.gco.gov.qa
   - 🇮🇸 time.is
   - www.gov.se
+  - www.gov.ua
+  - www.wto.org
+  - 🇭🇰 icook.hk
+  - 🇷🇺 russia.com
+  - www.gco.gov.qa
   - fbi.gov
   - 🇺🇸_US_美国_2
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
@@ -540,36 +339,17 @@ proxy-groups:
   - DE德国(mibei77.com 米贝节点分享)
   - 🇺🇸US-54.244.200.142-6345
   - 🇬🇧 英国
-  - 🇳🇱 荷兰
   - DE_b5ce7_0008
-  - 🇷🇺 俄罗斯-1J
-  - 🇷🇺 俄罗斯-1U
-  - 🇷🇺 俄罗斯-2G
-  - 🇱🇻_LV_拉脱维亚
-  - 🇷🇺 俄罗斯-2K
+  - 🇳🇱 荷兰
   - 🇯🇵JP-13.114.67.166-6257
-  - 🇷🇺 俄罗斯-1A
-  - 🇷🇺 俄罗斯-1O
-  - 🇷🇺 俄罗斯-1N
-  - KR_b5ce7_0012
-  - 🇷🇺 俄罗斯-1Q
-  - 🇷🇺 俄罗斯-2C
   - 美国5
   - 美国3
+  - KR_b5ce7_0012
   - 🇯🇵 免费-日本2-Ver.7
-  - 🇷🇺 俄罗斯-1V
   - 🇯🇵2
-  - 🇸🇬6
   - 🇯🇵 免费-日本6-Ver.7
-  - 🇷🇺 俄罗斯-1G
-  - 🇷🇺 俄罗斯-1F
-  - 🇷🇺 俄罗斯-2B
-  - 🇷🇺 俄罗斯-2L
-  - 🇷🇺 俄罗斯-1W
-  - 🇷🇺 俄罗斯-1T
-  - 🇷🇺 俄罗斯-1L
-  - 日本2
   - 日本1
+  - 日本2
   - 台湾2
   url: http://www.pinterest.com
   interval: 300
@@ -578,14 +358,14 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - www.gov.ua
-  - 🇭🇰 icook.hk
   - brazil.com
-  - www.wto.org
-  - 🇷🇺 russia.com
-  - www.gco.gov.qa
   - 🇮🇸 time.is
   - www.gov.se
+  - www.gov.ua
+  - www.wto.org
+  - 🇭🇰 icook.hk
+  - 🇷🇺 russia.com
+  - www.gco.gov.qa
   - fbi.gov
   - 🇺🇸_US_美国_2
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
@@ -594,50 +374,31 @@ proxy-groups:
   - DE德国(mibei77.com 米贝节点分享)
   - 🇺🇸US-54.244.200.142-6345
   - 🇬🇧 英国
-  - 🇳🇱 荷兰
   - DE_b5ce7_0008
-  - 🇷🇺 俄罗斯-1J
-  - 🇷🇺 俄罗斯-1U
-  - 🇷🇺 俄罗斯-2G
-  - 🇱🇻_LV_拉脱维亚
-  - 🇷🇺 俄罗斯-2K
+  - 🇳🇱 荷兰
   - 🇯🇵JP-13.114.67.166-6257
-  - 🇷🇺 俄罗斯-1A
-  - 🇷🇺 俄罗斯-1O
-  - 🇷🇺 俄罗斯-1N
-  - KR_b5ce7_0012
-  - 🇷🇺 俄罗斯-1Q
-  - 🇷🇺 俄罗斯-2C
   - 美国5
   - 美国3
+  - KR_b5ce7_0012
   - 🇯🇵 免费-日本2-Ver.7
-  - 🇷🇺 俄罗斯-1V
   - 🇯🇵2
-  - 🇸🇬6
   - 🇯🇵 免费-日本6-Ver.7
-  - 🇷🇺 俄罗斯-1G
-  - 🇷🇺 俄罗斯-1F
-  - 🇷🇺 俄罗斯-2B
-  - 🇷🇺 俄罗斯-2L
-  - 🇷🇺 俄罗斯-1W
-  - 🇷🇺 俄罗斯-1T
-  - 🇷🇺 俄罗斯-1L
-  - 日本2
   - 日本1
+  - 日本2
   - 台湾2
   url: http://www.pinterest.com
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - www.gov.ua
-  - 🇭🇰 icook.hk
   - brazil.com
-  - www.wto.org
-  - 🇷🇺 russia.com
-  - www.gco.gov.qa
   - 🇮🇸 time.is
   - www.gov.se
+  - www.gov.ua
+  - www.wto.org
+  - 🇭🇰 icook.hk
+  - 🇷🇺 russia.com
+  - www.gco.gov.qa
   - fbi.gov
   - 🇺🇸_US_美国_2
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
@@ -646,36 +407,17 @@ proxy-groups:
   - DE德国(mibei77.com 米贝节点分享)
   - 🇺🇸US-54.244.200.142-6345
   - 🇬🇧 英国
-  - 🇳🇱 荷兰
   - DE_b5ce7_0008
-  - 🇷🇺 俄罗斯-1J
-  - 🇷🇺 俄罗斯-1U
-  - 🇷🇺 俄罗斯-2G
-  - 🇱🇻_LV_拉脱维亚
-  - 🇷🇺 俄罗斯-2K
+  - 🇳🇱 荷兰
   - 🇯🇵JP-13.114.67.166-6257
-  - 🇷🇺 俄罗斯-1A
-  - 🇷🇺 俄罗斯-1O
-  - 🇷🇺 俄罗斯-1N
-  - KR_b5ce7_0012
-  - 🇷🇺 俄罗斯-1Q
-  - 🇷🇺 俄罗斯-2C
   - 美国5
   - 美国3
+  - KR_b5ce7_0012
   - 🇯🇵 免费-日本2-Ver.7
-  - 🇷🇺 俄罗斯-1V
   - 🇯🇵2
-  - 🇸🇬6
   - 🇯🇵 免费-日本6-Ver.7
-  - 🇷🇺 俄罗斯-1G
-  - 🇷🇺 俄罗斯-1F
-  - 🇷🇺 俄罗斯-2B
-  - 🇷🇺 俄罗斯-2L
-  - 🇷🇺 俄罗斯-1W
-  - 🇷🇺 俄罗斯-1T
-  - 🇷🇺 俄罗斯-1L
-  - 日本2
   - 日本1
+  - 日本2
   - 台湾2
 rules:
 - DOMAIN,app.adjust.com,DIRECT
