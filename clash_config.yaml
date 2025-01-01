@@ -179,13 +179,6 @@ proxies:
   udp: true
   password: 14fFPrbezE3HDZzsMOr6
   cipher: rc4-md5
-- cipher: chacha20-ietf-poly1305
-  name: DE德国(mibei77.com 米贝节点分享)
-  password: 2EtPqn6HYjUNcHohLfUpFQwnfjCCQ5mh1mJdEMCBucuWZ9P1udkRKHnVxuo55k1KXz2Fo6jrgt18W66opty1e4bm1jzfCfBb
-  port: 50841
-  server: 84.19.31.63
-  type: ss
-  udp: true
 - name: 🇯🇵JP-13.114.67.166-6257
   type: ss
   server: 13.114.67.166
@@ -282,13 +275,6 @@ proxies:
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
-- name: 🇩🇪 DE_324
-  type: ss
-  server: 84.19.31.63
-  port: '50841'
-  cipher: chacha20-ietf-poly1305
-  password: 2EtPqn6HYjUNcHohLfUpFQwnfjCCQ5mh1mJdEMCBucuWZ9P1udkRKHnVxuo55k1KXz2Fo6jrgt18W66opty1e4bm1jzfCfBb
-  udp: true
 proxy-groups:
 - name: 节点选择
   type: select
@@ -301,27 +287,25 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇷🇺 russia.com
-  - 🇮🇸 time.is
-  - 🇭🇰 icook.hk
-  - www.gov.ua
-  - www.wto.org
-  - www.gov.se
-  - fbi.gov
-  - brazil.com
   - www.gco.gov.qa
+  - www.gov.se
+  - 🇷🇺 russia.com
+  - fbi.gov
+  - www.wto.org
+  - 🇭🇰 icook.hk
+  - brazil.com
+  - www.gov.ua
+  - 🇮🇸 time.is
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
   - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
-  - 🇩🇪 DE_324
-  - DE德国(mibei77.com 米贝节点分享)
+  - 🇯🇵JP-13.114.67.166-6257
   - 🇬🇧 英国
   - 🇳🇱 荷兰
+  - KR_b5ce7_0012
   - DE_b5ce7_0008
-  - 🇯🇵JP-13.114.67.166-6257
   - 美国5
   - 美国3
-  - KR_b5ce7_0012
   - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵2
   - 🇯🇵 免费-日本6-Ver.7
@@ -333,27 +317,25 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇷🇺 russia.com
-  - 🇮🇸 time.is
-  - 🇭🇰 icook.hk
-  - www.gov.ua
-  - www.wto.org
-  - www.gov.se
-  - fbi.gov
-  - brazil.com
   - www.gco.gov.qa
+  - www.gov.se
+  - 🇷🇺 russia.com
+  - fbi.gov
+  - www.wto.org
+  - 🇭🇰 icook.hk
+  - brazil.com
+  - www.gov.ua
+  - 🇮🇸 time.is
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
   - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
-  - 🇩🇪 DE_324
-  - DE德国(mibei77.com 米贝节点分享)
+  - 🇯🇵JP-13.114.67.166-6257
   - 🇬🇧 英国
   - 🇳🇱 荷兰
+  - KR_b5ce7_0012
   - DE_b5ce7_0008
-  - 🇯🇵JP-13.114.67.166-6257
   - 美国5
   - 美国3
-  - KR_b5ce7_0012
   - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵2
   - 🇯🇵 免费-日本6-Ver.7
@@ -363,27 +345,25 @@ proxy-groups:
 - name: 手动选择
   type: select
   proxies:
-  - 🇷🇺 russia.com
-  - 🇮🇸 time.is
-  - 🇭🇰 icook.hk
-  - www.gov.ua
-  - www.wto.org
-  - www.gov.se
-  - fbi.gov
-  - brazil.com
   - www.gco.gov.qa
+  - www.gov.se
+  - 🇷🇺 russia.com
+  - fbi.gov
+  - www.wto.org
+  - 🇭🇰 icook.hk
+  - brazil.com
+  - www.gov.ua
+  - 🇮🇸 time.is
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
   - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
-  - 🇩🇪 DE_324
-  - DE德国(mibei77.com 米贝节点分享)
+  - 🇯🇵JP-13.114.67.166-6257
   - 🇬🇧 英国
   - 🇳🇱 荷兰
+  - KR_b5ce7_0012
   - DE_b5ce7_0008
-  - 🇯🇵JP-13.114.67.166-6257
   - 美国5
   - 美国3
-  - KR_b5ce7_0012
   - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵2
   - 🇯🇵 免费-日本6-Ver.7
