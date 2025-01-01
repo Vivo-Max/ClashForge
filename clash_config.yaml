@@ -179,13 +179,6 @@ proxies:
   udp: true
   password: 14fFPrbezE3HDZzsMOr6
   cipher: rc4-md5
-- name: 🇬🇧 英国
-  server: 51.38.65.155
-  port: 443
-  type: trojan
-  password: f142bc50-b755-11ef-ad1a-1239d0255272
-  skip-cert-verify: true
-  tfo: false
 - name: 🇳🇱 荷兰
   server: 5.255.118.176
   port: 443
@@ -280,24 +273,23 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
+  - 🇭🇰 icook.hk
+  - www.gov.se
   - www.wto.org
-  - fbi.gov
-  - 🇮🇸 time.is
+  - 🇷🇺 russia.com
   - www.gco.gov.qa
   - brazil.com
-  - 🇭🇰 icook.hk
-  - 🇷🇺 russia.com
-  - www.gov.se
+  - fbi.gov
   - www.gov.ua
+  - 🇮🇸 time.is
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
   - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
-  - 🇬🇧 英国
-  - DE_b5ce7_0008
   - 🇳🇱 荷兰
-  - 美国3
-  - 美国5
+  - DE_b5ce7_0008
   - KR_b5ce7_0012
+  - 美国5
+  - 美国3
   - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵2
   - 🇯🇵 免费-日本6-Ver.7
@@ -309,24 +301,23 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
+  - 🇭🇰 icook.hk
+  - www.gov.se
   - www.wto.org
-  - fbi.gov
-  - 🇮🇸 time.is
+  - 🇷🇺 russia.com
   - www.gco.gov.qa
   - brazil.com
-  - 🇭🇰 icook.hk
-  - 🇷🇺 russia.com
-  - www.gov.se
+  - fbi.gov
   - www.gov.ua
+  - 🇮🇸 time.is
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
   - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
-  - 🇬🇧 英国
-  - DE_b5ce7_0008
   - 🇳🇱 荷兰
-  - 美国3
-  - 美国5
+  - DE_b5ce7_0008
   - KR_b5ce7_0012
+  - 美国5
+  - 美国3
   - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵2
   - 🇯🇵 免费-日本6-Ver.7
@@ -336,24 +327,23 @@ proxy-groups:
 - name: 手动选择
   type: select
   proxies:
+  - 🇭🇰 icook.hk
+  - www.gov.se
   - www.wto.org
-  - fbi.gov
-  - 🇮🇸 time.is
+  - 🇷🇺 russia.com
   - www.gco.gov.qa
   - brazil.com
-  - 🇭🇰 icook.hk
-  - 🇷🇺 russia.com
-  - www.gov.se
+  - fbi.gov
   - www.gov.ua
+  - 🇮🇸 time.is
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
   - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
-  - 🇬🇧 英国
-  - DE_b5ce7_0008
   - 🇳🇱 荷兰
-  - 美国3
-  - 美国5
+  - DE_b5ce7_0008
   - KR_b5ce7_0012
+  - 美国5
+  - 美国3
   - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵2
   - 🇯🇵 免费-日本6-Ver.7
