@@ -281,25 +281,25 @@ proxy-groups:
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
   - www.wto.org
-  - www.gov.ua
+  - fbi.gov
+  - 🇮🇸 time.is
   - www.gco.gov.qa
   - brazil.com
-  - fbi.gov
-  - www.gov.se
-  - 🇷🇺 russia.com
   - 🇭🇰 icook.hk
-  - 🇮🇸 time.is
-  - 🇺🇸_US_美国_2
+  - 🇷🇺 russia.com
+  - www.gov.se
+  - www.gov.ua
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
+  - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
   - 🇬🇧 英国
-  - 🇳🇱 荷兰
   - DE_b5ce7_0008
-  - KR_b5ce7_0012
+  - 🇳🇱 荷兰
   - 美国3
   - 美国5
-  - 🇯🇵2
+  - KR_b5ce7_0012
   - 🇯🇵 免费-日本2-Ver.7
+  - 🇯🇵2
   - 🇯🇵 免费-日本6-Ver.7
   - 日本2
   url: http://www.pinterest.com
@@ -310,25 +310,25 @@ proxy-groups:
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
   - www.wto.org
-  - www.gov.ua
+  - fbi.gov
+  - 🇮🇸 time.is
   - www.gco.gov.qa
   - brazil.com
-  - fbi.gov
-  - www.gov.se
-  - 🇷🇺 russia.com
   - 🇭🇰 icook.hk
-  - 🇮🇸 time.is
-  - 🇺🇸_US_美国_2
+  - 🇷🇺 russia.com
+  - www.gov.se
+  - www.gov.ua
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
+  - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
   - 🇬🇧 英国
-  - 🇳🇱 荷兰
   - DE_b5ce7_0008
-  - KR_b5ce7_0012
+  - 🇳🇱 荷兰
   - 美国3
   - 美国5
-  - 🇯🇵2
+  - KR_b5ce7_0012
   - 🇯🇵 免费-日本2-Ver.7
+  - 🇯🇵2
   - 🇯🇵 免费-日本6-Ver.7
   - 日本2
   url: http://www.pinterest.com
@@ -337,25 +337,25 @@ proxy-groups:
   type: select
   proxies:
   - www.wto.org
-  - www.gov.ua
+  - fbi.gov
+  - 🇮🇸 time.is
   - www.gco.gov.qa
   - brazil.com
-  - fbi.gov
-  - www.gov.se
-  - 🇷🇺 russia.com
   - 🇭🇰 icook.hk
-  - 🇮🇸 time.is
-  - 🇺🇸_US_美国_2
+  - 🇷🇺 russia.com
+  - www.gov.se
+  - www.gov.ua
   - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
+  - 🇺🇸_US_美国_2
   - 🇨🇳 visa.cn
   - 🇬🇧 英国
-  - 🇳🇱 荷兰
   - DE_b5ce7_0008
-  - KR_b5ce7_0012
+  - 🇳🇱 荷兰
   - 美国3
   - 美国5
-  - 🇯🇵2
+  - KR_b5ce7_0012
   - 🇯🇵 免费-日本2-Ver.7
+  - 🇯🇵2
   - 🇯🇵 免费-日本6-Ver.7
   - 日本2
 rules:
