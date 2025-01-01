@@ -179,13 +179,6 @@ proxies:
   udp: true
   password: 14fFPrbezE3HDZzsMOr6
   cipher: rc4-md5
-- name: 🇯🇵JP-13.114.67.166-6257
-  type: ss
-  server: 13.114.67.166
-  port: 443
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
 - name: 🇬🇧 英国
   server: 51.38.65.155
   port: 443
@@ -287,27 +280,26 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
+  - www.wto.org
+  - www.gov.ua
   - www.gco.gov.qa
+  - brazil.com
+  - fbi.gov
   - www.gov.se
   - 🇷🇺 russia.com
-  - fbi.gov
-  - www.wto.org
   - 🇭🇰 icook.hk
-  - brazil.com
-  - www.gov.ua
   - 🇮🇸 time.is
-  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
   - 🇺🇸_US_美国_2
+  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
   - 🇨🇳 visa.cn
-  - 🇯🇵JP-13.114.67.166-6257
   - 🇬🇧 英国
   - 🇳🇱 荷兰
-  - KR_b5ce7_0012
   - DE_b5ce7_0008
-  - 美国5
+  - KR_b5ce7_0012
   - 美国3
-  - 🇯🇵 免费-日本2-Ver.7
+  - 美国5
   - 🇯🇵2
+  - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵 免费-日本6-Ver.7
   - 日本2
   url: http://www.pinterest.com
@@ -317,27 +309,26 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
+  - www.wto.org
+  - www.gov.ua
   - www.gco.gov.qa
+  - brazil.com
+  - fbi.gov
   - www.gov.se
   - 🇷🇺 russia.com
-  - fbi.gov
-  - www.wto.org
   - 🇭🇰 icook.hk
-  - brazil.com
-  - www.gov.ua
   - 🇮🇸 time.is
-  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
   - 🇺🇸_US_美国_2
+  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
   - 🇨🇳 visa.cn
-  - 🇯🇵JP-13.114.67.166-6257
   - 🇬🇧 英国
   - 🇳🇱 荷兰
-  - KR_b5ce7_0012
   - DE_b5ce7_0008
-  - 美国5
+  - KR_b5ce7_0012
   - 美国3
-  - 🇯🇵 免费-日本2-Ver.7
+  - 美国5
   - 🇯🇵2
+  - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵 免费-日本6-Ver.7
   - 日本2
   url: http://www.pinterest.com
@@ -345,27 +336,26 @@ proxy-groups:
 - name: 手动选择
   type: select
   proxies:
+  - www.wto.org
+  - www.gov.ua
   - www.gco.gov.qa
+  - brazil.com
+  - fbi.gov
   - www.gov.se
   - 🇷🇺 russia.com
-  - fbi.gov
-  - www.wto.org
   - 🇭🇰 icook.hk
-  - brazil.com
-  - www.gov.ua
   - 🇮🇸 time.is
-  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
   - 🇺🇸_US_美国_2
+  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-79.110.53.169:8080
   - 🇨🇳 visa.cn
-  - 🇯🇵JP-13.114.67.166-6257
   - 🇬🇧 英国
   - 🇳🇱 荷兰
-  - KR_b5ce7_0012
   - DE_b5ce7_0008
-  - 美国5
+  - KR_b5ce7_0012
   - 美国3
-  - 🇯🇵 免费-日本2-Ver.7
+  - 美国5
   - 🇯🇵2
+  - 🇯🇵 免费-日本2-Ver.7
   - 🇯🇵 免费-日本6-Ver.7
   - 日本2
 rules:
