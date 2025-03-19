@@ -1297,7 +1297,6 @@ def parse_vless_link(link):
     host, query = host_info.split('?', 1) if '?' in host_info else (host_info, "")
     port = host.split(':')[-1] if ':' in host else ""
     host = host.split(':')[0] if ':' in host else ""
-
     return {
         "name": urllib.parse.unquote(name),
         "type": "vless",
@@ -1457,17 +1456,20 @@ def process_url(url):
 
 # 解析不同的代理链接
 def parse_proxy_link(link):
-    if link.startswith("hysteria2://") or link.startswith("hy2://"):
-        return parse_hysteria2_link(link)
-    elif link.startswith("trojan://"):
-        return parse_trojan_link(link)
-    elif link.startswith("ss://"):
-        return parse_ss_link(link)
-    elif link.startswith("vless://"):
-        return parse_vless_link(link)
-    elif link.startswith("vmess://"):
-        return parse_vmess_link(link)
-    return None
+    try:
+        if link.startswith("hysteria2://") or link.startswith("hy2://"):
+            return parse_hysteria2_link(link)
+        elif link.startswith("trojan://"):
+            return parse_trojan_link(link)
+        elif link.startswith("ss://"):
+            return parse_ss_link(link)
+        elif link.startswith("vless://"):
+            return parse_vless_link(link)
+        elif link.startswith("vmess://"):
+            return parse_vmess_link(link)
+    except Exception as e:
+        # print(e)
+        return None
 
 # 根据server和port共同约束去重
 def deduplicate_proxies(proxies_list):
@@ -1577,6 +1579,8 @@ def generate_clash_config(links,load_nodes):
     for link in links:
         if link.startswith(("hysteria2://", "hy2://","trojan://", "ss://", "vless://", "vmess://")):
             node = parse_proxy_link(link)
+            if not node:
+                continue
             resolve_name_conflicts(node)
         else:
             if '|links' in link or '.md' in link:

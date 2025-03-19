@@ -61,6 +61,7 @@ links = [
   "https://slink.ltd/https://raw.githubusercontent.com/peasoft/NoMoreWalls/master/list.yml",
   "https://slink.ltd/https://raw.githubusercontent.com/mfbpn/tg_mfbpn_sub/main/trial.yaml",
   "https://slink.ltd/https://raw.githubusercontent.com/Ruk1ng001/freeSub/main/clash.yaml",
+  "https://raw.githubusercontent.com/SoliSpirit/v2ray-configs/main/all_configs.txt|links"
   "https://slink.ltd/https://raw.githubusercontent.com/ripaojiedian/freenode/main/clash",
   "https://slink.ltd/https://raw.githubusercontent.com/go4sharing/sub/main/sub.yaml",
   "https://slink.ltd/https://raw.githubusercontent.com/mfuu/v2ray/master/clash.yaml",
