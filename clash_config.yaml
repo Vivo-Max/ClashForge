@@ -94,10 +94,10 @@ proxy-groups:
   proxies:
   - 日本JP-T-TzPC
   - 日本JP-T-SiE6
-  - 日本JP-T-oUJn
   - 日本JP-T-KwGS
-  - 日本JP-T-7fs6
   - 日本JP-T-pR3s
+  - 日本JP-T-oUJn
+  - 日本JP-T-7fs6
   url: http://www.pinterest.com
   interval: 300
   tolerance: 50
@@ -107,10 +107,10 @@ proxy-groups:
   proxies:
   - 日本JP-T-TzPC
   - 日本JP-T-SiE6
-  - 日本JP-T-oUJn
   - 日本JP-T-KwGS
-  - 日本JP-T-7fs6
   - 日本JP-T-pR3s
+  - 日本JP-T-oUJn
+  - 日本JP-T-7fs6
   url: http://www.pinterest.com
   interval: 300
 - name: 手动选择
@@ -118,10 +118,10 @@ proxy-groups:
   proxies:
   - 日本JP-T-TzPC
   - 日本JP-T-SiE6
-  - 日本JP-T-oUJn
   - 日本JP-T-KwGS
-  - 日本JP-T-7fs6
   - 日本JP-T-pR3s
+  - 日本JP-T-oUJn
+  - 日本JP-T-7fs6
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT
