@@ -15,10 +15,8 @@
       },
       {
         "disable_cache": true,
-        "geosite": [
-          "category-ads-all"
-        ],
-        "server": "block"
+        "server": "block",
+        "rule_set": "geosite-cn"
       },
       {
         "query_type": [
@@ -37,18 +35,22 @@
         "server": "local"
       },
       {
-        "geosite": "cn",
+        "server": "local",
+        "rule_set": "geosite-cn"
+      },
+      {
+        "rule_set": "ext-cn-domain",
         "server": "local"
       }
     ],
     "servers": [
       {
-        "address": "8.8.8.8",
+        "address": "https://8.8.8.8/dns-query",
         "detour": "select",
         "tag": "remote"
       },
       {
-        "address": "223.5.5.5",
+        "address": "https://223.5.5.5/dns-query",
         "detour": "direct",
         "tag": "local"
       },
@@ -67,21 +69,24 @@
     "clash_api": {
       "external_controller": "127.0.0.1:9090",
       "secret": ""
+    },
+    "cache_file": {
+      "enabled": true
     }
   },
   "inbounds": [
     {
-      "auto_route": false,
-      "domain_strategy": "prefer_ipv4",
+      "auto_route": true,
       "endpoint_independent_nat": true,
-      "inet4_address": "172.19.0.1/30",
-      "inet6_address": "2001:0470:f9da:fdfa::1/64",
       "mtu": 9000,
       "strict_route": true,
-      "type": "tun"
+      "type": "tun",
+      "address": [
+        "172.19.0.1/30",
+        "2001:0470:f9da:fdfa::1/64"
+      ]
     },
     {
-      "domain_strategy": "prefer_ipv4",
       "listen": "127.0.0.1",
       "listen_port": 2333,
       "tag": "socks-in",
@@ -89,16 +94,16 @@
       "users": []
     },
     {
-      "domain_strategy": "prefer_ipv4",
       "listen": "127.0.0.1",
       "listen_port": 2334,
-      "set_system_proxy": true,
       "tag": "mixed-in",
       "type": "mixed",
       "users": []
     }
   ],
-  "log": {},
+  "log": {
+    "level": "info"
+  },
   "outbounds": [
     {
       "tag": "select",
@@ -113,7 +118,8 @@
         "🇺🇸_US_美国_1",
         "瑞士(mibei77.com 米贝节点分享)",
         "CA加拿大(mibei77.com 米贝节点分享) 2",
-        "🇺🇸_US_美国_1-FBXd",
+        "JP日本(mibei77.com 米贝节点分享)",
+        "🇺🇸_US_美国_1-PsmN",
         "🇨🇳 visa.cn",
         "🇸🇬 singapore.com",
         "🇯🇵 japan.com",
@@ -207,10 +213,18 @@
       "method": "chacha20-ietf-poly1305"
     },
     {
+      "password": "Nk9asglDzHzjktVzTkvhaA",
+      "server": "arxfw2b78fi2q9hzylhn.freesocks.work",
+      "server_port": 443,
+      "tag": "JP日本(mibei77.com 米贝节点分享)",
+      "type": "shadowsocks",
+      "method": "chacha20-ietf-poly1305"
+    },
+    {
       "password": "5453ae26-250d-4e79-b4ec-016baf806865",
       "server": "172.67.204.22",
       "server_port": 443,
-      "tag": "🇺🇸_US_美国_1-FBXd",
+      "tag": "🇺🇸_US_美国_1-PsmN",
       "tls": {
         "enabled": true,
         "server_name": "1SdfghJk.890602.xyz"
@@ -544,7 +558,8 @@
         "🇺🇸_US_美国_1",
         "瑞士(mibei77.com 米贝节点分享)",
         "CA加拿大(mibei77.com 米贝节点分享) 2",
-        "🇺🇸_US_美国_1-FBXd",
+        "JP日本(mibei77.com 米贝节点分享)",
+        "🇺🇸_US_美国_1-PsmN",
         "🇨🇳 visa.cn",
         "🇸🇬 singapore.com",
         "🇯🇵 japan.com",
@@ -562,22 +577,14 @@
     {
       "tag": "direct",
       "type": "direct"
-    },
-    {
-      "tag": "block",
-      "type": "block"
-    },
-    {
-      "tag": "dns-out",
-      "type": "dns"
     }
   ],
   "route": {
     "auto_detect_interface": true,
     "rules": [
       {
-        "geosite": "category-ads-all",
-        "outbound": "block"
+        "outbound": "block",
+        "rule_set": "AdGuardSDNSFilter"
       },
       {
         "outbound": "dns-out",
@@ -592,11 +599,52 @@
         "outbound": "select"
       },
       {
-        "geoip": [
-          "cn",
-          "private"
-        ],
-        "outbound": "direct"
+        "outbound": "direct",
+        "rule_set": "geoip-cn",
+        "ip_is_private": true
+      },
+      {
+        "action": "sniff"
+      },
+      {
+        "action": "hijack-dns",
+        "protocol": "dns"
+      },
+      {
+        "action": "resolve",
+        "strategy": "prefer_ipv4"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"
+      },
+      {
+        "tag": "AdGuardSDNSFilter",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs"
+      },
+      {
+        "tag": "chrome-doh",
+        "type": "remote",
+        "format": "source",
+        "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"
+      },
+      {
+        "tag": "ext-cn-domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/xmdhs/cn-domain-list/rule-set/ext-cn-list.srs"
       }
     ]
   }

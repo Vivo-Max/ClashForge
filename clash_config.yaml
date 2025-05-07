@@ -92,8 +92,15 @@ proxies:
   server: 77.91.103.73
   type: ss
   udp: true
+- cipher: chacha20-ietf-poly1305
+  name: JP日本(mibei77.com 米贝节点分享)
+  password: Nk9asglDzHzjktVzTkvhaA
+  port: 443
+  server: arxfw2b78fi2q9hzylhn.freesocks.work
+  type: ss
+  udp: true
 - ip-version: dual
-  name: 🇺🇸_US_美国_1-FBXd
+  name: 🇺🇸_US_美国_1-PsmN
   network: ws
   password: 5453ae26-250d-4e79-b4ec-016baf806865
   port: 443
@@ -295,26 +302,27 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
+  - 🇯🇵 japan.com
+  - www.gov.ua
   - 🇮🇸 time.is
   - www.wto.org
-  - 🇯🇵 japan.com
-  - 🇭🇰 icook.hk
   - 🇸🇬 singapore.com
-  - www.gov.ua
-  - 🇷🇺 russia.com
+  - 🇭🇰 icook.hk
+  - www.gov.se
   - fbi.gov
+  - 🇷🇺 russia.com
+  - 🇺🇸_US_美国
+  - www.gco.gov.qa
   - brazil.com
+  - 🇺🇸_US_美国_1
+  - 🇺🇸_US_美国->🇰🇷_KR_韩国
   - 🇨🇳 visa.cn
   - 🇪🇸_ES_西班牙
-  - www.gov.se
-  - 🇺🇸_US_美国
-  - 瑞士(mibei77.com 米贝节点分享)
-  - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_1-FBXd
-  - 🇺🇸_US_美国->🇰🇷_KR_韩国
+  - 🇺🇸_US_美国_1-PsmN
   - CA加拿大(mibei77.com 米贝节点分享) 2
+  - 瑞士(mibei77.com 米贝节点分享)
   - 🇷🇺_RU_俄罗斯
-  - www.gco.gov.qa
+  - JP日本(mibei77.com 米贝节点分享)
   url: http://www.pinterest.com
   interval: 300
   tolerance: 50
@@ -322,51 +330,53 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
+  - 🇯🇵 japan.com
+  - www.gov.ua
   - 🇮🇸 time.is
   - www.wto.org
-  - 🇯🇵 japan.com
-  - 🇭🇰 icook.hk
   - 🇸🇬 singapore.com
-  - www.gov.ua
-  - 🇷🇺 russia.com
+  - 🇭🇰 icook.hk
+  - www.gov.se
   - fbi.gov
+  - 🇷🇺 russia.com
+  - 🇺🇸_US_美国
+  - www.gco.gov.qa
   - brazil.com
+  - 🇺🇸_US_美国_1
+  - 🇺🇸_US_美国->🇰🇷_KR_韩国
   - 🇨🇳 visa.cn
   - 🇪🇸_ES_西班牙
-  - www.gov.se
-  - 🇺🇸_US_美国
-  - 瑞士(mibei77.com 米贝节点分享)
-  - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_1-FBXd
-  - 🇺🇸_US_美国->🇰🇷_KR_韩国
+  - 🇺🇸_US_美国_1-PsmN
   - CA加拿大(mibei77.com 米贝节点分享) 2
+  - 瑞士(mibei77.com 米贝节点分享)
   - 🇷🇺_RU_俄罗斯
-  - www.gco.gov.qa
+  - JP日本(mibei77.com 米贝节点分享)
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
+  - 🇯🇵 japan.com
+  - www.gov.ua
   - 🇮🇸 time.is
   - www.wto.org
-  - 🇯🇵 japan.com
-  - 🇭🇰 icook.hk
   - 🇸🇬 singapore.com
-  - www.gov.ua
-  - 🇷🇺 russia.com
+  - 🇭🇰 icook.hk
+  - www.gov.se
   - fbi.gov
+  - 🇷🇺 russia.com
+  - 🇺🇸_US_美国
+  - www.gco.gov.qa
   - brazil.com
+  - 🇺🇸_US_美国_1
+  - 🇺🇸_US_美国->🇰🇷_KR_韩国
   - 🇨🇳 visa.cn
   - 🇪🇸_ES_西班牙
-  - www.gov.se
-  - 🇺🇸_US_美国
-  - 瑞士(mibei77.com 米贝节点分享)
-  - 🇺🇸_US_美国_1
-  - 🇺🇸_US_美国_1-FBXd
-  - 🇺🇸_US_美国->🇰🇷_KR_韩国
+  - 🇺🇸_US_美国_1-PsmN
   - CA加拿大(mibei77.com 米贝节点分享) 2
+  - 瑞士(mibei77.com 米贝节点分享)
   - 🇷🇺_RU_俄罗斯
-  - www.gco.gov.qa
+  - JP日本(mibei77.com 米贝节点分享)
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT
