@@ -26,7 +26,7 @@ jobs:
       - name: Install System Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y wget unzip
+          sudo apt-get install -y wget unzip jq
 
       # 安装 Python 依赖
       - name: Install Python Dependencies
@@ -44,16 +44,28 @@ jobs:
         run: |
           ls -l clash_config.yaml clash_config.yaml.json || echo "Clash config files not found"
 
-      # 安装 clash2singbox CLI 工具
+      # 安装最新版 clash2singbox CLI 工具
       - name: Install clash2singbox
         run: |
-          wget https://github.com/xmdhs/clash2singbox/releases/latest/download/clash2singbox-linux-amd64
-          chmod +x clash2singbox-linux-amd64
+          wget $(curl -s https://api.github.com/repos/xmdhs/clash2singbox/releases/latest | grep "browser_download_url.*linux-amd64" | cut -d\" -f4)
+          mv clash2singbox-linux-amd64 clash2singbox
+          chmod +x clash2singbox
 
       # 转换 Clash 配置文件为 sing-box 配置文件
       - name: Convert Clash Config to Sing-Box Config
         run: |
-          ./clash2singbox-linux-amd64 -i clash_config.yaml -o sing-box_config.json
+          ./clash2singbox -i clash_config.yaml -o sing-box_config_temp.json
+
+      # 验证并补全 sing-box 配置文件
+      - name: Validate and Enhance Sing-Box Config
+        run: |
+          # 检查 JSON 格式
+          jq . sing-box_config_temp.json > sing-box_config.json || (echo "sing-box 配置格式无效" && exit 1)
+          # 添加必要的默认字段
+          jq 'if has("log") then . else . + {"log": {"level": "info"}} end |
+              if has("dns") then . else . + {"dns": {"servers": [{"tag": "google", "address": "8.8.8.8"}]}} end' \
+              sing-box_config.json > sing-box_config.json.tmp
+          mv sing-box_config.json.tmp sing-box_config.json
 
       # 检查生成的 sing-box 配置文件是否存在
       - name: Check Generated Sing-Box Files
