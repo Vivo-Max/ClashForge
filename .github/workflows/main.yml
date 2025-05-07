@@ -1,0 +1,62 @@
+name: Daily Clash Config Generation
+
+# 触发条件：每天 UTC 时间 0:00 运行
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  # 允许手动触发
+  workflow_dispatch:
+
+jobs:
+  generate-clash-config:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 检出代码仓库
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 设置 Python 环境
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 安装系统依赖（包括 wget 和 unzip，用于下载和解压 Clash 二进制文件）
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget unzip
+
+      # 安装 Python 依赖
+      - name: Install Python Dependencies
+        run: |
+          pip install --upgrade pip
+          pip install pyyaml httpx requests requests-html psutil
+
+      # 运行 ClashForge.py 脚本
+      - name: Run ClashForge Script
+        run: |
+          python ClashForge.py
+
+      # 检查生成的文件是否存在
+      - name: Check Generated Files
+        run: |
+          ls -l clash_config.yaml clash_config.yaml.json || echo "Generated files not found"
+
+      # 提交生成的配置文件到仓库
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add clash_config.yaml clash_config.yaml.json
+          git commit -m "Update Clash configuration files - $(date +'%Y-%m-%d')"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 处理提交失败的情况（例如没有新文件）
+      - name: Handle Commit Failure
+        if: failure()
+        run: |
+          echo "No changes to commit or commit failed, continuing..."
