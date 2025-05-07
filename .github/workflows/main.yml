@@ -44,13 +44,16 @@ jobs:
         run: |
           ls -l clash_config.yaml clash_config.yaml.json || echo "Clash config files not found"
 
+      # 安装 clash2singbox CLI 工具
+      - name: Install clash2singbox
+        run: |
+          wget https://github.com/xmdhs/clash2singbox/releases/latest/download/clash2singbox-linux-amd64
+          chmod +x clash2singbox-linux-amd64
+
       # 转换 Clash 配置文件为 sing-box 配置文件
       - name: Convert Clash Config to Sing-Box Config
         run: |
-          python convert_to_singbox.py
-        env:
-          CLASH_CONFIG_FILE: clash_config.yaml
-          SINGBOX_CONFIG_FILE: sing-box_config.json
+          ./clash2singbox-linux-amd64 -i clash_config.yaml -o sing-box_config.json
 
       # 检查生成的 sing-box 配置文件是否存在
       - name: Check Generated Sing-Box Files
