@@ -46,7 +46,7 @@ proxies:
     headers:
       Host: 0229.patterdeng.pp.ua
   udp: true
-- name: EE_speednode_0020
+- name: EE_speednode_0010
   server: 45.80.110.75
   port: 8880
   type: vless
@@ -60,34 +60,7 @@ proxies:
     headers:
       Host: 23-lsjfjwiposkfls.hc2021.cfd
   udp: true
-- name: GB_speednode_0021
-  server: 130.162.163.216
-  port: 443
-  type: vless
-  uuid: 9466263a-4b8e-4647-99b2-d2a363f001cd
-  flow: xtls-rprx-vision
-  tls: true
-  skip-cert-verify: false
-  client-fingerprint: ios
-  servername: buylite.tv.apple.com
-  reality-opts:
-    public-key: b5WuWodd3tB9cHWUJuoEFNvgYVOcLuDyjaxHy70umU4
-    short-id: '50211843'
-  udp: true
-- name: GB_speednode_0022
-  server: 178.62.44.40
-  port: 8440
-  type: vless
-  uuid: 97dda572-7ff0-4609-8388-c82be57bc6a9
-  flow: xtls-rprx-vision
-  tls: true
-  skip-cert-verify: true
-  client-fingerprint: chrome
-  servername: refersion.com
-  reality-opts:
-    public-key: y6JSkggQ__RA_nmCJpX1_ddSQC6vzDUPaN7KyvjVuic
-  udp: true
-- name: GB_speednode_0023
+- name: GB_speednode_0015
   server: 95.164.18.132
   port: 81
   type: vless
@@ -101,35 +74,21 @@ proxies:
     headers:
       Host: miku.mikuru.ip-ddns.com
   udp: true
-- name: JP_speednode_0027
-  server: 154.92.9.2
-  port: 8443
+- name: HK_speednode_0016
+  server: pq.aws14.yydjc.top
+  port: 443
   type: vless
-  uuid: de537efd-4d7c-4f3c-aea5-19d3f36c7b1b
+  uuid: 9466263a-4b8e-4647-99b2-d2a363f001cd
+  flow: xtls-rprx-vision
   tls: true
   skip-cert-verify: false
-  servername: txmt.conetcdata.dpdns.org
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: txmt.conetcdata.dpdns.org
+  client-fingerprint: ios
+  servername: www.mi.com
+  reality-opts:
+    public-key: Rwqxz0M2DjcW39poMFeZzfjlYZf2PwxxQ0UEI4CSZik
+    short-id: 6891d99c
   udp: true
-- name: JP_speednode_0028
-  server: 154.92.9.1
-  port: 8443
-  type: vless
-  uuid: de537efd-4d7c-4f3c-aea5-19d3f36c7b1b
-  tls: true
-  skip-cert-verify: false
-  servername: txmt.conetcdata.dpdns.org
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: txmt.conetcdata.dpdns.org
-  udp: true
-- name: KR_speednode_0029
+- name: KR_speednode_0019
   server: 220.120.172.116
   port: 12365
   type: vless
@@ -143,29 +102,14 @@ proxies:
     headers:
       Host: miku.mikuru.ip-ddns.com
   udp: true
-- name: KR_speednode_0030
+- name: KR_speednode_0020
   server: 154.90.63.177
   port: 989
   type: ss
   cipher: aes-256-cfb
   password: f8f7aCzcPKbsF8p3
   udp: true
-- name: RU_speednode_0034
-  server: 185.22.153.14
-  port: 30112
-  type: ss
-  cipher: aes-256-gcm
-  password: 76f22412bc0dbdf6
-  udp: true
-- name: TR_speednode_0041
-  server: 94.131.108.195
-  port: 53221
-  type: vless
-  uuid: 90efad13-d266-4d10-a914-bc40028ec469
-  tls: false
-  skip-cert-verify: true
-  udp: true
-- name: US_speednode_0047
+- name: US_speednode_0027
   server: 135.84.76.75
   port: 8880
   type: vless
@@ -179,7 +123,7 @@ proxies:
     headers:
       Host: 23-lsjfjwiposkfls.hc2021.cfd
   udp: true
-- name: US_speednode_0049
+- name: US_speednode_0031
   server: 135.84.75.75
   port: 8880
   type: vless
@@ -193,7 +137,7 @@ proxies:
     headers:
       Host: 23-lsjfjwiposkfls.hc2021.cfd
   udp: true
-- name: US_speednode_0057
+- name: US_speednode_0042
   server: 45.150.165.121
   port: 7885
   type: vless
@@ -207,22 +151,35 @@ proxies:
     public-key: cauu7I7nFMqzwMDdULVRJam0T04U4knX8koK0OG5dC8
     short-id: 40cb281a
   udp: true
-- name: US_speednode_0101
-  server: 104.24.152.190
+- name: US_speednode_0059
+  server: 104.16.95.143
   port: 443
   type: vless
-  uuid: f055d270-0e76-4a41-a53f-871bbb51b003
+  uuid: b5441b0d-2147-4898-8a6a-9b2c87f58382
   tls: true
   skip-cert-verify: false
-  client-fingerprint: random
-  servername: what.zhonghuoxing.top
+  servername: bitget1.asdasd.click
   network: ws
   ws-opts:
     path: /?ed=2560
     headers:
-      Host: what.zhonghuoxing.top
+      Host: bitget1.asdasd.click
   udp: true
-- name: US_speednode_0114
+- name: US_speednode_0078
+  server: 104.16.83.224
+  port: 443
+  type: vless
+  uuid: 1c4c856f-6ef1-4d32-a556-068d948a2158
+  tls: true
+  skip-cert-verify: false
+  servername: taoj.eu.org
+  network: ws
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      Host: taoj.eu.org
+  udp: true
+- name: US_speednode_0090
   server: 160.79.104.113
   port: 443
   type: vless
@@ -236,77 +193,17 @@ proxies:
     headers:
       Host: 0229.patterdeng.pp.ua
   udp: true
-- name: US_speednode_0120
-  server: 199.34.228.66
-  port: 8443
-  type: vless
-  uuid: de537efd-4d7c-4f3c-aea5-19d3f36c7b1b
-  tls: true
-  skip-cert-verify: false
-  servername: txmt.conetcdata.dpdns.org
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: txmt.conetcdata.dpdns.org
-  udp: true
-- name: US_speednode_0126
-  server: 199.34.228.186
-  port: 443
-  type: vless
-  uuid: a268ce39-7687-4817-aa5f-def4f653fb88
-  tls: true
-  skip-cert-verify: false
-  servername: cf.501508.xyz
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: cf.501508.xyz
-  udp: true
-- name: 🇷🇺_RU_俄罗斯_1
-  type: ss
-  server: 185.231.233.112
-  port: 989
+- cipher: aes-256-cfb
+  name: 🇷🇺_RU_俄罗斯
   password: f8f7aCzcPKbsF8p3
-  ip-version: dual
-  udp: true
-  cipher: aes-256-cfb
-- alterId: 0
-  cipher: auto
-  name: HK香港(mibei77.com 米贝节点分享) 5
-  port: 46597
-  server: 120.232.153.41
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  port: 989
+  server: 185.231.233.112
+  type: ss
 - alterId: 0
   cipher: auto
   name: HK香港(mibei77.com 米贝节点分享) 8
   port: 37805
   server: 120.232.153.63
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- alterId: 0
-  cipher: auto
-  name: HK香港(mibei77.com 米贝节点分享) 9
-  port: 51095
-  server: 120.198.71.219
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- alterId: 64
-  cipher: auto
-  name: US美国(mibei77.com 米贝节点分享) 4
-  port: 32980
-  server: 120.198.71.214
   skip-cert-verify: true
   tls: false
   type: vmess
@@ -324,6 +221,16 @@ proxies:
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 - alterId: 0
   cipher: auto
+  name: HK香港(mibei77.com 米贝节点分享) 17
+  port: 44015
+  server: 120.198.71.219
+  skip-cert-verify: true
+  tls: false
+  type: vmess
+  udp: true
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 0
+  cipher: auto
   name: US美国(mibei77.com 米贝节点分享) 11
   port: 59082
   server: 120.232.153.40
@@ -332,16 +239,6 @@ proxies:
   type: vmess
   udp: true
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-- alterId: 0
-  cipher: auto
-  name: US美国(mibei77.com 米贝节点分享) 18
-  port: 14100
-  server: dxv4.pai50288.uk
-  skip-cert-verify: true
-  tls: false
-  type: vmess
-  udp: true
-  uuid: f6866b0b-f946-4a03-8df0-c7e0016b55ad
 - alterId: 64
   cipher: auto
   name: US美国(mibei77.com 米贝节点分享) 19
@@ -354,6 +251,16 @@ proxies:
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 - alterId: 0
   cipher: auto
+  ip-version: dual
+  name: 13|🇭🇰 香港5|@ripaojiedian
+  network: tcp
+  port: 41291
+  server: 183.236.51.38
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 0
+  cipher: auto
   name: 香港(yudou66.com 玉豆免费节点) 7
   port: 14100
   server: 144.255.36.254
@@ -363,37 +270,9 @@ proxies:
   udp: true
   uuid: f6866b0b-f946-4a03-8df0-c7e0016b55ad
 - type: vless
-  name: xiaoer886_GB_1
-  server: 185.233.184.66
-  port: 8442
-  uuid: 5543ae5c-c24f-405a-9266-597cbc43c818
-  skip-cert-verify: true
-  udp: true
-  tls: true
-  network: ws
-  servername: miku.mikuru.ip-ddns.com
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      host: miku.mikuru.ip-ddns.com
-- type: vless
   name: xiaoer886_KR_3
   server: 14.39.43.121
   port: 10943
-  uuid: 5543ae5c-c24f-405a-9266-597cbc43c818
-  skip-cert-verify: true
-  udp: true
-  tls: true
-  network: ws
-  servername: miku.mikuru.ip-ddns.com
-  ws-opts:
-    path: /?ed=2560
-    headers:
-      host: miku.mikuru.ip-ddns.com
-- type: vless
-  name: xiaoer886_KR_4
-  server: 121.174.200.92
-  port: 12416
   uuid: 5543ae5c-c24f-405a-9266-597cbc43c818
   skip-cert-verify: true
   udp: true
@@ -419,86 +298,106 @@ proxies:
     headers:
       host: miku.mikuru.ip-ddns.com
 - type: vless
-  name: xiaoer886_US_152
-  server: 135.148.142.30
+  name: xiaoer886_US_111
+  server: 204.10.194.78
   port: 443
-  uuid: c4fa89d4-fcb9-48ba-adbc-665181cc817f
+  uuid: b8bd42a9-551f-419d-b70d-4aefdd2cb074
   skip-cert-verify: true
   network: tcp
-  servername: 147135010072.sec21org.com
+  flow: xtls-rprx-vision
+  servername: yfnl1.xn--4gq62f52gppi29k.com
   tls: true
   udp: true
-- name: 🇧🇬BG-89.44.197.181-0916
-  server: 89.44.197.181
-  port: 31348
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: oJ7xnUknEuMScM21clCyEit66JRhmZrArRSE0xeapGR24HqH
-- name: 🇰🇷KR-125.141.31.72-6757
+- type: vless
+  name: xiaoer886_KR_10
+  server: 222.102.166.18
+  port: 30111
+  uuid: 5543ae5c-c24f-405a-9266-597cbc43c818
+  skip-cert-verify: true
+  udp: true
+  tls: true
+  network: ws
+  servername: miku.mikuru.ip-ddns.com
+  ws-opts:
+    path: /?ed=2560
+    headers:
+      host: miku.mikuru.ip-ddns.com
+- name: 🇰🇷KR-125.141.31.72-1084
   server: 125.141.31.72
   port: 15098
   type: ss
   cipher: aes-256-cfb
   password: qwerREWQ@@
-- name: KR_2faa8_0043
-  server: 154.90.62.168
-  port: 989
+- name: 🇻🇳VN-103.186.155.19-1498
+  server: 103.186.155.19
+  port: 38388
   type: ss
   cipher: aes-256-cfb
+  password: Xn8jKdmDM00IeO%#$#fJAMtsEAEUOpH/YWYtYqDFnT0SV
+- name: 🇩🇪DE-66.151.41.89-1526
+  server: 66.151.41.89
+  port: 33133
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: 67dYfi1uAv2ZTxXvLoek39
+- name: 🇰🇷KR-154.90.63.193-6526
+  server: 154.90.63.193
+  port: 990
+  type: ss
+  cipher: chacha20-ietf-poly1305
   password: f8f7aCzcPKbsF8p3
-  udp: true
+- name: SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-184.170.241.194:443
+  type: ssr
+  server: 184.170.241.194
+  port: 443
+  password: shadowsocks
+  cipher: aes-128-cfb
+  protocol: origin
+  obfs: plain
+- name: 日本2
+  server: jpgmo102-cdn-route.couldflare-cdn.com
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: false
+  username: mrwdfNTD8M79LCukCieldrqZWqs=
+  password: exaxgqkKkd0TAMrCxeonWg==
+- alterId: 64
+  cipher: auto
+  name: 12|🇯🇵 日本3|@ripaojiedian
+  port: 55002
+  server: 183.237.84.53
+  skip-cert-verify: false
+  tfo: false
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 - alterId: 0
   cipher: auto
-  name: 2,13|台湾2|@ripaojiedian
+  name: 13|香港5|@ripaojiedian
   network: tcp
-  port: '3687'
-  server: 1cea2198-sukw00-sv3y7m-1glq.a.fosant.com
+  port: '59082'
+  server: 120.232.153.40
   servername: ''
-  skip-cert-verify: true
   tls: false
   type: vmess
-  uuid: df7bed3c-06eb-11f0-8ebc-f23c93141fad
-  ws-headers:
-    Host: 1cea2198-sukw00-sv3y7m-1glq.a.fosant.com
-  ws-path: /
-- alterId: 2
-  cipher: auto
-  name: 12,13|新加坡|@ripaojiedian
-  network: ws
-  port: '30812'
-  server: v12.heduian.link
-  servername: ''
-  skip-cert-verify: false
-  tfo: false
-  tls: false
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      Host: ocbc.com
-    path: /oooo
-- alterId: 2
-  cipher: auto
-  name: 12,13|美国3|@ripaojiedian
-  network: ws
-  port: '30807'
-  server: v7.heduian.link
-  servername: ''
-  skip-cert-verify: false
-  tfo: false
-  tls: false
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  ws-opts:
-    headers:
-      Host: ocbc.com
-    path: /oooo
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
 - alterId: 64
   cipher: auto
   name: 13|香港6|@ripaojiedian
   network: tcp
   port: '36609'
   server: 120.232.153.40
+  servername: ''
+  tls: false
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+- alterId: 64
+  cipher: auto
+  name: 13|日本3|@ripaojiedian
+  network: tcp
+  port: '55002'
+  server: 183.237.84.53
   servername: ''
   tls: false
   type: vmess
@@ -515,46 +414,40 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇰🇷KR-125.141.31.72-6757
-  - RU_speednode_0034
-  - KR_speednode_0030
-  - EE_speednode_0020
-  - US_speednode_0047
-  - US_speednode_0049
-  - US美国(mibei77.com 米贝节点分享) 11
-  - US美国(mibei77.com 米贝节点分享) 6
-  - US美国(mibei77.com 米贝节点分享) 19
-  - 🇷🇺_RU_俄罗斯_1
-  - xiaoer886_KR_4
-  - US_speednode_0057
-  - KR_speednode_0029
-  - 2,13|台湾2|@ripaojiedian
-  - 13|香港6|@ripaojiedian
-  - xiaoer886_GB_1
-  - xiaoer886_KR_5
-  - GB_speednode_0023
-  - 🇧🇬BG-89.44.197.181-0916
-  - US_speednode_0101
-  - US美国(mibei77.com 米贝节点分享) 4
-  - GB_speednode_0022
-  - xiaoer886_US_152
-  - HK香港(mibei77.com 米贝节点分享) 8
-  - TR_speednode_0041
-  - 香港(yudou66.com 玉豆免费节点) 7
+  - 🇩🇪DE-66.151.41.89-1526
+  - 🇰🇷KR-125.141.31.72-1084
+  - KR_speednode_0020
   - xiaoer886_KR_3
+  - EE_speednode_0010
+  - US_speednode_0027
+  - US_speednode_0031
+  - 🇷🇺_RU_俄罗斯
+  - US美国(mibei77.com 米贝节点分享) 11
+  - xiaoer886_US_111
+  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-184.170.241.194:443
+  - 🇻🇳VN-103.186.155.19-1498
+  - US美国(mibei77.com 米贝节点分享) 19
+  - 13|🇭🇰 香港5|@ripaojiedian
+  - HK香港(mibei77.com 米贝节点分享) 17
+  - HK香港(mibei77.com 米贝节点分享) 8
+  - US_speednode_0042
+  - 13|香港5|@ripaojiedian
+  - 香港(yudou66.com 玉豆免费节点) 7
+  - US美国(mibei77.com 米贝节点分享) 6
+  - xiaoer886_KR_10
+  - 🇰🇷KR-154.90.63.193-6526
+  - GB_speednode_0015
+  - 13|香港6|@ripaojiedian
+  - KR_speednode_0019
+  - 13|日本3|@ripaojiedian
+  - US_speednode_0059
+  - 12|🇯🇵 日本3|@ripaojiedian
   - BR_speednode_0001
-  - US_speednode_0120
-  - US_speednode_0126
-  - 12,13|新加坡|@ripaojiedian
-  - JP_speednode_0028
-  - 12,13|美国3|@ripaojiedian
-  - HK香港(mibei77.com 米贝节点分享) 9
-  - US_speednode_0114
-  - US美国(mibei77.com 米贝节点分享) 18
-  - JP_speednode_0027
-  - HK香港(mibei77.com 米贝节点分享) 5
-  - KR_2faa8_0043
-  - GB_speednode_0021
+  - US_speednode_0078
+  - US_speednode_0090
+  - HK_speednode_0016
+  - 日本2
+  - xiaoer886_KR_5
   url: http://www.pinterest.com
   interval: 300
   tolerance: 50
@@ -562,91 +455,79 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇰🇷KR-125.141.31.72-6757
-  - RU_speednode_0034
-  - KR_speednode_0030
-  - EE_speednode_0020
-  - US_speednode_0047
-  - US_speednode_0049
-  - US美国(mibei77.com 米贝节点分享) 11
-  - US美国(mibei77.com 米贝节点分享) 6
-  - US美国(mibei77.com 米贝节点分享) 19
-  - 🇷🇺_RU_俄罗斯_1
-  - xiaoer886_KR_4
-  - US_speednode_0057
-  - KR_speednode_0029
-  - 2,13|台湾2|@ripaojiedian
-  - 13|香港6|@ripaojiedian
-  - xiaoer886_GB_1
-  - xiaoer886_KR_5
-  - GB_speednode_0023
-  - 🇧🇬BG-89.44.197.181-0916
-  - US_speednode_0101
-  - US美国(mibei77.com 米贝节点分享) 4
-  - GB_speednode_0022
-  - xiaoer886_US_152
-  - HK香港(mibei77.com 米贝节点分享) 8
-  - TR_speednode_0041
-  - 香港(yudou66.com 玉豆免费节点) 7
+  - 🇩🇪DE-66.151.41.89-1526
+  - 🇰🇷KR-125.141.31.72-1084
+  - KR_speednode_0020
   - xiaoer886_KR_3
+  - EE_speednode_0010
+  - US_speednode_0027
+  - US_speednode_0031
+  - 🇷🇺_RU_俄罗斯
+  - US美国(mibei77.com 米贝节点分享) 11
+  - xiaoer886_US_111
+  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-184.170.241.194:443
+  - 🇻🇳VN-103.186.155.19-1498
+  - US美国(mibei77.com 米贝节点分享) 19
+  - 13|🇭🇰 香港5|@ripaojiedian
+  - HK香港(mibei77.com 米贝节点分享) 17
+  - HK香港(mibei77.com 米贝节点分享) 8
+  - US_speednode_0042
+  - 13|香港5|@ripaojiedian
+  - 香港(yudou66.com 玉豆免费节点) 7
+  - US美国(mibei77.com 米贝节点分享) 6
+  - xiaoer886_KR_10
+  - 🇰🇷KR-154.90.63.193-6526
+  - GB_speednode_0015
+  - 13|香港6|@ripaojiedian
+  - KR_speednode_0019
+  - 13|日本3|@ripaojiedian
+  - US_speednode_0059
+  - 12|🇯🇵 日本3|@ripaojiedian
   - BR_speednode_0001
-  - US_speednode_0120
-  - US_speednode_0126
-  - 12,13|新加坡|@ripaojiedian
-  - JP_speednode_0028
-  - 12,13|美国3|@ripaojiedian
-  - HK香港(mibei77.com 米贝节点分享) 9
-  - US_speednode_0114
-  - US美国(mibei77.com 米贝节点分享) 18
-  - JP_speednode_0027
-  - HK香港(mibei77.com 米贝节点分享) 5
-  - KR_2faa8_0043
-  - GB_speednode_0021
+  - US_speednode_0078
+  - US_speednode_0090
+  - HK_speednode_0016
+  - 日本2
+  - xiaoer886_KR_5
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇰🇷KR-125.141.31.72-6757
-  - RU_speednode_0034
-  - KR_speednode_0030
-  - EE_speednode_0020
-  - US_speednode_0047
-  - US_speednode_0049
-  - US美国(mibei77.com 米贝节点分享) 11
-  - US美国(mibei77.com 米贝节点分享) 6
-  - US美国(mibei77.com 米贝节点分享) 19
-  - 🇷🇺_RU_俄罗斯_1
-  - xiaoer886_KR_4
-  - US_speednode_0057
-  - KR_speednode_0029
-  - 2,13|台湾2|@ripaojiedian
-  - 13|香港6|@ripaojiedian
-  - xiaoer886_GB_1
-  - xiaoer886_KR_5
-  - GB_speednode_0023
-  - 🇧🇬BG-89.44.197.181-0916
-  - US_speednode_0101
-  - US美国(mibei77.com 米贝节点分享) 4
-  - GB_speednode_0022
-  - xiaoer886_US_152
-  - HK香港(mibei77.com 米贝节点分享) 8
-  - TR_speednode_0041
-  - 香港(yudou66.com 玉豆免费节点) 7
+  - 🇩🇪DE-66.151.41.89-1526
+  - 🇰🇷KR-125.141.31.72-1084
+  - KR_speednode_0020
   - xiaoer886_KR_3
+  - EE_speednode_0010
+  - US_speednode_0027
+  - US_speednode_0031
+  - 🇷🇺_RU_俄罗斯
+  - US美国(mibei77.com 米贝节点分享) 11
+  - xiaoer886_US_111
+  - SSR-美国-NF解锁自制剧-ChatGPT-TikTok-YouTube-184.170.241.194:443
+  - 🇻🇳VN-103.186.155.19-1498
+  - US美国(mibei77.com 米贝节点分享) 19
+  - 13|🇭🇰 香港5|@ripaojiedian
+  - HK香港(mibei77.com 米贝节点分享) 17
+  - HK香港(mibei77.com 米贝节点分享) 8
+  - US_speednode_0042
+  - 13|香港5|@ripaojiedian
+  - 香港(yudou66.com 玉豆免费节点) 7
+  - US美国(mibei77.com 米贝节点分享) 6
+  - xiaoer886_KR_10
+  - 🇰🇷KR-154.90.63.193-6526
+  - GB_speednode_0015
+  - 13|香港6|@ripaojiedian
+  - KR_speednode_0019
+  - 13|日本3|@ripaojiedian
+  - US_speednode_0059
+  - 12|🇯🇵 日本3|@ripaojiedian
   - BR_speednode_0001
-  - US_speednode_0120
-  - US_speednode_0126
-  - 12,13|新加坡|@ripaojiedian
-  - JP_speednode_0028
-  - 12,13|美国3|@ripaojiedian
-  - HK香港(mibei77.com 米贝节点分享) 9
-  - US_speednode_0114
-  - US美国(mibei77.com 米贝节点分享) 18
-  - JP_speednode_0027
-  - HK香港(mibei77.com 米贝节点分享) 5
-  - KR_2faa8_0043
-  - GB_speednode_0021
+  - US_speednode_0078
+  - US_speednode_0090
+  - HK_speednode_0016
+  - 日本2
+  - xiaoer886_KR_5
 rules:
 - DOMAIN,app.adjust.com,DIRECT
 - DOMAIN,bdtj.tagtic.cn,DIRECT
