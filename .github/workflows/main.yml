@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: '3.11'
 
-      # 安装系统依赖（包括 wget 和 unzip，用于下载和解压 Clash 二进制文件）
+      # 安装系统依赖（包括 wget、unzip 和 jq）
       - name: Install System Dependencies
         run: |
           sudo apt-get update
@@ -56,16 +56,83 @@ jobs:
         run: |
           ./clash2singbox -i clash_config.yaml -o sing-box_config_temp.json
 
-      # 验证并补全 sing-box 配置文件
+      # 验证并修复 sing-box 配置文件
       - name: Validate and Enhance Sing-Box Config
         run: |
-          # 检查 JSON 格式
+          # 验证 JSON 格式
           jq . sing-box_config_temp.json > sing-box_config.json || (echo "sing-box 配置格式无效" && exit 1)
-          # 添加必要的默认字段
-          jq 'if has("log") then . else . + {"log": {"level": "info"}} end |
-              if has("dns") then . else . + {"dns": {"servers": [{"tag": "google", "address": "8.8.8.8"}]}} end' \
-              sing-box_config.json > sing-box_config.json.tmp
-          mv sing-box_config.json.tmp sing-box_config.json
+
+          # 修复 log 配置
+          jq 'if .log == {} then .log = {"level": "info"} else . end' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
+
+          # 修复 DNS 配置：将 IP 地址改为 DoH 地址
+          jq '.dns.servers |= map(
+            if .tag == "remote" then .address = "https://8.8.8.8/dns-query" else
+            if .tag == "local" then .address = "https://223.5.5.5/dns-query" else . end end
+          )' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
+
+          # 添加 experimental.cache_file
+          jq '.experimental |= . + {"cache_file": {"enabled": true}}' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
+
+          # 修复 inbounds.tun：替换 inet4_address 和 inet6_address 为 address 数组
+          jq '.inbounds |= map(
+            if .type == "tun" then 
+              .address = [
+                (if .inet4_address then .inet4_address else "172.19.0.1/30" end),
+                (if .inet6_address then .inet6_address else "fdfe:dcba:9876::1/126" end)
+              ] | 
+              del(.inet4_address) | 
+              del(.inet6_address) | 
+              .auto_route = true 
+            else . end
+          )' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
+
+          # 移除 inbounds 中的 domain_strategy 和 set_system_proxy
+          jq '.inbounds |= map(
+            del(.domain_strategy) | 
+            del(.set_system_proxy)
+          )' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
+
+          # 添加 route.rule_set
+          jq '.route.rule_set = [
+            {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"},
+            {"tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"},
+            {"tag": "AdGuardSDNSFilter", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs"},
+            {"tag": "chrome-doh", "type": "remote", "format": "source", "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"},
+            {"tag": "ext-cn-domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/xmdhs/cn-domain-list/rule-set/ext-cn-list.srs"}
+          ]' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
+
+          # 修复 route.rules：替换 geoip 和 geosite 为 rule_set
+          jq '.route.rules |= map(
+            if .geoip then 
+              .rule_set = "geoip-cn" | 
+              del(.geoip) | 
+              if .outbound == "direct" then . + {"ip_is_private": true} else . end 
+            else 
+              if .geosite then .rule_set = (.geosite | if . == "category-ads-all" then "AdGuardSDNSFilter" else "geosite-cn" end) | del(.geosite) else . end 
+            end
+          )' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
+
+          # 添加 route.rules 中的 action 规则
+          jq '.route.rules += [
+            {"action": "sniff"},
+            {"action": "hijack-dns", "protocol": "dns"},
+            {"action": "resolve", "strategy": "prefer_ipv4"}
+          ]' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
+
+          # 修复 dns.rules：替换 geosite 为 rule_set
+          jq '.dns.rules |= map(
+            if .geosite then 
+              .rule_set = (.geosite | if . == "category-ads-all" then ["AdGuardSDNSFilter", "chrome-doh"] else "geosite-cn" end) | 
+              del(.geosite) 
+            else . end
+          )' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
+
+          # 添加 dns.rules 中 ext-cn-domain 规则
+          jq '.dns.rules += [{"rule_set": "ext-cn-domain", "server": "local"}]' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
+
+          # 移除未使用的 dns-out 和 block 出站
+          jq '.outbounds |= map(select(.tag != "dns-out" and .tag != "block"))' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
 
       # 检查生成的 sing-box 配置文件是否存在
       - name: Check Generated Sing-Box Files
