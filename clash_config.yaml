@@ -54,6 +54,12 @@ proxies:
     path: /4p35eUnmGxQ8YJFJxz
   ip-version: dual
   udp: true
+- cipher: aes-256-cfb
+  name: 🇷🇺_RU_俄罗斯
+  password: f8f7aCzcPKbsF8p3
+  port: 989
+  server: 185.231.233.112
+  type: ss
 - name: 🇺🇸_US_美国_1
   network: ws
   password: 15b24b56-d667-4fa8-b548-f3dc942fb461
@@ -86,7 +92,7 @@ proxies:
   type: ss
   udp: true
 - ip-version: dual
-  name: 🇺🇸_US_美国_1-p300
+  name: 🇺🇸_US_美国_1-KoMV
   network: ws
   password: 5453ae26-250d-4e79-b4ec-016baf806865
   port: 443
@@ -288,24 +294,25 @@ proxy-groups:
   type: url-test
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇭🇰 icook.hk
-  - 🇸🇬 singapore.com
-  - 🇷🇺 russia.com
   - www.gco.gov.qa
-  - 🇮🇸 time.is
-  - 🇯🇵 japan.com
-  - brazil.com
-  - 🇨🇳 visa.cn
-  - fbi.gov
   - www.wto.org
+  - 🇯🇵 japan.com
+  - fbi.gov
+  - 🇸🇬 singapore.com
   - www.gov.ua
-  - 🇺🇸_US_美国_1-p300
-  - CA加拿大(mibei77.com 米贝节点分享) 2
+  - brazil.com
+  - 🇭🇰 icook.hk
+  - 🇷🇺 russia.com
+  - 🇮🇸 time.is
+  - www.gov.se
   - 🇺🇸_US_美国_1
   - 🇺🇸_US_美国
+  - 🇨🇳 visa.cn
   - 瑞士(mibei77.com 米贝节点分享)
+  - CA加拿大(mibei77.com 米贝节点分享) 2
+  - 🇺🇸_US_美国_1-KoMV
   - 🇺🇸_US_美国->🇰🇷_KR_韩国
-  - www.gov.se
+  - 🇷🇺_RU_俄罗斯
   - JP日本(mibei77.com 米贝节点分享)
   url: http://www.pinterest.com
   interval: 300
@@ -314,48 +321,50 @@ proxy-groups:
   type: fallback
   exclude-filter: (?i)中国|China|CN|电信|移动|联通
   proxies:
-  - 🇭🇰 icook.hk
-  - 🇸🇬 singapore.com
-  - 🇷🇺 russia.com
   - www.gco.gov.qa
-  - 🇮🇸 time.is
-  - 🇯🇵 japan.com
-  - brazil.com
-  - 🇨🇳 visa.cn
-  - fbi.gov
   - www.wto.org
+  - 🇯🇵 japan.com
+  - fbi.gov
+  - 🇸🇬 singapore.com
   - www.gov.ua
-  - 🇺🇸_US_美国_1-p300
-  - CA加拿大(mibei77.com 米贝节点分享) 2
+  - brazil.com
+  - 🇭🇰 icook.hk
+  - 🇷🇺 russia.com
+  - 🇮🇸 time.is
+  - www.gov.se
   - 🇺🇸_US_美国_1
   - 🇺🇸_US_美国
+  - 🇨🇳 visa.cn
   - 瑞士(mibei77.com 米贝节点分享)
+  - CA加拿大(mibei77.com 米贝节点分享) 2
+  - 🇺🇸_US_美国_1-KoMV
   - 🇺🇸_US_美国->🇰🇷_KR_韩国
-  - www.gov.se
+  - 🇷🇺_RU_俄罗斯
   - JP日本(mibei77.com 米贝节点分享)
   url: http://www.gstatic.com/generate_204
   interval: 300
 - name: 手动选择
   type: select
   proxies:
-  - 🇭🇰 icook.hk
-  - 🇸🇬 singapore.com
-  - 🇷🇺 russia.com
   - www.gco.gov.qa
-  - 🇮🇸 time.is
-  - 🇯🇵 japan.com
-  - brazil.com
-  - 🇨🇳 visa.cn
-  - fbi.gov
   - www.wto.org
+  - 🇯🇵 japan.com
+  - fbi.gov
+  - 🇸🇬 singapore.com
   - www.gov.ua
-  - 🇺🇸_US_美国_1-p300
-  - CA加拿大(mibei77.com 米贝节点分享) 2
+  - brazil.com
+  - 🇭🇰 icook.hk
+  - 🇷🇺 russia.com
+  - 🇮🇸 time.is
+  - www.gov.se
   - 🇺🇸_US_美国_1
   - 🇺🇸_US_美国
+  - 🇨🇳 visa.cn
   - 瑞士(mibei77.com 米贝节点分享)
+  - CA加拿大(mibei77.com 米贝节点分享) 2
+  - 🇺🇸_US_美国_1-KoMV
   - 🇺🇸_US_美国->🇰🇷_KR_韩国
-  - www.gov.se
+  - 🇷🇺_RU_俄罗斯
   - JP日本(mibei77.com 米贝节点分享)
 rules:
 - DOMAIN,app.adjust.com,DIRECT
