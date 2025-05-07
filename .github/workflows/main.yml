@@ -1,4 +1,4 @@
-name: Daily Clash Config Generation
+name: Daily Clash Config Generation and Conversion
 
 # 触发条件：每天 UTC 时间 0:00 运行
 on:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  generate-clash-config:
+  generate-and-convert-clash-config:
     runs-on: ubuntu-latest
 
     steps:
@@ -34,23 +34,36 @@ jobs:
           pip install --upgrade pip
           pip install pyyaml httpx requests requests-html psutil lxml_html_clean
 
-      # 运行 ClashForge.py 脚本
+      # 运行 ClashForge.py 脚本生成 Clash 配置文件
       - name: Run ClashForge Script
         run: |
           python ClashForge.py
 
-      # 检查生成的文件是否存在
-      - name: Check Generated Files
+      # 检查生成的 Clash 配置文件是否存在
+      - name: Check Generated Clash Files
         run: |
-          ls -l clash_config.yaml clash_config.yaml.json || echo "Generated files not found"
+          ls -l clash_config.yaml clash_config.yaml.json || echo "Clash config files not found"
+
+      # 转换 Clash 配置文件为 sing-box 配置文件
+      - name: Convert Clash Config to Sing-Box Config
+        run: |
+          python convert_to_singbox.py
+        env:
+          CLASH_CONFIG_FILE: clash_config.yaml
+          SINGBOX_CONFIG_FILE: sing-box_config.json
+
+      # 检查生成的 sing-box 配置文件是否存在
+      - name: Check Generated Sing-Box Files
+        run: |
+          ls -l sing-box_config.json || echo "Sing-box config file not found"
 
       # 提交生成的配置文件到仓库
       - name: Commit and Push Changes
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add clash_config.yaml clash_config.yaml.json
-          git commit -m "Update Clash configuration files - $(date +'%Y-%m-%d')"
+          git add clash_config.yaml clash_config.yaml.json sing-box_config.json
+          git commit -m "Update Clash and Sing-Box configuration files - $(date +'%Y-%m-%d')"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
