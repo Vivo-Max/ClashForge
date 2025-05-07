@@ -32,7 +32,7 @@ jobs:
       - name: Install Python Dependencies
         run: |
           pip install --upgrade pip
-          pip install pyyaml httpx requests requests-html psutil
+          pip install pyyaml httpx requests requests-html psutil lxml_html_clean
 
       # 运行 ClashForge.py 脚本
       - name: Run ClashForge Script
