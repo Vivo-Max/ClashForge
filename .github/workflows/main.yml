@@ -39,10 +39,23 @@ jobs:
         run: |
           python ClashForge.py
 
-      # 检查生成的 Clash 配置文件是否存在
+      # 检查生成的 Clash 配置文件是否存在并调试
       - name: Check Generated Clash Files
         run: |
           ls -l clash_config.yaml clash_config.yaml.json || echo "Clash config files not found"
+          echo "Line 399:"
+          sed -n '399p' clash_config.yaml
+          echo "Line 1069:"
+          sed -n '1069p' clash_config.yaml
+          echo "Context around Line 399:"
+          sed -n '395,403p' clash_config.yaml
+          echo "Context around Line 1069:"
+          sed -n '1065,1073p' clash_config.yaml
+
+      # 修复 clash_config.yaml 中字符串 "0" 为整数 0
+      - name: Fix YAML String Zero
+        run: |
+          sed -i 's/: "0"/: 0/g' clash_config.yaml
 
       # 安装最新版 clash2singbox CLI 工具
       - name: Install clash2singbox
@@ -100,58 +113,10 @@ jobs:
             {"tag": "AdGuardSDNSFilter", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs"},
             {"tag": "chrome-doh", "type": "remote", "format": "source", "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"},
             {"tag": "ext-cn-domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/xmdhs/cn-domain-list/rule-set/ext-cn-list.srs"}
-          ]' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
+          ]' sing-box_config.json > tmp.json && mv tmp.json sing-box-box_config.json
 
           # 修复 route.rules：替换 geoip 和 geosite 为 rule_set
           jq '.route.rules |= map(
             if .geoip then 
               .rule_set = "geoip-cn" | 
-              del(.geoip) | 
-              if .outbound == "direct" then . + {"ip_is_private": true} else . end 
-            else 
-              if .geosite then .rule_set = (.geosite | if . == "category-ads-all" then "AdGuardSDNSFilter" else "geosite-cn" end) | del(.geosite) else . end 
-            end
-          )' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 添加 route.rules 中的 action 规则
-          jq '.route.rules += [
-            {"action": "sniff"},
-            {"action": "hijack-dns", "protocol": "dns"},
-            {"action": "resolve", "strategy": "prefer_ipv4"}
-          ]' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 修复 dns.rules：替换 geosite 为 rule_set
-          jq '.dns.rules |= map(
-            if .geosite then 
-              .rule_set = (.geosite | if . == "category-ads-all" then ["AdGuardSDNSFilter", "chrome-doh"] else "geosite-cn" end) | 
-              del(.geosite) 
-            else . end
-          )' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 添加 dns.rules 中 ext-cn-domain 规则
-          jq '.dns.rules += [{"rule_set": "ext-cn-domain", "server": "local"}]' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 移除未使用的 dns-out 和 block 出站
-          jq '.outbounds |= map(select(.tag != "dns-out" and .tag != "block"))' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-      # 检查生成的 sing-box 配置文件是否存在
-      - name: Check Generated Sing-Box Files
-        run: |
-          ls -l sing-box_config.json || echo "Sing-box config file not found"
-
-      # 提交生成的配置文件到仓库
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add clash_config.yaml clash_config.yaml.json sing-box_config.json
-          git commit -m "Update Clash and Sing-Box configuration files - $(date +'%Y-%m-%d')"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # 处理提交失败的情况（例如没有新文件）
-      - name: Handle Commit Failure
-        if: failure()
-        run: |
-          echo "No changes to commit or commit failed, continuing..."
+              d
