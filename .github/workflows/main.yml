@@ -43,24 +43,36 @@ jobs:
       - name: Check Generated Clash Files
         run: |
           ls -l clash_config.yaml clash_config.yaml.json || echo "Clash config files not found"
-          echo "Line 405:"
-          sed -n '405p' clash_config.yaml
-          echo "Line 1066:"
-          sed -n '1066p' clash_config.yaml
-          echo "Context around Line 405:"
-          sed -n '401,409p' clash_config.yaml
-          echo "Context around Line 1066:"
-          sed -n '1062,1070p' clash_config.yaml
+          echo "Line 420:"
+          sed -n '420p' clash_config.yaml
+          echo "Line 1081:"
+          sed -n '1081p' clash_config.yaml
+          echo "Context around Line 420:"
+          sed -n '416,424p' clash_config.yaml
+          echo "Context around Line 1081:"
+          sed -n '1077,1085p' clash_config.yaml
           echo "Checking for string '0' occurrences:"
           grep -n ': "0"' clash_config.yaml || echo "No ': \"0\"' found"
+          echo "Checking for other numeric strings:"
+          grep -n ': "[0-9]\+"' clash_config.yaml || echo "No numeric strings found"
 
       # 修复 clash_config.yaml 中字符串 "0" 为整数 0
       - name: Fix YAML String Zero
         run: |
+          # 备份原始文件以便调试
+          cp clash_config.yaml clash_config.yaml.bak
+          # 替换 ': "0"' 为 ': 0'
           sed -i 's/: "0"/: 0/g' clash_config.yaml
+          # 更广义的替换，处理所有 ': "数字"' 格式
+          sed -i 's/: "\([0-9]\+\)"/: \1/g' clash_config.yaml
           # 验证修复结果
           echo "After fixing, checking for remaining ': \"0\"':"
           grep -n ': "0"' clash_config.yaml || echo "No ': \"0\"' remaining"
+          echo "After fixing, checking for remaining numeric strings:"
+          grep -n ': "[0-9]\+"' clash_config.yaml || echo "No numeric strings remaining"
+          # 打印修改差异
+          echo "Differences after fixing:"
+          diff clash_config.yaml.bak clash_config.yaml || echo "No differences found"
 
       # 安装最新版 clash2singbox CLI 工具
       - name: Install clash2singbox
