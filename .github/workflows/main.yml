@@ -1,226 +1,85 @@
-name: Daily Clash Config Generation and Conversion
-
-# 触发条件：每天 UTC 时间 0:00 运行
+name: Clash Proxy Workflow
 on:
+  push:
+    branches: [main]
   schedule:
-    - cron: '0 0 * * *'
-  # 允许手动触发
-  workflow_dispatch:
+    - cron: '0 0 * * *'  # 每天凌晨运行
+  workflow_dispatch:  # 支持手动触发
 
 jobs:
-  generate-and-convert-clash-config:
+  run-script:
     runs-on: ubuntu-latest
-
+    timeout-minutes: 30
     steps:
-      # 检出代码仓库
-      - name: Checkout Repository
-        uses: actions/checkout@v4
+      # 检出代码
+      - uses: actions/checkout@v4
 
       # 设置 Python 环境
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.10'
 
-      # 安装系统依赖（包括 wget、unzip 和 jq）
-      - name: Install System Dependencies
+      # 安装依赖
+      - name: Install dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y wget unzip jq
+          python -m pip install --upgrade pip
+          pip install requests pyyaml httpx requests-html psutil
 
-      # 安装 Python 依赖
-      - name: Install Python Dependencies
+      # 更新 CA 证书（避免 SSL 错误）
+      - name: Update CA certificates
+        run: sudo apt-get update && sudo apt-get install -y ca-certificates
+
+      # 缓存 Clash 二进制
+      - name: Cache Clash binary
+        id: cache-clash
+        uses: actions/cache@v3
+        with:
+          path: clash-linux
+          key: clash-binary-${{ runner.os }}-v1.18.9
+
+      # 下载 Clash 二进制（如果缓存未命中）
+      - name: Download Clash binary
+        if: steps.cache-clash.outputs.cache-hit != 'true'
         run: |
-          pip install --upgrade pip
-          pip install pyyaml httpx requests requests-html psutil lxml_html_clean
+          curl -L -o clash.gz "https://github.com/MetaCubeX/mihomo/releases/download/v1.18.9/mihomo-linux-amd64-compatible.gz"
+          gunzip clash.gz
+          chmod +x clash
+          mv clash clash-linux
 
-      # 运行 ClashForge.py 脚本生成 Clash 配置文件
-      - name: Run ClashForge Script
+      # 缓存 clash2singbox 二进制
+      - name: Cache clash2singbox binary
+        id: cache-singbox
+        uses: actions/cache@v3
+        with:
+          path: clash2singbox
+          key: singbox-binary-${{ runner.os }}-v0.0.1
+
+      # 下载 clash2singbox 二进制（如果缓存未命中）
+      - name: Download clash2singbox binary
+        if: steps.cache-singbox.outputs.cache-hit != 'true'
         run: |
-          python ClashForge.py
-
-      # 检查生成的 Clash 配置文件是否存在并调试
-      - name: Check Generated Clash Files
-        run: |
-          ls -l clash_config.yaml clash_config.yaml.json || echo "Clash config files not found"
-          echo "Line 395:"
-          sed -n '395p' clash_config.yaml
-          echo "Line 991:"
-          sed -n '991p' clash_config.yaml
-          echo "Context around Line 395:"
-          sed -n '391,399p' clash_config.yaml
-          echo "Context around Line 991:"
-          sed -n '987,995p' clash_config.yaml
-          echo "Checking for string '0' occurrences:"
-          grep -n ': "0"' clash_config.yaml || echo "No ': \"0\"' found"
-          echo "Checking for numeric strings:"
-          grep -n ': "[0-9]\+"' clash_config.yaml || echo "No numeric strings found"
-          echo "Checking for unquoted numeric values:"
-          grep -n ': 0$' clash_config.yaml || echo "No unquoted '0' found"
-          echo "Checking for alterId specifically:"
-          grep -n 'alterId: .*' clash_config.yaml || echo "No alterId found"
-
-      # 修复 clash_config.yaml 中字符串 "0" 为整数 0
-      - name: Fix YAML String Zero
-        run: |
-          # 备份原始文件
-          cp clash_config.yaml clash_config.yaml.bak
-          # 替换 ': "0"' 为 ': 0'
-          sed -i 's/: "0"/: 0/g' clash_config.yaml
-          # 替换所有 ': "数字"' 格式
-          sed -i 's/: "\([0-9]\+\)"/: \1/g' clash_config.yaml
-          # 替换无引号的 ': 0'
-          sed -i 's/: 0$/&: 0/g' clash_config.yaml
-          # 针对 alterId 特殊处理
-          sed -i 's/alterId: "\([0-9]\+\)"/alterId: \1/g' clash_config.yaml
-          sed -i 's/alterId: 0/alterId: 0/g' clash_config.yaml
-          # 验证修复结果
-          echo "After fixing, checking for remaining ': \"0\"':"
-          grep -n ': "0"' clash_config.yaml || echo "No ': \"0\"' remaining"
-          echo "After fixing, checking for remaining numeric strings:"
-          grep -n ': "[0-9]\+"' clash_config.yaml || echo "No numeric strings remaining"
-          echo "After fixing, checking for unquoted '0':"
-          grep -n ': 0$' clash_config.yaml || echo "No unquoted '0' remaining"
-          echo "After fixing, checking alterId:"
-          grep -n 'alterId: .*' clash_config.yaml || echo "No alterId remaining"
-          # 打印修改差异
-          echo "Differences after fixing:"
-          diff clash_config.yaml.bak clash_config.yaml || echo "No differences found"
-
-      # 使用 Python 脚本进一步修复 YAML 类型
-      - name: Fix YAML Types with Python
-        run: |
-          cat << 'EOF' > fix_yaml.py
-          import yaml
-          import sys
-
-          def convert_to_int(data):
-              if isinstance(data, dict):
-                  return {k: convert_to_int(v) for k, v in data.items()}
-              elif isinstance(data, list):
-                  return [convert_to_int(item) for item in data]
-              elif isinstance(data, str) and data.isdigit():
-                  return int(data)
-              return data
-
-          with open('clash_config.yaml', 'r') as f:
-              data = yaml.safe_load(f)
-
-          fixed_data = convert_to_int(data)
-
-          with open('clash_config.yaml', 'w') as f:
-              yaml.safe_dump(fixed_data, f, default_flow_style=False)
-          EOF
-          python fix_yaml.py
-          # 验证 Python 修复结果
-          echo "Differences after Python fixing:"
-          diff clash_config.yaml.bak clash_config.yaml || echo "No further differences found"
-
-      # 安装最新版 clash2singbox CLI 工具
-      - name: Install clash2singbox
-        run: |
-          wget $(curl -s https://api.github.com/repos/xmdhs/clash2singbox/releases/latest | grep "browser_download_url.*linux-amd64" | cut -d\" -f4)
-          mv clash2singbox-linux-amd64 clash2singbox
+          curl -L -o clash2singbox "https://github.com/Querium/clash2singbox/releases/download/v0.0.1/clash2singbox-linux-amd64"
           chmod +x clash2singbox
 
-      # 转换 Clash 配置文件为 sing-box 配置文件
-      - name: Convert Clash Config to Sing-Box Config
+      # 创建 input 文件夹并添加示例节点文件（可选）
+      - name: Set up input directory
         run: |
-          ./clash2singbox -i clash_config.yaml -o sing-box_config_temp.json
+          mkdir -p input
+          echo "ss://example@server:port#name Obligatory: true" > input/nodes.txt
 
-      # 验证并修复 sing-box 配置文件
-      - name: Validate and Enhance Sing-Box Config
-        run: |
-          # 验证 JSON 格式
-          jq . sing-box_config_temp.json > sing-box_config.json || (echo "sing-box 配置格式无效" && exit 1)
-
-          # 修复 log 配置
-          jq 'if .log == {} then .log = {"level": "info"} else . end' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 修复 DNS 配置：将 IP 地址改为 DoH 地址
-          jq '.dns.servers |= map Facet('if .tag == "remote" then .address = "https://8.8.8.8/dns-query" else if .tag == "local" then .address = "https://223.5.5.5/dns-query" else . end end')' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 添加 experimental.cache_file
-          jq '.experimental |= . + {"cache_file": {"enabled": true}}' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 修复 inbounds.tun：替换 inet4_address 和 inet6_address 为 address 数组
-          jq '.inbounds |= map(
-            if .type == "tun" then 
-              .address = [
-                (if .inet4_address then .inet4_address else "172.19.0.1/30" end),
-                (if .inet6_address then .inet6_address else "fdfe:dcba:9876::1/126" end)
-              ] | 
-              del(.inet4_address) | 
-              del(.inet6_address) | 
-              .auto_route = true 
-            else . end
-          )' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 移除 inbounds 中的 domain_strategy 和 set_system_proxy
-          jq '.inbounds |= map(
-            del(.domain_strategy) | 
-            del(.set_system_proxy)
-          )' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 添加 route.rule_set
-          jq '.route.rule_set = [
-            {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"},
-            {"tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/xmdhs/sing-geosite/rule-set-Loyalsoldier/geosite-geolocation-cn.srs"},
-            {"tag": "AdGuardSDNSFilter", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/xmdhs/sing-box-ruleset/rule-set/AdGuardSDNSFilterSingBox.srs"},
-            {"tag": "chrome-doh", "type": "remote", "format": "source", "url": "https://gist.githubusercontent.com/xmdhs/71fc5ff6ef29f5ecaf2c52b8de5c3172/raw/chrome-doh.json"},
-            {"tag": "ext-cn-domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/xmdhs/cn-domain-list/rule-set/ext-cn-list.srs"}
-          ]' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 修复 route.rules：替换 geoip 和 geosite 为 rule_set
-          jq '.route.rules |= map(
-            if .geoip then 
-              .rule_set = "geoip-cn" | 
-              del(.geoip) | 
-              if .outbound == "direct" then . + {"ip_is_private": true} else . end 
-            else 
-              if .geosite then .rule_set = (.geosite | if . == "category-ads-all" then "AdGuardSDNSFilter" else "geosite-cn" end) | del(.geosite) else . end 
-            end
-          )' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 添加 route.rules 中的 action 规则
-          jq '.route.rules += [
-            {"action": "sniff"},
-            {"action": "hijack-dns", "protocol": "dns"},
-            {"action": "resolve", "strategy": "prefer_ipv4"}
-          ]' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 修复 dns.rules：替换 geosite 为 rule_set
-          jq '.dns.rules |= map(
-            if .geosite then 
-              .rule_set = (.geosite | if . == "category-ads-all" then ["AdGuardSDNSFilter", "chrome-doh"] else "geosite-cn" end) | 
-              del(.geosite) 
-            else . end
-          )' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 添加 dns.rules 中 ext-cn-domain 规则
-          jq '.dns.rules += [{"rule_set": "ext-cn-domain", "server": "local"}]' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-          # 移除未使用的 dns-out 和 block 出站
-          jq '.outbounds |= map(select(.tag != "dns-out" and .tag != "block"))' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
-
-      # 检查生成的 sing-box 配置文件是否存在
-      - name: Check Generated Sing-Box Files
-        run: |
-          ls -l sing-box_config.json || echo "Sing-box config file not found"
-
-      # 提交生成的配置文件到仓库
-      - name: Commit and Push Changes
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add clash_config.yaml clash_config.yaml.json sing-box_config.json
-          git commit -m "Update Clash and Sing-Box configuration files - $(date +'%Y-%m-%d')"
-          git push
+      # 运行脚本
+      - name: Run Clash script
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_WORKSPACE: ${{ github.workspace }}
+        run: python script.py
 
-      # 处理提交失败的情况（例如没有新文件）
-      - name: Handle Commit Failure
-        if: failure()
-        run: |
-          echo "No changes to commit or commit failed, continuing..."
+      # 上传生成的文件
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: clash-config
+          path: |
+            clash_config.yaml
+            clash_config.yaml.json
+            clash_singbox.json
