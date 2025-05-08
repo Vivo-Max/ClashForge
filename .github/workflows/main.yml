@@ -43,36 +43,78 @@ jobs:
       - name: Check Generated Clash Files
         run: |
           ls -l clash_config.yaml clash_config.yaml.json || echo "Clash config files not found"
-          echo "Line 420:"
-          sed -n '420p' clash_config.yaml
-          echo "Line 1081:"
-          sed -n '1081p' clash_config.yaml
-          echo "Context around Line 420:"
-          sed -n '416,424p' clash_config.yaml
-          echo "Context around Line 1081:"
-          sed -n '1077,1085p' clash_config.yaml
+          echo "Line 395:"
+          sed -n '395p' clash_config.yaml
+          echo "Line 991:"
+          sed -n '991p' clash_config.yaml
+          echo "Context around Line 395:"
+          sed -n '391,399p' clash_config.yaml
+          echo "Context around Line 991:"
+          sed -n '987,995p' clash_config.yaml
           echo "Checking for string '0' occurrences:"
           grep -n ': "0"' clash_config.yaml || echo "No ': \"0\"' found"
-          echo "Checking for other numeric strings:"
+          echo "Checking for numeric strings:"
           grep -n ': "[0-9]\+"' clash_config.yaml || echo "No numeric strings found"
+          echo "Checking for unquoted numeric values:"
+          grep -n ': 0$' clash_config.yaml || echo "No unquoted '0' found"
+          echo "Checking for alterId specifically:"
+          grep -n 'alterId: .*' clash_config.yaml || echo "No alterId found"
 
       # 修复 clash_config.yaml 中字符串 "0" 为整数 0
       - name: Fix YAML String Zero
         run: |
-          # 备份原始文件以便调试
+          # 备份原始文件
           cp clash_config.yaml clash_config.yaml.bak
           # 替换 ': "0"' 为 ': 0'
           sed -i 's/: "0"/: 0/g' clash_config.yaml
-          # 更广义的替换，处理所有 ': "数字"' 格式
+          # 替换所有 ': "数字"' 格式
           sed -i 's/: "\([0-9]\+\)"/: \1/g' clash_config.yaml
+          # 替换无引号的 ': 0'
+          sed -i 's/: 0$/&: 0/g' clash_config.yaml
+          # 针对 alterId 特殊处理
+          sed -i 's/alterId: "\([0-9]\+\)"/alterId: \1/g' clash_config.yaml
+          sed -i 's/alterId: 0/alterId: 0/g' clash_config.yaml
           # 验证修复结果
           echo "After fixing, checking for remaining ': \"0\"':"
           grep -n ': "0"' clash_config.yaml || echo "No ': \"0\"' remaining"
           echo "After fixing, checking for remaining numeric strings:"
           grep -n ': "[0-9]\+"' clash_config.yaml || echo "No numeric strings remaining"
+          echo "After fixing, checking for unquoted '0':"
+          grep -n ': 0$' clash_config.yaml || echo "No unquoted '0' remaining"
+          echo "After fixing, checking alterId:"
+          grep -n 'alterId: .*' clash_config.yaml || echo "No alterId remaining"
           # 打印修改差异
           echo "Differences after fixing:"
           diff clash_config.yaml.bak clash_config.yaml || echo "No differences found"
+
+      # 使用 Python 脚本进一步修复 YAML 类型
+      - name: Fix YAML Types with Python
+        run: |
+          cat << 'EOF' > fix_yaml.py
+          import yaml
+          import sys
+
+          def convert_to_int(data):
+              if isinstance(data, dict):
+                  return {k: convert_to_int(v) for k, v in data.items()}
+              elif isinstance(data, list):
+                  return [convert_to_int(item) for item in data]
+              elif isinstance(data, str) and data.isdigit():
+                  return int(data)
+              return data
+
+          with open('clash_config.yaml', 'r') as f:
+              data = yaml.safe_load(f)
+
+          fixed_data = convert_to_int(data)
+
+          with open('clash_config.yaml', 'w') as f:
+              yaml.safe_dump(fixed_data, f, default_flow_style=False)
+          EOF
+          python fix_yaml.py
+          # 验证 Python 修复结果
+          echo "Differences after Python fixing:"
+          diff clash_config.yaml.bak clash_config.yaml || echo "No further differences found"
 
       # 安装最新版 clash2singbox CLI 工具
       - name: Install clash2singbox
@@ -96,10 +138,7 @@ jobs:
           jq 'if .log == {} then .log = {"level": "info"} else . end' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
 
           # 修复 DNS 配置：将 IP 地址改为 DoH 地址
-          jq '.dns.servers |= map(
-            if .tag == "remote" then .address = "https://8.8.8.8/dns-query" else
-            if .tag == "local" then .address = "https://223.5.5.5/dns-query" else . end end
-          )' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
+          jq '.dns.servers |= map Facet('if .tag == "remote" then .address = "https://8.8.8.8/dns-query" else if .tag == "local" then .address = "https://223.5.5.5/dns-query" else . end end')' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
 
           # 添加 experimental.cache_file
           jq '.experimental |= . + {"cache_file": {"enabled": true}}' sing-box_config.json > tmp.json && mv tmp.json sing-box_config.json
