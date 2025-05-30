@@ -163,6 +163,171 @@ clash_config_template = {
         "PROCESS-NAME,com.tencent.ibg.jooxtv,节点选择",
         "DOMAIN-SUFFIX,joox.com,节点选择",
         "DOMAIN-KEYWORD,jooxweb-api,节点选择",
+        "PROCESS-NAME,com.skysoft.kkbox.andr# -*- coding: utf-8 -*-
+# !/usr/bin/env python3
+import base64
+import subprocess
+import threading
+import time
+import urllib.parse
+import json
+import glob
+import re
+import yaml
+import random
+import string
+import httpx
+import asyncio
+from itertools import chain
+from typing import Dict, List, Optional
+import sys
+import requests
+import zipfile
+import gzip
+import shutil
+import platform
+import os
+from datetime import datetime
+from asyncio import Semaphore
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+import warnings
+warnings.filterwarnings('ignore')
+from requests_html import HTMLSession
+import psutil
+
+
+# TEST_URL = "http://www.gstatic.com/generate_204"
+TEST_URL = "http://www.pinterest.com"
+CLASH_API_PORTS = [9090]
+CLASH_API_HOST = "127.0.0.1"
+CLASH_API_SECRET = ""
+TIMEOUT = 3
+# 存储所有节点的速度测试结果
+SPEED_TEST = False
+SPEED_TEST_LIMIT = 5 # 只测试前30个节点的下行速度，每个节点测试5秒
+results_speed = []
+MAX_CONCURRENT_TESTS = 100
+LIMIT = 10000 # 最多保留LIMIT个节点
+CONFIG_FILE = 'clash_config.yaml'
+INPUT = "input" # 从文件中加载代理节点，支持yaml/yml、txt(每条代理链接占一行)
+BAN = ["中国", "China", "CN", "电信", "移动", "联通"]
+headers = {
+    'Accept-Charset': 'utf-8',
+    'Accept': 'text/html,application/x-yaml,*/*',
+    'User-Agent': 'Clash Verge/1.7.7'
+}
+
+# Clash 配置文件的基础结构
+clash_config_template = {
+    "port": 7890,
+    "socks-port": 7891,
+    "redir-port": 7892,
+    "allow-lan": True,
+    "mode": "rule",
+    "log-level": "info",
+    "external-controller": "127.0.0.1:9090",
+    "geodata-mode": True,
+    'geox-url': {'geoip': 'https://slink.ltd/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/geoip.dat', 'mmdb': 'https://slink.ltd/https://raw.githubusercontent.com/Loyalsoldier/geoip/release/GeoLite2-Country.mmdb'},
+    "dns": {
+        "enable": True,
+        "ipv6": False,
+        "default-nameserver": [
+            "223.5.5.5",
+            "119.29.29.29"
+        ],
+        "enhanced-mode": "fake-ip",
+        "fake-ip-range": "198.18.0.1/16",
+        "use-hosts": True,
+        "nameserver": [
+            "https://doh.pub/dns-query",
+            "https://dns.alidns.com/dns-query"
+        ],
+        "fallback": [
+            "https://doh.dns.sb/dns-query",
+            "https://dns.cloudflare.com/dns-query",
+            "https://dns.twnic.tw/dns-query",
+            "tls://8.8.4.4:853"
+        ],
+        "fallback-filter": {
+            "geoip": True,
+            "ipcidr": [
+                "240.0.0.0/4",
+                "0.0.0.0/32"
+            ]
+        }
+    },
+    "proxies": [],
+    "proxy-groups": [
+        {
+            "name": "节点选择",
+            "type": "select",
+            "proxies": [
+                "自动选择",
+                "故障转移",
+                "DIRECT",
+                "手动选择"
+            ]
+        },
+        {
+            "name": "自动选择",
+            "type": "url-test",
+            "exclude-filter": "(?i)中国|China|CN|电信|移动|联通",
+            "proxies": [],
+            # "url": "http://www.gstatic.com/generate_204",
+            "url": "http://www.pinterest.com",
+            "interval": 300,
+            "tolerance": 50
+        },
+        {
+            "name": "故障转移",
+            "type": "fallback",
+            "exclude-filter": "(?i)中国|China|CN|电信|移动|联通",
+            "proxies": [],
+            "url": "http://www.gstatic.com/generate_204",
+            "interval": 300
+        },
+        {
+            "name": "手动选择",
+            "type": "select",
+            "proxies": []
+        },
+    ],
+    "rules": [
+        "DOMAIN,app.adjust.com,DIRECT",
+        "DOMAIN,bdtj.tagtic.cn,DIRECT",
+        "DOMAIN,log.mmstat.com,DIRECT",
+        "DOMAIN,sycm.mmstat.com,DIRECT",
+        "DOMAIN-SUFFIX,blog.google,DIRECT",
+        "DOMAIN-SUFFIX,googletraveladservices.com,DIRECT",
+        "DOMAIN,dl.google.com,DIRECT",
+        "DOMAIN,dl.l.google.com,DIRECT",
+        "DOMAIN,fonts.googleapis.com,DIRECT",
+        "DOMAIN,fonts.gstatic.com,DIRECT",
+        "DOMAIN,mtalk.google.com,DIRECT",
+        "DOMAIN,alt1-mtalk.google.com,DIRECT",
+        "DOMAIN,alt2-mtalk.google.com,DIRECT",
+        "DOMAIN,alt3-mtalk.google.com,DIRECT",
+        "DOMAIN,alt4-mtalk.google.com,DIRECT",
+        "DOMAIN,alt5-mtalk.google.com,DIRECT",
+        "DOMAIN,alt6-mtalk.google.com,DIRECT",
+        "DOMAIN,alt7-mtalk.google.com,DIRECT",
+        "DOMAIN,alt8-mtalk.google.com,DIRECT",
+        "DOMAIN,fairplay.l.qq.com,DIRECT",
+        "DOMAIN,livew.l.qq.com,DIRECT",
+        "DOMAIN,vd.l.qq.com,DIRECT",
+        "DOMAIN,analytics.strava.com,DIRECT",
+        "DOMAIN,msg.umeng.com,DIRECT",
+        "DOMAIN,msg.umengcloud.com,DIRECT",
+        "PROCESS-NAME,com.ximalaya.ting.himalaya,节点选择",
+        "DOMAIN-SUFFIX,himalaya.com,节点选择",
+        "PROCESS-NAME,deezer.android.app,节点选择",
+        "DOMAIN-SUFFIX,deezer.com,节点选择",
+        "DOMAIN-SUFFIX,dzcdn.net,节点选择",
+        "PROCESS-NAME,com.tencent.ibg.joox,节点选择",
+        "PROCESS-NAME,com.tencent.ibg.jooxtv,节点选择",
+        "DOMAIN-SUFFIX,joox.com,节点选择",
+        "DOMAIN-KEYWORD,jooxweb-api,节点选择",
         "PROCESS-NAME,com.skysoft.kkbox.android,节点选择",
         "DOMAIN-SUFFIX,kkbox.com,节点选择",
         "DOMAIN-SUFFIX,kkbox.com.tw,节点选择",
@@ -1229,136 +1394,171 @@ clash_config_template = {
 
 # 解析 Hysteria2 链接
 def parse_hysteria2_link(link):
-    link = link[14:]
-    parts = link.split('@')
-    uuid = parts[0]
-    server_info = parts[1].split('?')
-    server = server_info[0].split(':')[0]
-    port = int(server_info[0].split(':')[1].split('/')[0].strip())
-    query_params = urllib.parse.parse_qs(server_info[1] if len(server_info) > 1 else '')
-    insecure = '1' in query_params.get('insecure', ['0'])
-    sni = query_params.get('sni', [''])[0]
-    name = urllib.parse.unquote(link.split('#')[-1].strip())
+    try:
+        link = link[14:] if link.startswith("hysteria2://") else link[6:]  # 支持 hy2://
+        parts = link.split('@')
+        if len(parts) != 2:
+            raise ValueError("Invalid Hysteria2 link format")
+        uuid = parts[0]
+        server_info = parts[1].split('?')
+        server_port = server_info[0].split('/')[0].strip()
+        server, port = server_port.split(':') if ':' in server_port else (server_port, '443')
+        query_params = urllib.parse.parse_qs(server_info[1] if len(server_info) > 1 else '')
+        insecure = '1' in query_params.get('insecure', ['0'])
+        sni = query_params.get('sni', [''])[0]
+        name = urllib.parse.unquote(link.split('#')[-1].strip()) or f"hy2-{server}"
 
-    return {
-        "name": f"{name}",
-        "server": server,
-        "port": port,
-        "type": "hysteria2",
-        "password": uuid,
-        "auth": uuid,
-        "sni": sni,
-        "skip-cert-verify": not insecure,
-        "client-fingerprint": "chrome"
-    }
+        return {
+            "name": name,
+            "server": server,
+            "port": int(port),  # 确保 port 为整数
+            "type": "hysteria2",
+            "password": uuid,
+            "auth": uuid,
+            "sni": sni,
+            "skip-cert-verify": not insecure,
+            "client-fingerprint": "chrome"
+        }
+    except Exception as e:
+        print(f"Failed to parse Hysteria2 link: {e}")
+        return None
 
 # 解析 Shadowsocks 链接
 def parse_ss_link(link):
-    link = link[5:]
-    if "#" in link:
-        config_part, name = link.split('#')
-    else:
-        config_part, name = link, ""
-    decoded = base64.urlsafe_b64decode(config_part.split('@')[0] + '=' * (-len(config_part.split('@')[0]) % 4)).decode('utf-8')
-    method_passwd = decoded.split(':')
-    cipher, password = method_passwd if len(method_passwd) == 2 else (method_passwd[0], "")
-    server_info = config_part.split('@')[1]
-    server, port = server_info.split(':') if ":" in server_info else (server_info, "")
+    try:
+        link = link[5:]  # 移除 ss://
+        if "#" in link:
+            config_part, name = link.split('#')
+        else:
+            config_part, name = link, ""
+        decoded = base64.urlsafe_b64decode(config_part.split('@')[0] + '=' * (-len(config_part.split('@')[0]) % 4)).decode('utf-8')
+        method_passwd = decoded.split(':')
+        if len(method_passwd) < 2:
+            raise ValueError("Invalid SS auth format")
+        cipher, password = method_passwd if len(method_passwd) == 2 else (method_passwd[0], "")
+        server_info = config_part.split('@')[1]
+        server, port = server_info.split(':') if ":" in server_info else (server_info, "8388")
 
-    return {
-        "name": urllib.parse.unquote(name),
-        "type": "ss",
-        "server": server,
-        "port": int(port),
-        "cipher": cipher,
-        "password": password,
-        "udp": True
-    }
+        return {
+            "name": urllib.parse.unquote(name) or f"ss-{server}",
+            "type": "ss",
+            "server": server,
+            "port": int(port),  # 确保 port 为整数
+            "cipher": cipher,
+            "password": password,
+            "udp": True
+        }
+    except Exception as e:
+        print(f"Failed to parse SS link: {e}")
+        return None
 
 # 解析 Trojan 链接
 def parse_trojan_link(link):
-    link = link[9:]
-    config_part, name = link.split('#')
-    user_info, host_info = config_part.split('@')
-    username, password = user_info.split(':') if ":" in user_info else ("", user_info)
-    host, port_and_query = host_info.split(':') if ":" in host_info else (host_info, "")
-    port, query = port_and_query.split('?', 1) if '?' in port_and_query else (port_and_query, "")
+    try:
+        link = link[9:]  # 移除 trojan://
+        config_part, name = link.split('#') if '#' in link else (link, "")
+        user_info, host_info = config_part.split('@')
+        username, password = user_info.split(':') if ":" in user_info else ("", user_info)
+        host_port = host_info.split('?', 1)[0]
+        host, port = host_port.split(':') if ':' in host_port else (host_port, "443")
+        query = host_info.split('?', 1)[1] if '?' in host_info else ""
 
-    return {
-        "name": urllib.parse.unquote(name),
-        "type": "trojan",
-        "server": host,
-        "port": int(port),
-        "password": password,
-        "sni": urllib.parse.parse_qs(query).get("sni", [""])[0],
-        "skip-cert-verify": urllib.parse.parse_qs(query).get("skip-cert-verify", ["false"])[0] == "true"
-    }
+        return {
+            "name": urllib.parse.unquote(name) or f"trojan-{host}",
+            "type": "trojan",
+            "server": host,
+            "port": int(port),  # 确保 port 为整数
+            "password": password,
+            "sni": urllib.parse.parse_qs(query).get("sni", [""])[0],
+            "skip-cert-verify": urllib.parse.parse_qs(query).get("skip-cert-verify", ["false"])[0] == "true"
+        }
+    except Exception as e:
+        print(f"Failed to parse Trojan link: {e}")
+        return None
 
 # 解析 VLESS 链接
 def parse_vless_link(link):
-    link = link[8:]
-    config_part, name = link.split('#')
-    user_info, host_info = config_part.split('@')
-    uuid = user_info
-    host, query = host_info.split('?', 1) if '?' in host_info else (host_info, "")
-    port = host.split(':')[-1] if ':' in host else ""
-    host = host.split(':')[0] if ':' in host else ""
-    return {
-        "name": urllib.parse.unquote(name),
-        "type": "vless",
-        "server": host,
-        "port": int(port),
-        "uuid": uuid,
-        "security": urllib.parse.parse_qs(query).get("security", ["none"])[0],
-        "tls": urllib.parse.parse_qs(query).get("security", ["none"])[0] == "tls",
-        "sni": urllib.parse.parse_qs(query).get("sni", [""])[0],
-        "skip-cert-verify": urllib.parse.parse_qs(query).get("skip-cert-verify", ["false"])[0] == "true",
-        "network": urllib.parse.parse_qs(query).get("type", ["tcp"])[0],
-        "ws-opts": {
-            "path": urllib.parse.parse_qs(query).get("path", [""])[0],
-            "headers": {
-                "Host": urllib.parse.parse_qs(query).get("host", [""])[0]
-            }
-        } if urllib.parse.parse_qs(query).get("type", ["tcp"])[0] == "ws" else {}
-    }
+    try:
+        link = link[8:]  # 移除 vless://
+        config_part, name = link.split('#') if '#' in link else (link, "")
+        user_info, host_info = config_part.split('@')
+        uuid = user_info
+        host_port = host_info.split('?', 1)[0]
+        host, port = host_port.split(':') if ':' in host_port else (host_port, "443")
+        query = host_info.split('?', 1)[1] if '?' in host_info else ""
+
+        return {
+            "name": urllib.parse.unquote(name) or f"vless-{host}",
+            "type": "vless",
+            "server": host,
+            "port": int(port),  # 确保 port 为整数
+            "uuid": uuid,
+            "security": urllib.parse.parse_qs(query).get("security", ["none"])[0],
+            "tls": urllib.parse.parse_qs(query).get("security", ["none"])[0] == "tls",
+            "sni": urllib.parse.parse_qs(query).get("sni", [""])[0],
+            "skip-cert-verify": urllib.parse.parse_qs(query).get("skip-cert-verify", ["false"])[0] == "true",
+            "network": urllib.parse.parse_qs(query).get("type", ["tcp"])[0],
+            "ws-opts": {
+                "path": urllib.parse.parse_qs(query).get("path", [""])[0],
+                "headers": {
+                    "Host": urllib.parse.parse_qs(query).get("host", [""])[0]
+                }
+            } if urllib.parse.parse_qs(query).get("type", ["tcp"])[0] == "ws" else {}
+        }
+    except Exception as e:
+        print(f"Failed to parse VLESS link: {e}")
+        return None
 
 # 解析 VMESS 链接
 def parse_vmess_link(link):
-    link = link[8:]
-    decoded_link = base64.urlsafe_b64decode(link + '=' * (-len(link) % 4)).decode("utf-8")
-    vmess_info = json.loads(decoded_link)
+    try:
+        link = link[8:]  # 移除 vmess://
+        decoded_link = base64.urlsafe_b64decode(link + '=' * (-len(link) % 4)).decode("utf-8")
+        vmess_info = json.loads(decoded_link)
 
-    return {
-        "name": urllib.parse.unquote(vmess_info.get("ps", "vmess")),
-        "type": "vmess",
-        "server": vmess_info["add"],
-        "port": int(vmess_info["port"]),
-        "uuid": vmess_info["id"],
-        "alterId": int(vmess_info.get("aid", 0)),
-        "cipher": "auto",
-        "network": vmess_info.get("net", "tcp"),
-        "tls": vmess_info.get("tls", "") == "tls",
-        "sni": vmess_info.get("sni", ""),
-        "ws-opts": {
-            "path": vmess_info.get("path", ""),
-            "headers": {
-                "Host": vmess_info.get("host", "")
-            }
-        } if vmess_info.get("net", "tcp") == "ws" else {}
-    }
+        return {
+            "name": urllib.parse.unquote(vmess_info.get("ps", f"vmess-{vmess_info['add']}")),
+            "type": "vmess",
+            "server": vmess_info["add"],
+            "port": int(vmess_info["port"]),  # 确保 port 为整数
+            "uuid": vmess_info["id"],
+            "alterId": int(vmess_info.get("aid", 0)),  # 确保 alterId 为整数
+            "cipher": "auto",
+            "network": vmess_info.get("net", "tcp"),
+            "tls": vmess_info.get("tls", "") == "tls",
+            "sni": vmess_info.get("sni", ""),
+            "ws-opts": {
+                "path": vmess_info.get("path", ""),
+                "headers": {
+                    "Host": vmess_info.get("host", "")
+                }
+            } if vmess_info.get("net", "tcp") == "ws" else {}
+        }
+    except Exception as e:
+        print(f"Failed to parse VMESS link: {e}")
+        return None
 
 # 解析ss订阅源
 def parse_ss_sub(link):
     new_links = []
     try:
-        # 发送请求并获取内容
         response = requests.get(link, headers=headers, verify=False, allow_redirects=True)
         if response.status_code == 200:
             data = response.json()
-            new_links = [{"name": x['remarks'], "type": "ss", "server": x['server'], "port": x['server_port'], "cipher": x['method'],"password": x['password'], "udp": True} for x in data]
-            return new_links
-    except requests.RequestException as e:
-        print(f"请求错误: {e}")
+            new_links = [
+                {
+                    "name": x.get('remarks', f"ss-{x['server']}"),
+                    "type": "ss",
+                    "server": x['server'],
+                    "port": int(x['server_port']),  # 确保 port 为整数
+                    "cipher": x['method'],
+                    "password": x['password'],
+                    "udp": True
+                } for x in data
+            ]
+        return new_links
+    except Exception as e:
+        print(f"Failed to parse SS subscription: {e}")
         return new_links
 
 def parse_md_link(link):
@@ -1561,87 +1761,99 @@ def handle_links(new_links,resolve_name_conflicts):
         pass
 
 # 生成 Clash 配置文件
-def generate_clash_config(links,load_nodes):
+def generate_clash_config(links, load_nodes):
     now = datetime.now()
     print(f"当前时间: {now}\n---")
 
     final_nodes = []
-    existing_names = set()  # 存储所有节点名字以检查重复
+    existing_names = set()
     config = clash_config_template.copy()
 
-
-    # 名称已存在的节点加随机后缀
     def resolve_name_conflicts(node):
-        server = node.get("server")
-        if not server:
-            # print(f'不存在sever，非节点')
+        if not isinstance(node, dict) or not node.get("server"):
             return
-        name = str(node["name"])
+        name = str(node.get("name", ""))
+        if not name:
+            name = f"{node['type']}-{node['server']}"
         if not_contains(name):
             if name in existing_names:
                 name = add_random_suffix(name, existing_names)
+            # 确保整数字段为整数
+            if 'port' in node:
+                try:
+                    node['port'] = int(node['port'])
+                except (ValueError, TypeError):
+                    print(f"Invalid port value for node {name}: {node['port']}")
+                    return
+            if 'alterId' in node:
+                try:
+                    node['alterId'] = int(node['alterId'])
+                except (ValueError, TypeError):
+                    print(f"Invalid alterId value for node {name}: {node['alterId']}")
+                    return
             existing_names.add(name)
             node["name"] = name
             final_nodes.append(node)
 
+    # 处理本地 YAML 节点
     for node in load_nodes:
         resolve_name_conflicts(node)
 
-
+    # 处理链接
     for link in links:
-        if link.startswith(("hysteria2://", "hy2://","trojan://", "ss://", "vless://", "vmess://")):
+        if link.startswith(("hysteria2://", "hy2://", "trojan://", "ss://", "vless://", "vmess://")):
             node = parse_proxy_link(link)
-            if not node:
-                continue
-            resolve_name_conflicts(node)
+            if node:
+                resolve_name_conflicts(node)
         else:
             if '|links' in link or '.md' in link:
                 link = link.replace('|links', '')
                 new_links = parse_md_link(link)
-                handle_links(new_links,resolve_name_conflicts)
-            if '|ss' in link:
+                for new_link in new_links:
+                    node = parse_proxy_link(new_link)
+                    if node:
+                        resolve_name_conflicts(node)
+            elif '|ss' in link:
                 link = link.replace('|ss', '')
                 new_links = parse_ss_sub(link)
                 for node in new_links:
                     resolve_name_conflicts(node)
-            if '{' in link:
-                link = resolve_template_url(link)
-            print(f'当前正在处理link: {link}')
-            # 处理非特定协议的链接
-            try:
-                new_links,isyaml = process_url(link)
-            except Exception as e:
-                print(f"error: {e}")
-                continue
-            if isyaml:
-                for node in new_links:
-                    resolve_name_conflicts(node)
             else:
-                handle_links(new_links, resolve_name_conflicts)
+                try:
+                    link = resolve_template_url(link) if '{' in link else link
+                    new_links, isyaml = process_url(link)
+                    if isyaml:
+                        for node in new_links:
+                            resolve_name_conflicts(node)
+                    else:
+                        for new_link in new_links:
+                            node = parse_proxy_link(new_link)
+                            if node:
+                                resolve_name_conflicts(node)
+                except Exception as e:
+                    print(f"Failed to process URL {link}: {e}")
+                    continue
+
     final_nodes = deduplicate_proxies(final_nodes)
-    # 重置group中节点name
-    config["proxy-groups"][1]["proxies"] = []
-    for node in final_nodes:
-        name = str(node["name"])
-        if not_contains(name):
-            # 0节点选择 1 自动选择 2故障转移 3手动选择
-            config["proxy-groups"][1]["proxies"].append(name)
-            proxies = list(set(config["proxy-groups"][1]["proxies"]))
-            config["proxy-groups"][1]["proxies"] = proxies
-            config["proxy-groups"][2]["proxies"] = proxies
-            config["proxy-groups"][3]["proxies"] = proxies
-    config["proxies"] = final_nodes
-    
-    if config["proxies"]:
-        global CONFIG_FILE
-        CONFIG_FILE = CONFIG_FILE[:-5] if CONFIG_FILE.endswith('.json') else CONFIG_FILE
-        with open(CONFIG_FILE, "w", encoding="utf-8") as f:
-            yaml.dump(config, f, allow_unicode=True, default_flow_style=False)
-        with open(f'{CONFIG_FILE}.json', "w", encoding="utf-8") as f:
-            json.dump(config,f,ensure_ascii=False)
-        print(f"已经生成Clash配置文件{CONFIG_FILE}|{CONFIG_FILE}.json")
-    else:
+    if not final_nodes:
         print('没有节点数据更新')
+        return
+
+    # 更新代理组
+    config["proxies"] = final_nodes
+    proxy_names = [node["name"] for node in final_nodes if not_contains(node["name"])]
+    config["proxy-groups"][1]["proxies"] = proxy_names
+    config["proxy-groups"][2]["proxies"] = proxy_names
+    config["proxy-groups"][3]["proxies"] = proxy_names
+
+    # 写入文件
+    global CONFIG_FILE
+    CONFIG_FILE = CONFIG_FILE[:-5] if CONFIG_FILE.endswith('.json') else CONFIG_FILE
+    with open(CONFIG_FILE, "w", encoding="utf-8") as f:
+        yaml.safe_dump(config, f, allow_unicode=True, default_flow_style=False)
+    with open(f'{CONFIG_FILE}.json', "w", encoding="utf-8") as f:
+        json.dump(config, f, ensure_ascii=False, indent=2)
+    print(f"已经生成Clash配置文件{CONFIG_FILE}|{CONFIG_FILE}.json")
 
 # 判断不包含
 def not_contains(s):
